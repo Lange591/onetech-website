@@ -46,10 +46,10 @@ const services = [
     text: "We install and configure Starlink for homes, businesses, farms and remote sites that need fast internet. Our team handles dish mounting, cable routing, and network optimization.",
     points: ["Dish mounting", "Cable routing", "Router setup", "Speed testing"],
     images: [
-      "/images/work/roof-install.jpg",
-      "/images/network/network-1.jpg",
-      "/images/network/network-2.jpg",
-      "/images/network/network-3.jpg"
+      "/images/starlink/starlink-dish-install.jpg",
+      "/images/starlink/starlink-roof-mount.jpg",
+      "/images/starlink/starlink-setup-1.jpg",
+      "/images/starlink/starlink-setup-2.jpg"
     ],
     gradient: "from-red-400 to-zinc-950",
   },
@@ -62,9 +62,9 @@ const services = [
     points: ["IT planning", "Device recommendations", "Business support", "Digital upgrades"],
     images: [
       "/images/events/tent-booth.jpg",
-      "/images/network/network-2.jpg",
-      "/images/network/network-3.jpg",
-      "/images/events/radio-interview.jpg"
+      "/images/events/team-booth.jpg",
+      "/images/events/radio-interview.jpg",
+      "/images/events/outdoor-event.jpg"
     ],
     gradient: "from-zinc-700 to-red-950",
   },
@@ -456,7 +456,7 @@ function WorkShowcase() {
     { src: "/images/solar/inverter-install-2.jpg", alt: "Solar inverter installation", label: "Solar Installation" },
     { src: "/images/cctv/cctv-install.jpg", alt: "CCTV camera installation", label: "CCTV Setup" },
     { src: "/images/network/wifi-install.jpg", alt: "WiFi equipment installation", label: "Network Setup" },
-    { src: "/images/work/roof-install.jpg", alt: "Roof installation work", label: "Starlink Install" },
+    { src: "/images/starlink/starlink-dish-install.jpg", alt: "Starlink dish installation", label: "Starlink Install" },
     { src: "/images/solar/solar-panel-install.jpg", alt: "Solar panel installation", label: "Solar Panels" },
     { src: "/images/events/team-booth.jpg", alt: "Team at event", label: "Community Events" },
   ];
