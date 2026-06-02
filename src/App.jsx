@@ -29,6 +29,7 @@ const services = [
     points: ["Indoor & outdoor cameras", "Remote phone viewing", "DVR/NVR setup", "Solar-powered options"],
     images: [
       "/images/cctv/cctv-install.jpg",
+      "/images/flyers/cctv-security-flyer.jpg",
       "/images/cctv/cctv-1.jpg",
       "/images/cctv/cctv-2.jpg",
       "/images/cctv/cctv-3.jpg",
@@ -46,10 +47,11 @@ const services = [
     text: "We install and configure Starlink for homes, businesses, farms and remote sites that need fast internet. Our team handles dish mounting, cable routing, and network optimization.",
     points: ["Dish mounting", "Cable routing", "Router setup", "Speed testing"],
     images: [
-      "/images/work/roof-install.jpg",
+      "/images/network/wifi-install.jpg",
       "/images/network/network-1.jpg",
       "/images/network/network-2.jpg",
-      "/images/network/network-3.jpg"
+      "/images/network/network-3.jpg",
+      "/images/flyers/network-flyer.jpg"
     ],
     gradient: "from-red-400 to-zinc-950",
   },
@@ -61,10 +63,10 @@ const services = [
     text: "We help you choose the right devices, networks, security systems and support approach for your environment. Get expert guidance tailored to your specific needs.",
     points: ["IT planning", "Device recommendations", "Business support", "Digital upgrades"],
     images: [
+      "/images/events/radio-interview.jpg",
       "/images/events/tent-booth.jpg",
-      "/images/network/network-2.jpg",
-      "/images/network/network-3.jpg",
-      "/images/events/radio-interview.jpg"
+      "/images/events/team-booth.jpg",
+      "/images/events/outdoor-event.jpg"
     ],
     gradient: "from-zinc-700 to-red-950",
   },
@@ -92,6 +94,7 @@ const services = [
     points: ["Structured cabling", "Switches & routers", "Cabinet setup", "LAN upgrades"],
     images: [
       "/images/network/network-1.jpg",
+      "/images/flyers/network-flyer.jpg",
       "/images/network/network-4.jpg",
       "/images/network/network-5.jpg",
       "/images/network/wifi-install.jpg"
@@ -107,6 +110,7 @@ const services = [
     points: ["Solar panels", "Inverters", "Battery backup", "Maintenance support"],
     images: [
       "/images/solar/inverter-install-2.jpg",
+      "/images/flyers/solar-flyer.jpg",
       "/images/solar/solar-panel-install.jpg",
       "/images/solar/inverter-install-1.jpg",
       "/images/solar/solar-1.jpg",
@@ -138,13 +142,13 @@ const teamMembers = [
   {
     name: "Technical Lead",
     role: "Solar, CCTV & Network Installations",
-    img: "/images/solar/inverter-install-2.jpg",
+    img: "/images/team/team-1.jpg",
     description: "Expert in solar systems, surveillance installations, and network infrastructure."
   },
   {
     name: "Field Specialist",
     role: "WiFi, Starlink & Customer Support",
-    img: "/images/events/radio-interview.jpg",
+    img: "/images/team/team-2.jpg",
     description: "Specialized in wireless solutions, satellite internet, and client relations."
   }
 ];
@@ -161,32 +165,63 @@ const pages = [
 function TechBackground() {
   return (
     <>
-      <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_20%_10%,rgba(239,68,68,0.38),transparent_28%),radial-gradient(circle_at_85%_20%,rgba(255,255,255,0.13),transparent_25%),radial-gradient(circle_at_50%_90%,rgba(185,28,28,0.22),transparent_30%),linear-gradient(135deg,#050505_0%,#170101_46%,#020202_100%)]" />
+      <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_20%_10%,rgba(239,68,68,0.42),transparent_28%),radial-gradient(circle_at_85%_20%,rgba(255,255,255,0.15),transparent_25%),radial-gradient(circle_at_50%_90%,rgba(185,28,28,0.28),transparent_30%),linear-gradient(135deg,#030303_0%,#0a0505_46%,#020202_100%)]" />
       <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.08]"
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.06]"
         style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,.65) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.65) 1px, transparent 1px)",
-          backgroundSize: "42px 42px"
+          backgroundImage: "linear-gradient(rgba(239,68,68,.8) 1px, transparent 1px), linear-gradient(90deg, rgba(239,68,68,.8) 1px, transparent 1px)",
+          backgroundSize: "60px 60px"
         }}
       />
       <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.18]"
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.12]"
         style={{
-          backgroundImage: "radial-gradient(circle at 20% 30%, rgba(239,68,68,.9) 0 1px, transparent 2px), radial-gradient(circle at 80% 60%, rgba(255,255,255,.8) 0 1px, transparent 2px)",
-          backgroundSize: "90px 90px"
+          backgroundImage: "radial-gradient(circle at 25% 25%, rgba(239,68,68,.7) 0 2px, transparent 3px), radial-gradient(circle at 75% 75%, rgba(255,255,255,.5) 0 1px, transparent 2px)",
+          backgroundSize: "120px 120px"
         }}
       />
+      <svg className="pointer-events-none fixed inset-0 z-0 h-full w-full opacity-[0.04]">
+        <defs>
+          <pattern id="circuit" patternUnits="userSpaceOnUse" width="100" height="100">
+            <path d="M10 10h80v80h-80z" fill="none" stroke="rgba(239,68,68,.6)" strokeWidth="0.5"/>
+            <circle cx="10" cy="10" r="3" fill="rgba(239,68,68,.4)"/>
+            <circle cx="90" cy="10" r="3" fill="rgba(239,68,68,.4)"/>
+            <circle cx="10" cy="90" r="3" fill="rgba(239,68,68,.4)"/>
+            <circle cx="90" cy="90" r="3" fill="rgba(239,68,68,.4)"/>
+            <path d="M50 10v30M10 50h30M90 50h-30M50 90v-30" stroke="rgba(239,68,68,.3)" strokeWidth="0.5"/>
+            <circle cx="50" cy="50" r="5" fill="none" stroke="rgba(239,68,68,.5)" strokeWidth="0.5"/>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#circuit)"/>
+      </svg>
     </>
   );
 }
 
 function Logo({ small = false }) {
+  const size = small ? 48 : 96;
   return (
-    <img
-      src="/images/brand/logo.jpg"
-      alt="OneTech IT Services"
-      className={`${small ? "h-12 w-12" : "h-24 w-24"} rounded-full object-cover bg-white shadow-xl`}
-    />
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 100 100"
+      className="shrink-0"
+      aria-label="OneTech IT Services"
+    >
+      <defs>
+        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#ef4444" />
+          <stop offset="100%" stopColor="#b91c1c" />
+        </linearGradient>
+      </defs>
+      <circle cx="50" cy="50" r="48" fill="url(#logoGradient)" />
+      <circle cx="50" cy="50" r="44" fill="none" stroke="white" strokeWidth="2" opacity="0.3" />
+      <circle cx="50" cy="24" r="12" fill="white" />
+      <text x="50" y="29" textAnchor="middle" fill="#dc2626" fontSize="16" fontWeight="900" fontFamily="system-ui, sans-serif">1</text>
+      <path d="M20 42 Q50 35 80 42" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" />
+      <text x="50" y="62" textAnchor="middle" fill="white" fontSize="14" fontWeight="900" fontFamily="system-ui, sans-serif" letterSpacing="-0.5">OneTech</text>
+      <text x="50" y="78" textAnchor="middle" fill="white" fontSize="8" fontWeight="600" fontFamily="system-ui, sans-serif" letterSpacing="1" opacity="0.9">IT SERVICES</text>
+    </svg>
   );
 }
 
@@ -350,7 +385,7 @@ function HeroGraphic() {
       />
       <div className="absolute left-1/2 top-1/2 h-[330px] w-[330px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-[3.5rem] border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur-2xl">
         <img
-          src="/images/solar/inverter-install-2.jpg"
+          src="/images/team/team-1.jpg"
           alt="OneTech installation work"
           className="h-full w-full rounded-[2.7rem] object-cover object-top opacity-80"
         />
@@ -456,7 +491,7 @@ function WorkShowcase() {
     { src: "/images/solar/inverter-install-2.jpg", alt: "Solar inverter installation", label: "Solar Installation" },
     { src: "/images/cctv/cctv-install.jpg", alt: "CCTV camera installation", label: "CCTV Setup" },
     { src: "/images/network/wifi-install.jpg", alt: "WiFi equipment installation", label: "Network Setup" },
-    { src: "/images/work/roof-install.jpg", alt: "Roof installation work", label: "Starlink Install" },
+    { src: "/images/network/network-1.jpg", alt: "Network infrastructure", label: "Infrastructure" },
     { src: "/images/solar/solar-panel-install.jpg", alt: "Solar panel installation", label: "Solar Panels" },
     { src: "/images/events/team-booth.jpg", alt: "Team at event", label: "Community Events" },
   ];
@@ -489,6 +524,34 @@ function WorkShowcase() {
               </div>
             </motion.div>
           ))}
+        </div>
+        
+        <div className="mt-16">
+          <p className="font-black uppercase tracking-[0.35em] text-red-400">Our Services</p>
+          <h2 className="mt-4 text-4xl font-black tracking-[-0.05em] md:text-5xl">What we offer.</h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            <div className="group relative overflow-hidden rounded-[2rem] border border-white/10">
+              <img
+                src="/images/flyers/cctv-security-flyer.jpg"
+                alt="CCTV and Cyber Security Services"
+                className="h-auto w-full object-contain transition duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div className="group relative overflow-hidden rounded-[2rem] border border-white/10">
+              <img
+                src="/images/flyers/solar-flyer.jpg"
+                alt="Solar Installation Services"
+                className="h-auto w-full object-contain transition duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div className="group relative overflow-hidden rounded-[2rem] border border-white/10">
+              <img
+                src="/images/flyers/network-flyer.jpg"
+                alt="Network Solutions Services"
+                className="h-auto w-full object-contain transition duration-500 group-hover:scale-105"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>
