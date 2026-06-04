@@ -163,57 +163,91 @@ const pages = [
 function TechBackground() {
   return (
     <>
-      {/* Deep tech gradient base */}
-      <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-br from-slate-950 via-zinc-900 to-neutral-950" />
+      {/* Deep tech gradient base with blue-black tones */}
+      <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-br from-[#0a0a0f] via-[#0d0d14] to-[#080810]" />
       
-      {/* Hexagonal tech mesh pattern */}
+      {/* Animated circuit board pattern */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.035]"
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.08]"
         style={{
           backgroundImage: `
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23dc2626' fill-opacity='0.5'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
-          `
-        }}
-      />
-      
-      {/* Circuit traces overlay */}
-      <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.02]"
-        style={{
-          backgroundImage: `
-            linear-gradient(90deg, transparent 49.5%, rgba(220,38,38,0.6) 49.5%, rgba(220,38,38,0.6) 50.5%, transparent 50.5%),
-            linear-gradient(0deg, transparent 49.5%, rgba(220,38,38,0.4) 49.5%, rgba(220,38,38,0.4) 50.5%, transparent 50.5%)
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23dc2626' stroke-width='0.5'%3E%3Cpath d='M10 10h80v80H10z'/%3E%3Cpath d='M30 10v20h40V10'/%3E%3Cpath d='M10 50h20v-20'/%3E%3Cpath d='M70 50h20'/%3E%3Cpath d='M50 50v40'/%3E%3Cpath d='M30 70h40'/%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3Ccircle cx='70' cy='30' r='3'/%3E%3Ccircle cx='30' cy='70' r='3'/%3E%3Ccircle cx='70' cy='70' r='3'/%3E%3Ccircle cx='50' cy='50' r='4'/%3E%3C/g%3E%3C/svg%3E")
           `,
-          backgroundSize: "80px 80px"
+          backgroundSize: "100px 100px"
         }}
       />
       
-      {/* Glowing accent points */}
+      {/* Binary data stream overlay */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.025]"
+        style={{
+          backgroundImage: `
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Ctext x='5' y='15' fill='%23ef4444' font-family='monospace' font-size='8'%3E101%3C/text%3E%3Ctext x='35' y='35' fill='%23ef4444' font-family='monospace' font-size='8'%3E010%3C/text%3E%3Ctext x='15' y='55' fill='%23ef4444' font-family='monospace' font-size='8'%3E110%3C/text%3E%3C/svg%3E")
+          `,
+          backgroundSize: "60px 60px"
+        }}
+      />
+      
+      {/* Grid lines - network topology */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            linear-gradient(90deg, transparent 0%, transparent calc(50% - 0.5px), rgba(220,38,38,0.5) 50%, transparent calc(50% + 0.5px), transparent 100%),
+            linear-gradient(0deg, transparent 0%, transparent calc(50% - 0.5px), rgba(220,38,38,0.3) 50%, transparent calc(50% + 0.5px), transparent 100%)
+          `,
+          backgroundSize: "60px 60px"
+        }}
+      />
+      
+      {/* Glowing red accent orbs */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
           backgroundImage: `
-            radial-gradient(ellipse 800px 600px at 20% 10%, rgba(220,38,38,0.12), transparent),
-            radial-gradient(ellipse 600px 400px at 85% 90%, rgba(239,68,68,0.08), transparent),
-            radial-gradient(ellipse 400px 300px at 50% 50%, rgba(252,165,165,0.03), transparent)
+            radial-gradient(ellipse 900px 700px at 15% 5%, rgba(220,38,38,0.15), transparent),
+            radial-gradient(ellipse 700px 500px at 90% 95%, rgba(239,68,68,0.12), transparent),
+            radial-gradient(ellipse 500px 400px at 60% 40%, rgba(185,28,28,0.08), transparent)
           `
         }}
       />
       
-      {/* Fine dot matrix grid */}
+      {/* Tech node dots */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.03]"
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.06]"
         style={{
-          backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)`,
-          backgroundSize: "24px 24px"
+          backgroundImage: `radial-gradient(circle, rgba(220,38,38,0.9) 1.5px, transparent 1.5px)`,
+          backgroundSize: "40px 40px"
         }}
       />
       
-      {/* Subtle diagonal data flow lines */}
+      {/* Diagonal data flow lines */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.02]"
+        style={{
+          backgroundImage: `
+            repeating-linear-gradient(45deg, transparent, transparent 80px, rgba(220,38,38,0.4) 80px, rgba(220,38,38,0.4) 81px),
+            repeating-linear-gradient(-45deg, transparent, transparent 80px, rgba(220,38,38,0.2) 80px, rgba(220,38,38,0.2) 81px)
+          `
+        }}
+      />
+      
+      {/* Micro circuit connectors */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M0 20h15M25 20h15M20 0v15M20 25v15' stroke='%23dc2626' stroke-width='0.5' fill='none'/%3E%3Ccircle cx='20' cy='20' r='2' fill='%23dc2626'/%3E%3C/svg%3E")
+          `,
+          backgroundSize: "40px 40px"
+        }}
+      />
+      
+      {/* Scanline effect for CRT tech feel */}
       <div
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.015]"
         style={{
-          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 100px, rgba(220,38,38,0.3) 100px, rgba(220,38,38,0.3) 101px)`
+          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px)`
         }}
       />
     </>
@@ -473,13 +507,17 @@ function HomePage({ setPage, openService }) {
 
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-7xl">
-          <div className="flex items-end justify-between gap-6">
-            <div>
-              <p className="font-black uppercase tracking-[0.35em] text-red-400">Popular Services</p>
-              <h2 className="mt-4 text-5xl font-black tracking-[-0.05em] md:text-7xl">Choose a service.</h2>
+          {/* Section Header */}
+          <div className="mb-12 text-center">
+            <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2">
+              <Router className="h-4 w-4 text-red-400" />
+              <span className="text-sm font-bold uppercase tracking-widest text-red-400">Popular Services</span>
             </div>
+            <h2 className="mt-6 text-5xl font-black tracking-[-0.03em] md:text-7xl">
+              Choose a <span className="text-red-500">service</span>.
+            </h2>
           </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {services.slice(0, 4).map((s) => (
             <ServiceCard key={s.slug} service={s} openService={openService} />
             ))}
@@ -507,9 +545,18 @@ function WorkShowcase() {
   return (
     <section className="px-6 pb-24">
       <div className="mx-auto max-w-7xl">
-        <p className="font-black uppercase tracking-[0.35em] text-red-400">Our Work</p>
-        <h2 className="mt-4 text-5xl font-black tracking-[-0.05em] md:text-7xl">Projects in action.</h2>
-        <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {/* Section Header */}
+        <div className="mb-12 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2">
+            <Zap className="h-4 w-4 text-red-400" />
+            <span className="text-sm font-bold uppercase tracking-widest text-red-400">Our Work</span>
+          </div>
+          <h2 className="mt-6 text-5xl font-black tracking-[-0.03em] md:text-7xl">
+            Projects in <span className="text-red-500">action</span>.
+          </h2>
+        </div>
+        
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {workImages.map((img, i) => (
             <motion.div
               key={img.src}
@@ -517,19 +564,23 @@ function WorkShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-white/10"
+              whileHover={{ scale: 1.02 }}
+              className="group relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.02]"
             >
               <img
                 src={img.src}
                 alt={img.alt}
-                className="absolute inset-0 h-full w-full object-cover object-center transition duration-500 group-hover:scale-110"
+                className="absolute inset-0 h-full w-full object-cover object-center transition duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute bottom-4 left-4">
-                <span className="rounded-full bg-red-600 px-4 py-2 text-sm font-black text-white">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
+              <div className="absolute bottom-5 left-5 right-5">
+                <span className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-red-600 to-red-700 px-4 py-2 text-sm font-black text-white shadow-lg">
+                  <CheckCircle2 className="h-4 w-4" />
                   {img.label}
                 </span>
               </div>
+              {/* Hover overlay */}
+              <div className="pointer-events-none absolute inset-0 rounded-[2rem] opacity-0 ring-2 ring-inset ring-red-500/40 transition-opacity duration-300 group-hover:opacity-100" />
             </motion.div>
           ))}
         </div>
@@ -540,43 +591,108 @@ function WorkShowcase() {
 
 function FlyersShowcase() {
   const flyers = [
-    { src: "/images/flyers/solar-flyer.jpg", alt: "Solar Installations - Clean energy solutions", title: "Solar Installations", description: "Powering homes and businesses with sustainable energy" },
-    { src: "/images/flyers/security-flyer.jpg", alt: "CCTV & Cyber Security Solutions", title: "Security Solutions", description: "CCTV systems and cyber security for complete protection" },
-    { src: "/images/flyers/network-flyer.jpg", alt: "Smart Network Solutions - Starlink & WiFi", title: "Network Solutions", description: "Starlink, WiFi extension, and network infrastructure" },
+    { 
+      src: "/images/flyers/solar-flyer.jpg", 
+      alt: "Solar Installations - Clean energy solutions", 
+      title: "Solar Installations", 
+      description: "Powering homes and businesses with sustainable, clean energy solutions",
+      icon: Sun,
+      gradient: "from-orange-500 to-red-600",
+      stats: "50+ Installations"
+    },
+    { 
+      src: "/images/flyers/security-flyer.jpg", 
+      alt: "CCTV & Cyber Security Solutions", 
+      title: "Security Solutions", 
+      description: "Complete CCTV systems and cyber security for total protection",
+      icon: Camera,
+      gradient: "from-red-500 to-red-700",
+      stats: "24/7 Monitoring"
+    },
+    { 
+      src: "/images/flyers/network-flyer.jpg", 
+      alt: "Smart Network Solutions - Starlink & WiFi", 
+      title: "Network Solutions", 
+      description: "Starlink, WiFi extension, and enterprise network infrastructure",
+      icon: Wifi,
+      gradient: "from-red-600 to-zinc-800",
+      stats: "High-Speed"
+    },
   ];
 
   return (
     <section className="px-6 pb-24">
       <div className="mx-auto max-w-7xl">
-        <p className="font-black uppercase tracking-[0.35em] text-red-400">Our Services</p>
-        <h2 className="mt-4 text-5xl font-black tracking-[-0.05em] md:text-7xl">What we offer.</h2>
-        <p className="mt-4 max-w-2xl text-lg text-white/60">
-          Professional IT solutions tailored to your needs. From solar installations to network infrastructure, we have you covered.
-        </p>
-        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {flyers.map((flyer, i) => (
-            <motion.div
-              key={flyer.src}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="group flex flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.04] shadow-2xl backdrop-blur-xl"
-            >
-              <div className="relative aspect-[3/4] w-full overflow-hidden">
-                <img
-                  src={flyer.src}
-                  alt={flyer.alt}
-                  className="absolute inset-0 h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-              </div>
-              <div className="flex flex-1 flex-col justify-end p-5">
-                <h3 className="text-lg font-black leading-tight">{flyer.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-white/60">{flyer.description}</p>
-              </div>
-            </motion.div>
-          ))}
+        {/* Section Header */}
+        <div className="mb-12 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2">
+            <Sparkles className="h-4 w-4 text-red-400" />
+            <span className="text-sm font-bold uppercase tracking-widest text-red-400">Our Services</span>
+          </div>
+          <h2 className="mt-6 text-5xl font-black tracking-[-0.03em] md:text-7xl">
+            What we <span className="text-red-500">offer</span>.
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-white/60">
+            Professional IT solutions tailored to your needs. From solar installations to network infrastructure, we deliver excellence.
+          </p>
+        </div>
+        
+        {/* Services Grid */}
+        <div className="grid gap-6 lg:grid-cols-3">
+          {flyers.map((flyer, i) => {
+            const Icon = flyer.icon;
+            return (
+              <motion.div
+                key={flyer.src}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15, duration: 0.5 }}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] shadow-2xl backdrop-blur-xl"
+              >
+                {/* Flyer Image with better aspect ratio */}
+                <div className="relative aspect-[4/5] w-full overflow-hidden">
+                  <img
+                    src={flyer.src}
+                    alt={flyer.alt}
+                    className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-110"
+                  />
+                  {/* Overlay gradients */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${flyer.gradient} opacity-0 mix-blend-overlay transition-opacity duration-500 group-hover:opacity-30`} />
+                  
+                  {/* Icon badge */}
+                  <div className={`absolute left-5 top-5 rounded-2xl bg-gradient-to-br ${flyer.gradient} p-3 shadow-xl ring-1 ring-white/20`}>
+                    <Icon className="h-6 w-6 text-white" />
+                  </div>
+                  
+                  {/* Stats badge */}
+                  <div className="absolute right-5 top-5 rounded-full bg-black/50 px-4 py-2 backdrop-blur-md">
+                    <span className="text-xs font-bold text-white/90">{flyer.stats}</span>
+                  </div>
+                </div>
+                
+                {/* Content */}
+                <div className="relative p-6">
+                  {/* Decorative line */}
+                  <div className={`absolute left-6 top-0 h-1 w-12 -translate-y-0.5 rounded-full bg-gradient-to-r ${flyer.gradient}`} />
+                  
+                  <h3 className="text-xl font-black tracking-tight">{flyer.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-white/60">{flyer.description}</p>
+                  
+                  {/* Action hint */}
+                  <div className="mt-5 flex items-center gap-2 text-sm font-bold text-red-400 transition-colors group-hover:text-red-300">
+                    <span>View Details</span>
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </div>
+                </div>
+                
+                {/* Hover glow effect */}
+                <div className={`pointer-events-none absolute inset-0 rounded-[2rem] opacity-0 ring-2 ring-inset ring-red-500/50 transition-opacity duration-300 group-hover:opacity-100`} />
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -587,8 +703,8 @@ function ServiceCard({ service, openService }) {
   const Icon = service.icon;
   return (
     <motion.div
-      whileHover={{ y: -8 }}
-      className="group overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/[0.055] shadow-2xl backdrop-blur-xl"
+      whileHover={{ y: -8, transition: { duration: 0.3 } }}
+      className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] shadow-2xl backdrop-blur-xl"
     >
       <div className="relative h-52 overflow-hidden">
         <img
@@ -596,18 +712,18 @@ function ServiceCard({ service, openService }) {
           alt={service.title}
           className="h-full w-full object-cover object-center transition duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
-        <div className="absolute bottom-4 left-4 rounded-2xl bg-red-600 p-3">
-          <Icon />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+        <div className={`absolute bottom-4 left-4 rounded-2xl bg-gradient-to-br ${service.gradient} p-3 shadow-lg ring-1 ring-white/20`}>
+          <Icon className="h-5 w-5 text-white" />
         </div>
       </div>
       <div className="p-6">
-        <h3 className="text-2xl font-black">{service.title}</h3>
-        <p className="mt-3 leading-7 text-white/60">{service.intro}</p>
-        <div className="mt-6 flex gap-3">
+        <h3 className="text-xl font-black tracking-tight">{service.title}</h3>
+        <p className="mt-3 text-sm leading-relaxed text-white/60">{service.intro}</p>
+        <div className="mt-5 flex gap-3">
           <button
             onClick={() => openService(service.slug)}
-            className="rounded-full bg-white px-5 py-3 text-sm font-black text-red-800"
+            className="rounded-full bg-white px-4 py-2.5 text-sm font-black text-red-800 transition hover:bg-white/90"
           >
             View details
           </button>
@@ -615,12 +731,14 @@ function ServiceCard({ service, openService }) {
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hello OneTech IT Services, I would like a quote for ${service.title}.`)}`}
             target="_blank"
             rel="noreferrer"
-            className="rounded-full bg-red-600 px-5 py-3 text-sm font-black text-white"
+            className="rounded-full bg-red-600 px-4 py-2.5 text-sm font-black text-white transition hover:bg-red-500"
           >
             Quote
           </a>
         </div>
       </div>
+      {/* Hover glow effect */}
+      <div className="pointer-events-none absolute inset-0 rounded-[2rem] opacity-0 ring-2 ring-inset ring-red-500/40 transition-opacity duration-300 group-hover:opacity-100" />
     </motion.div>
   );
 }
@@ -634,11 +752,20 @@ function ServicesPage({ openService }) {
       className="px-6 py-20"
     >
       <div className="mx-auto max-w-7xl">
-        <p className="font-black uppercase tracking-[0.35em] text-red-400">Services</p>
-        <h1 className="mt-4 max-w-4xl text-6xl font-black tracking-[-0.06em] md:text-8xl">
-          Click any service to view its landing page.
-        </h1>
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {/* Section Header */}
+        <div className="mb-12 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2">
+            <BriefcaseBusiness className="h-4 w-4 text-red-400" />
+            <span className="text-sm font-bold uppercase tracking-widest text-red-400">All Services</span>
+          </div>
+          <h1 className="mt-6 text-5xl font-black tracking-[-0.03em] md:text-7xl">
+            Click any service to <span className="text-red-500">explore</span>.
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-white/60">
+            Discover our comprehensive range of professional IT and technology solutions.
+          </p>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
             <ServiceCard key={s.slug} service={s} openService={openService} />
           ))}
@@ -814,12 +941,17 @@ function AboutPage() {
 function TeamPreview({ setPage }) {
   return (
     <section className="px-6 pb-24">
-      <div className="mx-auto max-w-7xl rounded-[3.5rem] border border-white/10 bg-white/[0.055] p-8 shadow-2xl backdrop-blur-xl md:p-12">
+      <div className="mx-auto max-w-7xl rounded-[3rem] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-8 shadow-2xl backdrop-blur-xl md:p-12">
         <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="font-black uppercase tracking-[0.35em] text-red-400">Meet Our Team</p>
-            <h2 className="mt-4 text-5xl font-black tracking-[-0.05em]">The people behind the installations.</h2>
-            <p className="mt-4 text-white/60">
+            <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2">
+              <Users className="h-4 w-4 text-red-400" />
+              <span className="text-sm font-bold uppercase tracking-widest text-red-400">Meet Our Team</span>
+            </div>
+            <h2 className="mt-6 text-4xl font-black tracking-[-0.03em] md:text-5xl">
+              The people behind the <span className="text-red-500">installations</span>.
+            </h2>
+            <p className="mt-4 leading-relaxed text-white/60">
               Our experienced team of technicians and specialists are dedicated to delivering quality installations and exceptional customer service.
             </p>
             <button
