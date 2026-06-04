@@ -479,7 +479,7 @@ function AppShell({ page, setPage, children }) {
             </div>
           </div>
           <div className="mt-8 border-t border-white/10 pt-8 text-center text-sm text-white/50">
-            2026 OneTech IT Services. Experts in Technology Solutions.
+            OneTech IT Services. Experts in Technology Solutions.
           </div>
         </div>
       </footer>
