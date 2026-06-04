@@ -7,6 +7,9 @@ import {
   ChevronRight, FileText, Users, ExternalLink, Info
 } from "lucide-react";
 
+// 
+@Lange Coding //
+
 const WHATSAPP_NUMBER = "263786025853";
 const COMPANY_EMAIL = "info@onetechitservices.co.zw";
 const COMPANY_PHONE = "+263 786 025 853";
