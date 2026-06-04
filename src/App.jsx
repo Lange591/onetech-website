@@ -48,10 +48,10 @@ const services = [
     text: "We install and configure Starlink for homes, businesses, farms and remote sites that need fast internet. Our team handles dish mounting, cable routing, and network optimization.",
     points: ["Dish mounting", "Cable routing", "Router setup", "Speed testing"],
     images: [
-      "/images/starlink/starlink-dish-install.jpg",
-      "/images/starlink/starlink-roof-mount.jpg",
-      "/images/starlink/starlink-setup-1.jpg",
-      "/images/starlink/starlink-setup-2.jpg"
+      "/images/network/starlink-install.jpg",
+      "/images/network/wifi-install.jpg",
+      "/images/network/network-4.jpg",
+      "/images/network/network-5.jpg"
     ],
     gradient: "from-red-400 to-zinc-950",
   },
@@ -63,10 +63,10 @@ const services = [
     text: "We help you choose the right devices, networks, security systems and support approach for your environment. Get expert guidance tailored to your specific needs.",
     points: ["IT planning", "Device recommendations", "Business support", "Digital upgrades"],
     images: [
-      "/images/events/tent-booth.jpg",
-      "/images/events/team-booth.jpg",
-      "/images/events/radio-interview.jpg",
-      "/images/events/outdoor-event.jpg"
+      "/images/network/network-2.jpg",
+      "/images/network/network-3.jpg",
+      "/images/events/exhibition.jpg",
+      "/images/events/team-event.jpg"
     ],
     gradient: "from-zinc-700 to-red-950",
   },
@@ -93,10 +93,10 @@ const services = [
     text: "We design and install clean, scalable network infrastructure that supports daily business operations. From small offices to large enterprises, we deliver reliable solutions.",
     points: ["Structured cabling", "Switches & routers", "Cabinet setup", "LAN upgrades"],
     images: [
-      "/images/network/network-1.jpg",
       "/images/network/network-4.jpg",
       "/images/network/network-5.jpg",
-      "/images/network/wifi-install.jpg"
+      "/images/network/network-1.jpg",
+      "/images/network/network-2.jpg"
     ],
     gradient: "from-red-500 to-zinc-900",
   },
@@ -144,15 +144,9 @@ const teamMembers = [
     description: "Leading the technical vision and overseeing all installations and projects."
   },
   {
-    name: "Technical Lead",
-    role: "Solar, CCTV & Network Installations",
-    img: "/images/solar/inverter-thumbsup.jpg",
-    description: "Expert in solar systems, surveillance installations, and network infrastructure."
-  },
-  {
     name: "Field Specialist",
     role: "WiFi, Starlink & Customer Support",
-    img: "/images/events/radio-interview.jpg",
+    img: "/images/solar/inverter-thumbsup.jpg",
     description: "Specialized in wireless solutions, satellite internet, and client relations."
   }
 ];
@@ -169,19 +163,40 @@ const pages = [
 function TechBackground() {
   return (
     <>
-      <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(circle_at_20%_10%,rgba(239,68,68,0.38),transparent_28%),radial-gradient(circle_at_85%_20%,rgba(255,255,255,0.13),transparent_25%),radial-gradient(circle_at_50%_90%,rgba(185,28,28,0.22),transparent_30%),linear-gradient(135deg,#050505_0%,#170101_46%,#020202_100%)]" />
+      {/* Base dark gradient with tech feel */}
+      <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_at_top_left,rgba(239,68,68,0.15),transparent_50%),radial-gradient(ellipse_at_bottom_right,rgba(59,130,246,0.1),transparent_50%),radial-gradient(ellipse_at_center,rgba(17,24,39,1),transparent),linear-gradient(180deg,#0a0a0a_0%,#111827_50%,#0f0f0f_100%)]" />
+      {/* Circuit board pattern */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.08]"
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.04]"
         style={{
-          backgroundImage: "linear-gradient(rgba(255,255,255,.65) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.65) 1px, transparent 1px)",
-          backgroundSize: "42px 42px"
+          backgroundImage: `
+            linear-gradient(90deg, rgba(239,68,68,.5) 1px, transparent 1px),
+            linear-gradient(rgba(239,68,68,.5) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(239,68,68,.3) 1px, transparent 1px),
+            linear-gradient(rgba(239,68,68,.3) 1px, transparent 1px)
+          `,
+          backgroundSize: "100px 100px, 100px 100px, 20px 20px, 20px 20px"
         }}
       />
+      {/* Tech nodes/connection points */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.18]"
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.12]"
         style={{
-          backgroundImage: "radial-gradient(circle at 20% 30%, rgba(239,68,68,.9) 0 1px, transparent 2px), radial-gradient(circle at 80% 60%, rgba(255,255,255,.8) 0 1px, transparent 2px)",
-          backgroundSize: "90px 90px"
+          backgroundImage: `
+            radial-gradient(circle at 10% 20%, rgba(239,68,68,0.8) 0 2px, transparent 3px),
+            radial-gradient(circle at 90% 80%, rgba(239,68,68,0.6) 0 2px, transparent 3px),
+            radial-gradient(circle at 50% 50%, rgba(255,255,255,0.4) 0 1px, transparent 2px),
+            radial-gradient(circle at 30% 70%, rgba(59,130,246,0.5) 0 2px, transparent 3px),
+            radial-gradient(circle at 70% 30%, rgba(239,68,68,0.7) 0 2px, transparent 3px)
+          `,
+          backgroundSize: "200px 200px"
+        }}
+      />
+      {/* Subtle scan line effect */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.02]"
+        style={{
+          backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px)"
         }}
       />
     </>
@@ -400,7 +415,7 @@ function HeroGraphic() {
   );
 }
 
-function HomePage({ setPage, openQuote, openService }) {
+function HomePage({ setPage, openService }) {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
       <section className="px-6 py-16 md:py-24">
@@ -419,12 +434,14 @@ function HomePage({ setPage, openQuote, openService }) {
               OneTech IT Services is a leading ICT solutions provider specializing in Starlink installations, CCTV security systems, Computer networking, VoIP communications, solar solutions, IT consultancy and IT accessories sales. We help homes and businesses across Zimbabwe stay connected, secure, and powered for success.
             </p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-              <button
-                onClick={() => openQuote()}
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello OneTech IT Services, I would like to request a quote.")}`}
+                target="_blank"
+                rel="noreferrer"
                 className="group inline-flex items-center justify-center rounded-full bg-red-600 px-8 py-4 font-black text-white shadow-2xl shadow-red-700/30 hover:bg-red-500"
               >
                 Request a Quote <ArrowRight className="ml-2" size={19} />
-              </button>
+              </a>
               <button
                 onClick={() => setPage("services")}
                 className="rounded-full border border-white/15 bg-white/5 px-8 py-4 font-black text-white backdrop-blur-xl hover:bg-white/10"
@@ -447,7 +464,7 @@ function HomePage({ setPage, openQuote, openService }) {
           </div>
           <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {services.slice(0, 4).map((s) => (
-              <ServiceCard key={s.slug} service={s} openService={openService} openQuote={openQuote} />
+            <ServiceCard key={s.slug} service={s} openService={openService} />
             ))}
           </div>
         </div>
@@ -549,7 +566,7 @@ function FlyersShowcase() {
   );
 }
 
-function ServiceCard({ service, openService, openQuote }) {
+function ServiceCard({ service, openService }) {
   const Icon = service.icon;
   return (
     <motion.div
@@ -577,19 +594,21 @@ function ServiceCard({ service, openService, openQuote }) {
           >
             View details
           </button>
-          <button
-            onClick={() => openQuote(service.slug)}
+          <a
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hello OneTech IT Services, I would like a quote for ${service.title}.`)}`}
+            target="_blank"
+            rel="noreferrer"
             className="rounded-full bg-red-600 px-5 py-3 text-sm font-black text-white"
           >
             Quote
-          </button>
+          </a>
         </div>
       </div>
     </motion.div>
   );
 }
 
-function ServicesPage({ openService, openQuote }) {
+function ServicesPage({ openService }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 16 }}
@@ -604,7 +623,7 @@ function ServicesPage({ openService, openQuote }) {
         </h1>
         <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
-            <ServiceCard key={s.slug} service={s} openService={openService} openQuote={openQuote} />
+            <ServiceCard key={s.slug} service={s} openService={openService} />
           ))}
         </div>
       </div>
@@ -612,7 +631,7 @@ function ServicesPage({ openService, openQuote }) {
   );
 }
 
-function ServiceDetailPage({ serviceSlug, openQuote, setPage }) {
+function ServiceDetailPage({ serviceSlug, setPage }) {
   const service = services.find((s) => s.slug === serviceSlug) || services[0];
   const Icon = service.icon;
 
@@ -649,12 +668,14 @@ function ServiceDetailPage({ serviceSlug, openQuote, setPage }) {
                   </div>
                 ))}
               </div>
-              <button
-                onClick={() => openQuote(service.slug)}
-                className="mt-9 rounded-full bg-white px-8 py-4 font-black text-red-800 shadow-xl hover:bg-white/90"
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hello OneTech IT Services, I would like a quote for ${service.title}.`)}`}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-9 inline-block rounded-full bg-white px-8 py-4 font-black text-red-800 shadow-xl hover:bg-white/90"
               >
                 Request quotation
-              </button>
+              </a>
             </div>
             <div className="grid grid-cols-2 gap-4">
               {service.images.slice(0, 4).map((img, i) => (
@@ -794,7 +815,7 @@ function TeamPreview({ setPage }) {
 
 function TeamGrid() {
   return (
-    <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-5 md:grid-cols-2">
       {teamMembers.map((t) => (
         <div key={t.name} className="overflow-hidden rounded-[2.2rem] border border-white/10 bg-black/25">
           <div className="relative h-80 overflow-hidden">
@@ -1201,12 +1222,12 @@ export default function OneTechWebsite() {
 
   const CurrentPage = useMemo(() => {
     if (page === "about") return <AboutPage />;
-    if (page === "services") return <ServicesPage openService={openService} openQuote={openQuote} />;
-    if (page === "service-detail") return <ServiceDetailPage serviceSlug={serviceSlug} openQuote={openQuote} setPage={setPage} />;
+    if (page === "services") return <ServicesPage openService={openService} />;
+    if (page === "service-detail") return <ServiceDetailPage serviceSlug={serviceSlug} setPage={setPage} />;
     if (page === "team") return <TeamPage />;
     if (page === "contact") return <ContactPage />;
     if (page === "quote") return <QuotePage selectedService={quoteService} />;
-    return <HomePage setPage={setPage} openQuote={openQuote} openService={openService} />;
+    return <HomePage setPage={setPage} openService={openService} />;
   }, [page, quoteService, serviceSlug]);
 
   return (
