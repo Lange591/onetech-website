@@ -163,40 +163,57 @@ const pages = [
 function TechBackground() {
   return (
     <>
-      {/* Base dark gradient with tech feel */}
-      <div className="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_at_top_left,rgba(239,68,68,0.15),transparent_50%),radial-gradient(ellipse_at_bottom_right,rgba(59,130,246,0.1),transparent_50%),radial-gradient(ellipse_at_center,rgba(17,24,39,1),transparent),linear-gradient(180deg,#0a0a0a_0%,#111827_50%,#0f0f0f_100%)]" />
-      {/* Circuit board pattern */}
+      {/* Deep tech gradient base */}
+      <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-br from-slate-950 via-zinc-900 to-neutral-950" />
+      
+      {/* Hexagonal tech mesh pattern */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.04]"
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.035]"
         style={{
           backgroundImage: `
-            linear-gradient(90deg, rgba(239,68,68,.5) 1px, transparent 1px),
-            linear-gradient(rgba(239,68,68,.5) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(239,68,68,.3) 1px, transparent 1px),
-            linear-gradient(rgba(239,68,68,.3) 1px, transparent 1px)
-          `,
-          backgroundSize: "100px 100px, 100px 100px, 20px 20px, 20px 20px"
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23dc2626' fill-opacity='0.5'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+          `
         }}
       />
-      {/* Tech nodes/connection points */}
-      <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.12]"
-        style={{
-          backgroundImage: `
-            radial-gradient(circle at 10% 20%, rgba(239,68,68,0.8) 0 2px, transparent 3px),
-            radial-gradient(circle at 90% 80%, rgba(239,68,68,0.6) 0 2px, transparent 3px),
-            radial-gradient(circle at 50% 50%, rgba(255,255,255,0.4) 0 1px, transparent 2px),
-            radial-gradient(circle at 30% 70%, rgba(59,130,246,0.5) 0 2px, transparent 3px),
-            radial-gradient(circle at 70% 30%, rgba(239,68,68,0.7) 0 2px, transparent 3px)
-          `,
-          backgroundSize: "200px 200px"
-        }}
-      />
-      {/* Subtle scan line effect */}
+      
+      {/* Circuit traces overlay */}
       <div
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.02]"
         style={{
-          backgroundImage: "repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px)"
+          backgroundImage: `
+            linear-gradient(90deg, transparent 49.5%, rgba(220,38,38,0.6) 49.5%, rgba(220,38,38,0.6) 50.5%, transparent 50.5%),
+            linear-gradient(0deg, transparent 49.5%, rgba(220,38,38,0.4) 49.5%, rgba(220,38,38,0.4) 50.5%, transparent 50.5%)
+          `,
+          backgroundSize: "80px 80px"
+        }}
+      />
+      
+      {/* Glowing accent points */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0"
+        style={{
+          backgroundImage: `
+            radial-gradient(ellipse 800px 600px at 20% 10%, rgba(220,38,38,0.12), transparent),
+            radial-gradient(ellipse 600px 400px at 85% 90%, rgba(239,68,68,0.08), transparent),
+            radial-gradient(ellipse 400px 300px at 50% 50%, rgba(252,165,165,0.03), transparent)
+          `
+        }}
+      />
+      
+      {/* Fine dot matrix grid */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px)`,
+          backgroundSize: "24px 24px"
+        }}
+      />
+      
+      {/* Subtle diagonal data flow lines */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.015]"
+        style={{
+          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 100px, rgba(220,38,38,0.3) 100px, rgba(220,38,38,0.3) 101px)`
         }}
       />
     </>
@@ -482,7 +499,7 @@ function WorkShowcase() {
     { src: "/images/solar/inverter-install-2.jpg", alt: "Solar inverter installation", label: "Solar Installation" },
     { src: "/images/cctv/cctv-install.jpg", alt: "CCTV camera installation", label: "CCTV Setup" },
     { src: "/images/network/wifi-install.jpg", alt: "WiFi equipment installation", label: "Network Setup" },
-    { src: "/images/starlink/starlink-dish-install.jpg", alt: "Starlink dish installation", label: "Starlink Install" },
+    { src: "/images/network/starlink-install.jpg", alt: "Starlink dish installation", label: "Starlink Install" },
     { src: "/images/solar/solar-panel-install.jpg", alt: "Solar panel installation", label: "Solar Panels" },
     { src: "/images/events/team-booth.jpg", alt: "Team at event", label: "Community Events" },
   ];
@@ -500,12 +517,12 @@ function WorkShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="group relative overflow-hidden rounded-[2rem] border border-white/10"
+              className="group relative aspect-[4/3] overflow-hidden rounded-[2rem] border border-white/10"
             >
               <img
                 src={img.src}
                 alt={img.alt}
-                className="h-72 w-full object-cover object-center transition duration-500 group-hover:scale-110"
+                className="absolute inset-0 h-full w-full object-cover object-center transition duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
               <div className="absolute bottom-4 left-4">
@@ -536,7 +553,7 @@ function FlyersShowcase() {
         <p className="mt-4 max-w-2xl text-lg text-white/60">
           Professional IT solutions tailored to your needs. From solar installations to network infrastructure, we have you covered.
         </p>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
+        <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {flyers.map((flyer, i) => (
             <motion.div
               key={flyer.src}
@@ -544,19 +561,19 @@ function FlyersShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15 }}
-              className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.055] shadow-2xl backdrop-blur-xl"
+              className="group flex flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.04] shadow-2xl backdrop-blur-xl"
             >
-              <div className="relative overflow-hidden">
+              <div className="relative aspect-[3/4] w-full overflow-hidden">
                 <img
                   src={flyer.src}
                   alt={flyer.alt}
-                  className="w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                  className="absolute inset-0 h-full w-full object-cover object-top transition duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-black">{flyer.title}</h3>
-                <p className="mt-2 text-sm text-white/60">{flyer.description}</p>
+              <div className="flex flex-1 flex-col justify-end p-5">
+                <h3 className="text-lg font-black leading-tight">{flyer.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/60">{flyer.description}</p>
               </div>
             </motion.div>
           ))}
@@ -767,21 +784,27 @@ function AboutPage() {
         </div>
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">
-          <img
-            src="/images/events/tent-booth.jpg"
-            alt="OneTech event booth"
-            className="h-72 w-full rounded-[2rem] object-cover"
-          />
-          <img
-            src="/images/events/team-booth.jpg"
-            alt="OneTech team"
-            className="h-72 w-full rounded-[2rem] object-cover"
-          />
-          <img
-            src="/images/events/radio-interview.jpg"
-            alt="OneTech media appearance"
-            className="h-72 w-full rounded-[2rem] object-cover object-top"
-          />
+          <div className="aspect-[4/3] overflow-hidden rounded-[2rem]">
+            <img
+              src="/images/events/tent-booth.jpg"
+              alt="OneTech event booth"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="aspect-[4/3] overflow-hidden rounded-[2rem]">
+            <img
+              src="/images/events/team-booth.jpg"
+              alt="OneTech team"
+              className="h-full w-full object-cover"
+            />
+          </div>
+          <div className="aspect-[4/3] overflow-hidden rounded-[2rem]">
+            <img
+              src="/images/events/radio-interview.jpg"
+              alt="OneTech media appearance"
+              className="h-full w-full object-cover object-top"
+            />
+          </div>
         </div>
       </div>
     </motion.div>
@@ -818,13 +841,13 @@ function TeamGrid() {
     <div className="grid gap-5 md:grid-cols-2">
       {teamMembers.map((t) => (
         <div key={t.name} className="overflow-hidden rounded-[2.2rem] border border-white/10 bg-black/25">
-          <div className="relative h-80 overflow-hidden">
+          <div className="relative aspect-[4/5] overflow-hidden">
             <img
               src={t.img}
               alt={t.name}
-              className="h-full w-full object-cover object-top"
+              className="h-full w-full object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
           </div>
           <div className="p-6">
             <h3 className="text-2xl font-black">{t.name}</h3>
@@ -857,26 +880,34 @@ function TeamPage() {
         <div className="mt-12 rounded-[2.5rem] border border-white/10 bg-white/[0.055] p-8 backdrop-blur-xl">
           <h2 className="text-3xl font-black">Team in Action</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <img
-              src="/images/events/tent-booth.jpg"
-              alt="Team at exhibition"
-              className="h-48 w-full rounded-2xl object-cover"
-            />
-            <img
-              src="/images/events/team-booth.jpg"
-              alt="Team at booth"
-              className="h-48 w-full rounded-2xl object-cover"
-            />
-            <img
-              src="/images/events/outdoor-event.jpg"
-              alt="Outdoor event"
-              className="h-48 w-full rounded-2xl object-cover"
-            />
-            <img
-              src="/images/events/radio-interview.jpg"
-              alt="Radio interview"
-              className="h-48 w-full rounded-2xl object-cover object-top"
-            />
+            <div className="aspect-[4/3] overflow-hidden rounded-2xl">
+              <img
+                src="/images/events/tent-booth.jpg"
+                alt="Team at exhibition"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="aspect-[4/3] overflow-hidden rounded-2xl">
+              <img
+                src="/images/events/team-booth.jpg"
+                alt="Team at booth"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="aspect-[4/3] overflow-hidden rounded-2xl">
+              <img
+                src="/images/events/outdoor-event.jpg"
+                alt="Outdoor event"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="aspect-[4/3] overflow-hidden rounded-2xl">
+              <img
+                src="/images/events/radio-interview.jpg"
+                alt="Radio interview"
+                className="h-full w-full object-cover object-top"
+              />
+            </div>
           </div>
         </div>
       </div>
