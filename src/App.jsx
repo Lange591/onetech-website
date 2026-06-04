@@ -7,15 +7,17 @@ import {
   ChevronRight, FileText, Users, ExternalLink, Info
 } from "lucide-react";
 
-const WHATSAPP_NUMBER = "263775131446";
+const WHATSAPP_NUMBER = "263786025853";
 const COMPANY_EMAIL = "info@onetechitservices.co.zw";
-const COMPANY_PHONE = "+263 775 131 446";
-const COMPANY_LOCATION = "Mutare Trade Centre, Shop 69 & 80";
+const COMPANY_PHONE = "+263 786 025 853";
+const COMPANY_PHONE_ALT1 = "+263 775 131 446";
+const COMPANY_PHONE_ALT2 = "+263 773 566 596";
+const COMPANY_LOCATION = "Mutare Trade Centre, Shop 69-70";
 
 const socialLinks = {
-  facebook: "https://www.facebook.com/onetechitservices",
-  instagram: "https://www.instagram.com/onetechitservices",
-  linkedin: "https://www.linkedin.com/company/onetechitservices",
+  facebook: "https://www.facebook.com/share/1CSVtM7UHq/",
+  instagram: "https://www.instagram.com/onetechitservices1?igsh=MXE0ZGtmd3M5ZnUwOA==",
+  google: "https://share.google/Qbhmlnw4fSU3gV1II",
   website: "https://onetechitservices.co.zw",
 };
 
@@ -136,9 +138,15 @@ const services = [
 
 const teamMembers = [
   {
+    name: "Nixon Kunze",
+    role: "Technical Director",
+    img: "/images/team/nixon-kunze.jpg",
+    description: "Leading the technical vision and overseeing all installations and projects."
+  },
+  {
     name: "Technical Lead",
     role: "Solar, CCTV & Network Installations",
-    img: "/images/solar/inverter-install-2.jpg",
+    img: "/images/solar/inverter-thumbsup.jpg",
     description: "Expert in solar systems, surveillance installations, and network infrastructure."
   },
   {
@@ -306,9 +314,9 @@ function AppShell({ page, setPage, children }) {
                   <span className="sr-only">Instagram</span>
                   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"/></svg>
                 </a>
-                <a href={socialLinks.linkedin} target="_blank" rel="noreferrer" className="rounded-full bg-white/10 p-3 hover:bg-red-600">
-                  <span className="sr-only">LinkedIn</span>
-                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                <a href={socialLinks.google} target="_blank" rel="noreferrer" className="rounded-full bg-white/10 p-3 hover:bg-red-600">
+                  <span className="sr-only">Google Business</span>
+                  <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
                 </a>
               </div>
             </div>
@@ -446,6 +454,7 @@ function HomePage({ setPage, openQuote, openService }) {
       </section>
 
       <WorkShowcase />
+      <FlyersShowcase />
       <TeamPreview setPage={setPage} />
     </motion.div>
   );
@@ -486,6 +495,51 @@ function WorkShowcase() {
                 <span className="rounded-full bg-red-600 px-4 py-2 text-sm font-black text-white">
                   {img.label}
                 </span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FlyersShowcase() {
+  const flyers = [
+    { src: "/images/flyers/solar-flyer.jpg", alt: "Solar Installations - Clean energy solutions", title: "Solar Installations", description: "Powering homes and businesses with sustainable energy" },
+    { src: "/images/flyers/security-flyer.jpg", alt: "CCTV & Cyber Security Solutions", title: "Security Solutions", description: "CCTV systems and cyber security for complete protection" },
+    { src: "/images/flyers/network-flyer.jpg", alt: "Smart Network Solutions - Starlink & WiFi", title: "Network Solutions", description: "Starlink, WiFi extension, and network infrastructure" },
+  ];
+
+  return (
+    <section className="px-6 pb-24">
+      <div className="mx-auto max-w-7xl">
+        <p className="font-black uppercase tracking-[0.35em] text-red-400">Our Services</p>
+        <h2 className="mt-4 text-5xl font-black tracking-[-0.05em] md:text-7xl">What we offer.</h2>
+        <p className="mt-4 max-w-2xl text-lg text-white/60">
+          Professional IT solutions tailored to your needs. From solar installations to network infrastructure, we have you covered.
+        </p>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {flyers.map((flyer, i) => (
+            <motion.div
+              key={flyer.src}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+              className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.055] shadow-2xl backdrop-blur-xl"
+            >
+              <div className="relative overflow-hidden">
+                <img
+                  src={flyer.src}
+                  alt={flyer.alt}
+                  className="w-full object-cover object-top transition duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-black">{flyer.title}</h3>
+                <p className="mt-2 text-sm text-white/60">{flyer.description}</p>
               </div>
             </motion.div>
           ))}
@@ -740,7 +794,7 @@ function TeamPreview({ setPage }) {
 
 function TeamGrid() {
   return (
-    <div className="grid gap-5 md:grid-cols-2">
+    <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
       {teamMembers.map((t) => (
         <div key={t.name} className="overflow-hidden rounded-[2.2rem] border border-white/10 bg-black/25">
           <div className="relative h-80 overflow-hidden">
@@ -892,11 +946,14 @@ function SocialButtons() {
       )
     },
     {
-      label: "LinkedIn",
-      href: socialLinks.linkedin,
+      label: "Google",
+      href: socialLinks.google,
       icon: (
         <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
         </svg>
       )
     },
