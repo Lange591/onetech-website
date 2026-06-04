@@ -161,137 +161,184 @@ const pages = [
 ];
 
 function TechBackground() {
+  // Generate floating particles
+  const particles = Array.from({ length: 50 }, (_, i) => ({
+    id: i,
+    left: `${Math.random() * 100}%`,
+    delay: `${Math.random() * 20}s`,
+    duration: `${15 + Math.random() * 20}s`,
+    size: Math.random() > 0.7 ? 3 : Math.random() > 0.4 ? 2 : 1,
+  }));
+
   return (
     <>
-      {/* Deep tech gradient base - darker and more dramatic */}
-      <div className="pointer-events-none fixed inset-0 z-0 bg-[#030305]" />
+      {/* Deep tech gradient base */}
+      <div className="pointer-events-none fixed inset-0 z-0 bg-[#050508]" />
       
-      {/* Animated gradient orbs - pulsing energy centers */}
+      {/* Primary glowing orbs - MUCH more visible */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 animate-pulse-glow"
+        className="pointer-events-none fixed inset-0 z-0"
         style={{
+          animation: 'pulse-glow 3s ease-in-out infinite',
           backgroundImage: `
-            radial-gradient(ellipse 800px 600px at 10% 0%, rgba(220,38,38,0.25), transparent 70%),
-            radial-gradient(ellipse 600px 400px at 95% 100%, rgba(185,28,28,0.2), transparent 70%),
-            radial-gradient(ellipse 400px 300px at 50% 50%, rgba(239,68,68,0.1), transparent 70%)
+            radial-gradient(ellipse 1000px 800px at 0% 0%, rgba(220,38,38,0.4), transparent 60%),
+            radial-gradient(ellipse 800px 600px at 100% 100%, rgba(185,28,28,0.35), transparent 60%),
+            radial-gradient(ellipse 600px 500px at 50% 30%, rgba(239,68,68,0.15), transparent 60%)
           `
         }}
       />
       
-      {/* Secondary pulsing orbs with offset timing */}
+      {/* Secondary pulsing orbs with offset */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
-          animation: 'pulse-glow 4s ease-in-out infinite 2s',
+          animation: 'pulse-glow 4s ease-in-out infinite 1.5s',
           backgroundImage: `
-            radial-gradient(ellipse 500px 400px at 80% 20%, rgba(220,38,38,0.15), transparent 70%),
-            radial-gradient(ellipse 400px 300px at 20% 80%, rgba(239,68,68,0.12), transparent 70%)
+            radial-gradient(ellipse 700px 500px at 85% 15%, rgba(220,38,38,0.25), transparent 60%),
+            radial-gradient(ellipse 500px 400px at 15% 85%, rgba(239,68,68,0.2), transparent 60%)
           `
         }}
       />
 
-      {/* Animated hexagonal tech mesh - the signature tech pattern */}
+      {/* BOLD Circuit board pattern - the main tech element */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 animate-hex-rotate opacity-[0.07]"
+        className="pointer-events-none fixed inset-0 z-0"
         style={{
+          animation: 'circuit-pulse 2.5s ease-in-out infinite',
           backgroundImage: `
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66' fill='none' stroke='%23dc2626' stroke-width='0.5'/%3E%3Cpath d='M28 100L0 84L0 50L28 34L56 50L56 84L28 100' fill='none' stroke='%23dc2626' stroke-width='0.5'/%3E%3Ccircle cx='28' cy='50' r='2' fill='%23ef4444' fill-opacity='0.5'/%3E%3Ccircle cx='0' cy='50' r='1.5' fill='%23ef4444' fill-opacity='0.3'/%3E%3Ccircle cx='56' cy='50' r='1.5' fill='%23ef4444' fill-opacity='0.3'/%3E%3C/svg%3E")
-          `,
-          backgroundSize: "56px 97px"
-        }}
-      />
-      
-      {/* Animated circuit board with glowing nodes */}
-      <div
-        className="pointer-events-none fixed inset-0 z-0 animate-circuit-pulse"
-        style={{
-          backgroundImage: `
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23dc2626' stroke-width='0.6'%3E%3Cpath d='M20 20h80M20 20v80M100 20v80M20 100h80'/%3E%3Cpath d='M20 60h25M75 60h25M60 20v25M60 75v25'/%3E%3Cpath d='M45 45h30v30H45z'/%3E%3Cpath d='M35 35L45 45M85 35L75 45M35 85L45 75M85 85L75 75'/%3E%3C/g%3E%3Cg fill='%23ef4444'%3E%3Ccircle cx='20' cy='20' r='3' opacity='0.8'/%3E%3Ccircle cx='100' cy='20' r='3' opacity='0.8'/%3E%3Ccircle cx='20' cy='100' r='3' opacity='0.8'/%3E%3Ccircle cx='100' cy='100' r='3' opacity='0.8'/%3E%3Ccircle cx='60' cy='60' r='4' opacity='1'/%3E%3Ccircle cx='45' cy='60' r='2' opacity='0.6'/%3E%3Ccircle cx='75' cy='60' r='2' opacity='0.6'/%3E%3Ccircle cx='60' cy='45' r='2' opacity='0.6'/%3E%3Ccircle cx='60' cy='75' r='2' opacity='0.6'/%3E%3C/g%3E%3C/svg%3E")
-          `,
-          backgroundSize: "120px 120px"
-        }}
-      />
-      
-      {/* Flowing data grid lines */}
-      <div
-        className="pointer-events-none fixed inset-0 z-0 animate-grid-pulse"
-        style={{
-          backgroundImage: `
-            linear-gradient(90deg, transparent 0%, transparent 49%, rgba(220,38,38,0.4) 49%, rgba(220,38,38,0.4) 51%, transparent 51%, transparent 100%),
-            linear-gradient(0deg, transparent 0%, transparent 49%, rgba(220,38,38,0.25) 49%, rgba(220,38,38,0.25) 51%, transparent 51%, transparent 100%)
-          `,
-          backgroundSize: "80px 80px"
-        }}
-      />
-      
-      {/* Animated binary/data stream - Matrix-style */}
-      <div
-        className="pointer-events-none fixed inset-0 z-0 animate-data-flow opacity-[0.04]"
-        style={{
-          backgroundImage: `
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ctext x='10' y='20' fill='%23ef4444' font-family='monospace' font-size='10' opacity='0.8'%3E01%3C/text%3E%3Ctext x='50' y='20' fill='%23ef4444' font-family='monospace' font-size='10' opacity='0.6'%3E10%3C/text%3E%3Ctext x='80' y='20' fill='%23ef4444' font-family='monospace' font-size='10' opacity='0.4'%3E11%3C/text%3E%3Ctext x='30' y='50' fill='%23ef4444' font-family='monospace' font-size='10' opacity='0.7'%3E00%3C/text%3E%3Ctext x='70' y='50' fill='%23ef4444' font-family='monospace' font-size='10' opacity='0.5'%3E01%3C/text%3E%3Ctext x='10' y='80' fill='%23ef4444' font-family='monospace' font-size='10' opacity='0.5'%3E11%3C/text%3E%3Ctext x='50' y='80' fill='%23ef4444' font-family='monospace' font-size='10' opacity='0.8'%3E10%3C/text%3E%3Ctext x='85' y='80' fill='%23ef4444' font-family='monospace' font-size='10' opacity='0.6'%3E00%3C/text%3E%3C/svg%3E")
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23dc2626' stroke-width='1'%3E%3Cpath d='M0 50h35M65 50h35' stroke-opacity='0.3'/%3E%3Cpath d='M50 0v35M50 65v35' stroke-opacity='0.3'/%3E%3Crect x='35' y='35' width='30' height='30' stroke-opacity='0.25'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='4' fill='%23ef4444' fill-opacity='0.6'/%3E%3Ccircle cx='35' cy='50' r='2' fill='%23ef4444' fill-opacity='0.4'/%3E%3Ccircle cx='65' cy='50' r='2' fill='%23ef4444' fill-opacity='0.4'/%3E%3Ccircle cx='50' cy='35' r='2' fill='%23ef4444' fill-opacity='0.4'/%3E%3Ccircle cx='50' cy='65' r='2' fill='%23ef4444' fill-opacity='0.4'/%3E%3Ccircle cx='0' cy='50' r='2' fill='%23ef4444' fill-opacity='0.3'/%3E%3Ccircle cx='100' cy='50' r='2' fill='%23ef4444' fill-opacity='0.3'/%3E%3Ccircle cx='50' cy='0' r='2' fill='%23ef4444' fill-opacity='0.3'/%3E%3Ccircle cx='50' cy='100' r='2' fill='%23ef4444' fill-opacity='0.3'/%3E%3C/svg%3E")
           `,
           backgroundSize: "100px 100px"
         }}
       />
       
-      {/* Network topology nodes with connections */}
+      {/* Hexagonal grid overlay */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.05]"
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.12]"
         style={{
+          animation: 'hex-rotate 40s linear infinite',
           backgroundImage: `
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg stroke='%23dc2626' stroke-width='0.5' fill='none'%3E%3Cpath d='M100 20L180 60L180 140L100 180L20 140L20 60Z'/%3E%3Cpath d='M100 20L100 180M20 60L180 140M180 60L20 140'/%3E%3C/g%3E%3Cg fill='%23ef4444'%3E%3Ccircle cx='100' cy='20' r='4'/%3E%3Ccircle cx='180' cy='60' r='4'/%3E%3Ccircle cx='180' cy='140' r='4'/%3E%3Ccircle cx='100' cy='180' r='4'/%3E%3Ccircle cx='20' cy='140' r='4'/%3E%3Ccircle cx='20' cy='60' r='4'/%3E%3Ccircle cx='100' cy='100' r='6'/%3E%3C/g%3E%3C/svg%3E")
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='104' viewBox='0 0 60 104'%3E%3Cg fill='none' stroke='%23dc2626' stroke-width='0.8'%3E%3Cpath d='M30 0L60 17.3v34.6L30 69.2 0 51.9V17.3z'/%3E%3Cpath d='M30 34.6L60 51.9v34.6L30 103.8 0 86.5V51.9z'/%3E%3C/g%3E%3Ccircle cx='30' cy='34.6' r='3' fill='%23ef4444' fill-opacity='0.5'/%3E%3C/svg%3E")
           `,
-          backgroundSize: "200px 200px"
+          backgroundSize: "60px 104px"
+        }}
+      />
+      
+      {/* Glowing grid lines - more visible */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0"
+        style={{
+          animation: 'grid-pulse 4s ease-in-out infinite',
+          backgroundImage: `
+            linear-gradient(90deg, transparent 0%, transparent 49.5%, rgba(220,38,38,0.15) 50%, transparent 50.5%, transparent 100%),
+            linear-gradient(0deg, transparent 0%, transparent 49.5%, rgba(220,38,38,0.1) 50%, transparent 50.5%, transparent 100%)
+          `,
+          backgroundSize: "60px 60px"
+        }}
+      />
+      
+      {/* Data stream layer - animated binary */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.08]"
+        style={{
+          animation: 'data-flow 15s linear infinite',
+          backgroundImage: `
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Ctext x='10' y='25' fill='%23ef4444' font-family='Consolas,monospace' font-size='11' font-weight='bold'%3E0101%3C/text%3E%3Ctext x='70' y='25' fill='%23ef4444' font-family='Consolas,monospace' font-size='11' opacity='0.7'%3E1100%3C/text%3E%3Ctext x='30' y='60' fill='%23ef4444' font-family='Consolas,monospace' font-size='11' opacity='0.8'%3E1010%3C/text%3E%3Ctext x='85' y='60' fill='%23ef4444' font-family='Consolas,monospace' font-size='11' opacity='0.6'%3E0011%3C/text%3E%3Ctext x='10' y='95' fill='%23ef4444' font-family='Consolas,monospace' font-size='11' opacity='0.6'%3E1111%3C/text%3E%3Ctext x='60' y='95' fill='%23ef4444' font-family='Consolas,monospace' font-size='11'%3E0100%3C/text%3E%3C/svg%3E")
+          `,
+          backgroundSize: "120px 120px"
         }}
       />
 
-      {/* Microchip/processor pattern */}
+      {/* Network nodes with connection lines */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.1]"
+        style={{
+          backgroundImage: `
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Cg stroke='%23dc2626' stroke-width='0.6' fill='none'%3E%3Cpath d='M75 10L140 45v60L75 140 10 105V45z'/%3E%3Cpath d='M75 10v130M10 45l130 60M140 45L10 105' stroke-dasharray='4,4'/%3E%3C/g%3E%3Cg fill='%23ef4444'%3E%3Ccircle cx='75' cy='10' r='5'/%3E%3Ccircle cx='140' cy='45' r='4'/%3E%3Ccircle cx='140' cy='105' r='4'/%3E%3Ccircle cx='75' cy='140' r='5'/%3E%3Ccircle cx='10' cy='105' r='4'/%3E%3Ccircle cx='10' cy='45' r='4'/%3E%3Ccircle cx='75' cy='75' r='6'/%3E%3C/g%3E%3C/svg%3E")
+          `,
+          backgroundSize: "150px 150px"
+        }}
+      />
+
+      {/* Floating particles layer */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        {particles.map((p) => (
+          <div
+            key={p.id}
+            className="absolute rounded-full bg-red-500"
+            style={{
+              width: `${p.size}px`,
+              height: `${p.size}px`,
+              left: p.left,
+              bottom: '-10px',
+              opacity: p.size === 3 ? 0.8 : p.size === 2 ? 0.5 : 0.3,
+              animation: `float-particle ${p.duration} linear infinite`,
+              animationDelay: p.delay,
+              boxShadow: p.size === 3 ? '0 0 6px 2px rgba(239,68,68,0.6)' : 'none',
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Scanning line effect */}
+      <div 
+        className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-[0.03]"
+      >
+        <div
+          className="absolute left-0 right-0 h-32"
+          style={{
+            background: 'linear-gradient(to bottom, transparent, rgba(220,38,38,0.5), transparent)',
+            animation: 'scan-line 8s linear infinite',
+          }}
+        />
+      </div>
+
+      {/* Diagonal tech lines */}
       <div
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.04]"
         style={{
           backgroundImage: `
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Crect x='40' y='40' width='80' height='80' fill='none' stroke='%23dc2626' stroke-width='1'/%3E%3Crect x='50' y='50' width='60' height='60' fill='none' stroke='%23dc2626' stroke-width='0.5'/%3E%3Cg stroke='%23dc2626' stroke-width='0.5'%3E%3Cpath d='M55 40V30M70 40V30M90 40V30M105 40V30'/%3E%3Cpath d='M55 120V130M70 120V130M90 120V130M105 120V130'/%3E%3Cpath d='M40 55H30M40 70H30M40 90H30M40 105H30'/%3E%3Cpath d='M120 55H130M120 70H130M120 90H130M120 105H130'/%3E%3C/g%3E%3Ccircle cx='80' cy='80' r='15' fill='none' stroke='%23ef4444' stroke-width='0.8'/%3E%3Ccircle cx='80' cy='80' r='5' fill='%23ef4444' opacity='0.5'/%3E%3C/svg%3E")
-          `,
-          backgroundSize: "160px 160px"
-        }}
-      />
-      
-      {/* Diagonal energy flow lines */}
-      <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.025]"
-        style={{
-          backgroundImage: `
-            repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(220,38,38,0.5) 60px, rgba(220,38,38,0.5) 61px, transparent 61px, transparent 120px),
-            repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(185,28,28,0.3) 60px, rgba(185,28,28,0.3) 61px, transparent 61px, transparent 120px)
+            repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(220,38,38,0.6) 40px, rgba(220,38,38,0.6) 41px),
+            repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(185,28,28,0.4) 40px, rgba(185,28,28,0.4) 41px)
           `
         }}
       />
       
-      {/* Glowing edge vignette */}
+      {/* Corner tech accents - top left */}
+      <div 
+        className="pointer-events-none fixed left-0 top-0 z-0 h-96 w-96 opacity-60"
+        style={{
+          background: `
+            linear-gradient(135deg, rgba(220,38,38,0.15) 0%, transparent 50%),
+            radial-gradient(ellipse at 0% 0%, rgba(239,68,68,0.2), transparent 70%)
+          `
+        }}
+      />
+      
+      {/* Corner tech accents - bottom right */}
+      <div 
+        className="pointer-events-none fixed bottom-0 right-0 z-0 h-96 w-96 opacity-60"
+        style={{
+          background: `
+            linear-gradient(315deg, rgba(220,38,38,0.15) 0%, transparent 50%),
+            radial-gradient(ellipse at 100% 100%, rgba(239,68,68,0.2), transparent 70%)
+          `
+        }}
+      />
+      
+      {/* Vignette for depth */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
-          background: `
-            radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.4) 100%),
-            linear-gradient(to bottom, rgba(220,38,38,0.03) 0%, transparent 20%, transparent 80%, rgba(220,38,38,0.02) 100%)
-          `
+          background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.5) 100%)'
         }}
       />
       
-      {/* Scanline overlay for depth */}
+      {/* Subtle noise texture */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.02]"
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.025]"
         style={{
-          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.03) 1px, rgba(255,255,255,0.03) 2px)`
-        }}
-      />
-      
-      {/* Noise texture for premium feel */}
-      <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.015]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
         }}
       />
     </>
