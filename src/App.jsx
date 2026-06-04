@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 
 // 
-@Lange Coding //
+@Lange coding //
 
 const WHATSAPP_NUMBER = "263786025853";
 const COMPANY_EMAIL = "info@onetechitservices.co.zw";
@@ -164,7 +164,8 @@ const pages = [
 ];
 
 function TechBackground() {
-  // Generate floating particles
+  // 
+@Lange coding //
   const particles = Array.from({ length: 50 }, (_, i) => ({
     id: i,
     left: `${Math.random() * 100}%`,
