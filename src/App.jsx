@@ -9,7 +9,6 @@ import {
 
 // @Lange coding
 
-
 const WHATSAPP_NUMBER = "263786025853";
 const COMPANY_EMAIL = "info@onetechitservices.co.zw";
 const COMPANY_PHONE = "+263 786 025 853";
@@ -23,6 +22,8 @@ const socialLinks = {
   google: "https://share.google/Qbhmlnw4fSU3gV1II",
   website: "https://onetechitservices.co.zw",
 };
+
+// @Lange coding
 
 const services = [
   {
@@ -139,6 +140,8 @@ const services = [
   },
 ];
 
+// @Lange coding
+
 const teamMembers = [
   {
     name: "Nixon Kunze",
@@ -163,8 +166,9 @@ const pages = [
   { id: "quote", label: "Quote", icon: FileText },
 ];
 
+// @Lange coding
+
 function TechBackground() {
-  // @Lange coding
   const particles = Array.from({ length: 50 }, (_, i) => ({
     id: i,
     left: `${Math.random() * 100}%`,
@@ -175,10 +179,8 @@ function TechBackground() {
 
   return (
     <>
-      {/* Deep tech gradient base */}
       <div className="pointer-events-none fixed inset-0 z-0 bg-[#050508]" />
       
-      {/* Primary glowing orbs - MUCH more visible */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
@@ -191,7 +193,6 @@ function TechBackground() {
         }}
       />
       
-      {/* Secondary pulsing orbs with offset */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
@@ -203,7 +204,6 @@ function TechBackground() {
         }}
       />
 
-      {/* BOLD Circuit board pattern - the main tech element */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
@@ -215,7 +215,6 @@ function TechBackground() {
         }}
       />
       
-      {/* Hexagonal grid overlay */}
       <div
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.12]"
         style={{
@@ -227,7 +226,6 @@ function TechBackground() {
         }}
       />
       
-      {/* Glowing grid lines - more visible */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
@@ -240,7 +238,6 @@ function TechBackground() {
         }}
       />
       
-      {/* Data stream layer - animated binary */}
       <div
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.08]"
         style={{
@@ -252,7 +249,6 @@ function TechBackground() {
         }}
       />
 
-      {/* Network nodes with connection lines */}
       <div
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.1]"
         style={{
@@ -263,7 +259,6 @@ function TechBackground() {
         }}
       />
 
-      {/* Floating particles layer */}
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         {particles.map((p) => (
           <div
@@ -283,7 +278,6 @@ function TechBackground() {
         ))}
       </div>
 
-      {/* Scanning line effect */}
       <div 
         className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-[0.03]"
       >
@@ -296,7 +290,6 @@ function TechBackground() {
         />
       </div>
 
-      {/* Diagonal tech lines */}
       <div
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.04]"
         style={{
@@ -307,7 +300,6 @@ function TechBackground() {
         }}
       />
       
-      {/* Corner tech accents - top left */}
       <div 
         className="pointer-events-none fixed left-0 top-0 z-0 h-96 w-96 opacity-60"
         style={{
@@ -318,7 +310,6 @@ function TechBackground() {
         }}
       />
       
-      {/* Corner tech accents - bottom right */}
       <div 
         className="pointer-events-none fixed bottom-0 right-0 z-0 h-96 w-96 opacity-60"
         style={{
@@ -329,7 +320,6 @@ function TechBackground() {
         }}
       />
       
-      {/* Vignette for depth */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
@@ -337,7 +327,6 @@ function TechBackground() {
         }}
       />
       
-      {/* Subtle noise texture */}
       <div
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.025]"
         style={{
@@ -348,6 +337,8 @@ function TechBackground() {
   );
 }
 
+// @Lange coding
+
 function Logo({ small = false }) {
   return (
     <img
@@ -357,6 +348,8 @@ function Logo({ small = false }) {
     />
   );
 }
+
+// @Lange coding
 
 function AppShell({ page, setPage, children }) {
   const [open, setOpen] = useState(false);
@@ -490,6 +483,8 @@ function AppShell({ page, setPage, children }) {
   );
 }
 
+// @Lange coding
+
 function WhatsAppFloat() {
   return (
     <a
@@ -502,6 +497,8 @@ function WhatsAppFloat() {
     </a>
   );
 }
+
+// @Lange coding
 
 function HeroGraphic() {
   return (
@@ -560,6 +557,8 @@ function HeroGraphic() {
   );
 }
 
+// @Lange coding
+
 function HomePage({ setPage, openService }) {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
@@ -601,7 +600,6 @@ function HomePage({ setPage, openService }) {
 
       <section className="px-6 pb-24">
         <div className="mx-auto max-w-7xl">
-          {/* Section Header */}
           <div className="mb-12 text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2">
               <Router className="h-4 w-4 text-red-400" />
@@ -626,6 +624,8 @@ function HomePage({ setPage, openService }) {
   );
 }
 
+// @Lange coding
+
 function WorkShowcase() {
   const workImages = [
     { src: "/images/solar/inverter-install-2.jpg", alt: "Solar inverter installation", label: "Solar Installation" },
@@ -639,7 +639,6 @@ function WorkShowcase() {
   return (
     <section className="px-6 pb-24">
       <div className="mx-auto max-w-7xl">
-        {/* Section Header */}
         <div className="mb-12 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2">
             <Zap className="h-4 w-4 text-red-400" />
@@ -673,7 +672,6 @@ function WorkShowcase() {
                   {img.label}
                 </span>
               </div>
-              {/* Hover overlay */}
               <div className="pointer-events-none absolute inset-0 rounded-[2rem] opacity-0 ring-2 ring-inset ring-red-500/40 transition-opacity duration-300 group-hover:opacity-100" />
             </motion.div>
           ))}
@@ -682,6 +680,8 @@ function WorkShowcase() {
     </section>
   );
 }
+
+// @Lange coding
 
 function FlyersShowcase() {
   const flyers = [
@@ -717,7 +717,6 @@ function FlyersShowcase() {
   return (
     <section className="px-6 pb-24">
       <div className="mx-auto max-w-7xl">
-        {/* Section Header */}
         <div className="mb-12 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2">
             <Sparkles className="h-4 w-4 text-red-400" />
@@ -731,7 +730,6 @@ function FlyersShowcase() {
           </p>
         </div>
         
-        {/* Services Grid */}
         <div className="grid gap-6 lg:grid-cols-3">
           {flyers.map((flyer, i) => {
             const Icon = flyer.icon;
@@ -745,44 +743,36 @@ function FlyersShowcase() {
                 whileHover={{ y: -8, transition: { duration: 0.3 } }}
                 className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] shadow-2xl backdrop-blur-xl"
               >
-                {/* Flyer Image with better aspect ratio */}
                 <div className="relative aspect-[4/5] w-full overflow-hidden">
                   <img
                     src={flyer.src}
                     alt={flyer.alt}
                     className="absolute inset-0 h-full w-full object-cover object-top transition duration-700 group-hover:scale-110"
                   />
-                  {/* Overlay gradients */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
                   <div className={`absolute inset-0 bg-gradient-to-br ${flyer.gradient} opacity-0 mix-blend-overlay transition-opacity duration-500 group-hover:opacity-30`} />
                   
-                  {/* Icon badge */}
                   <div className={`absolute left-5 top-5 rounded-2xl bg-gradient-to-br ${flyer.gradient} p-3 shadow-xl ring-1 ring-white/20`}>
                     <Icon className="h-6 w-6 text-white" />
                   </div>
                   
-                  {/* Stats badge */}
                   <div className="absolute right-5 top-5 rounded-full bg-black/50 px-4 py-2 backdrop-blur-md">
                     <span className="text-xs font-bold text-white/90">{flyer.stats}</span>
                   </div>
                 </div>
                 
-                {/* Content */}
                 <div className="relative p-6">
-                  {/* Decorative line */}
                   <div className={`absolute left-6 top-0 h-1 w-12 -translate-y-0.5 rounded-full bg-gradient-to-r ${flyer.gradient}`} />
                   
                   <h3 className="text-xl font-black tracking-tight">{flyer.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-white/60">{flyer.description}</p>
                   
-                  {/* Action hint */}
                   <div className="mt-5 flex items-center gap-2 text-sm font-bold text-red-400 transition-colors group-hover:text-red-300">
                     <span>View Details</span>
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>
                 </div>
                 
-                {/* Hover glow effect */}
                 <div className={`pointer-events-none absolute inset-0 rounded-[2rem] opacity-0 ring-2 ring-inset ring-red-500/50 transition-opacity duration-300 group-hover:opacity-100`} />
               </motion.div>
             );
@@ -792,6 +782,8 @@ function FlyersShowcase() {
     </section>
   );
 }
+
+// @Lange coding
 
 function ServiceCard({ service, openService }) {
   const Icon = service.icon;
@@ -831,11 +823,12 @@ function ServiceCard({ service, openService }) {
           </a>
         </div>
       </div>
-      {/* Hover glow effect */}
       <div className="pointer-events-none absolute inset-0 rounded-[2rem] opacity-0 ring-2 ring-inset ring-red-500/40 transition-opacity duration-300 group-hover:opacity-100" />
     </motion.div>
   );
 }
+
+// @Lange coding
 
 function ServicesPage({ openService }) {
   return (
@@ -846,7 +839,6 @@ function ServicesPage({ openService }) {
       className="px-6 py-20"
     >
       <div className="mx-auto max-w-7xl">
-        {/* Section Header */}
         <div className="mb-12 text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2">
             <BriefcaseBusiness className="h-4 w-4 text-red-400" />
@@ -868,6 +860,8 @@ function ServicesPage({ openService }) {
     </motion.div>
   );
 }
+
+// @Lange coding
 
 function ServiceDetailPage({ serviceSlug, setPage }) {
   const service = services.find((s) => s.slug === serviceSlug) || services[0];
@@ -943,6 +937,8 @@ function ServiceDetailPage({ serviceSlug, setPage }) {
     </motion.div>
   );
 }
+
+// @Lange coding
 
 function AboutPage() {
   return (
@@ -1032,6 +1028,8 @@ function AboutPage() {
   );
 }
 
+// @Lange coding
+
 function TeamPreview({ setPage }) {
   return (
     <section className="px-6 pb-24">
@@ -1062,6 +1060,8 @@ function TeamPreview({ setPage }) {
   );
 }
 
+// @Lange coding
+
 function TeamGrid() {
   return (
     <div className="grid gap-5 md:grid-cols-2">
@@ -1084,6 +1084,8 @@ function TeamGrid() {
     </div>
   );
 }
+
+// @Lange coding
 
 function TeamPage() {
   return (
@@ -1140,6 +1142,8 @@ function TeamPage() {
     </motion.div>
   );
 }
+
+// @Lange coding
 
 function ContactPage() {
   return (
@@ -1203,6 +1207,8 @@ function ContactPage() {
   );
 }
 
+// @Lange coding
+
 function SocialButtons() {
   const items = [
     {
@@ -1259,6 +1265,8 @@ function SocialButtons() {
     </div>
   );
 }
+
+// @Lange coding
 
 function QuotePage({ selectedService = "" }) {
   const defaultService = selectedService || "cctv";
@@ -1461,6 +1469,8 @@ function QuotePage({ selectedService = "" }) {
     </motion.div>
   );
 }
+
+// @Lange coding
 
 export default function OneTechWebsite() {
   const [page, setPage] = useState("home");
