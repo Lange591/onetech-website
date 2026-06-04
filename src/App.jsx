@@ -163,91 +163,135 @@ const pages = [
 function TechBackground() {
   return (
     <>
-      {/* Deep tech gradient base with blue-black tones */}
-      <div className="pointer-events-none fixed inset-0 z-0 bg-gradient-to-br from-[#0a0a0f] via-[#0d0d14] to-[#080810]" />
+      {/* Deep tech gradient base - darker and more dramatic */}
+      <div className="pointer-events-none fixed inset-0 z-0 bg-[#030305]" />
       
-      {/* Animated circuit board pattern */}
+      {/* Animated gradient orbs - pulsing energy centers */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.08]"
+        className="pointer-events-none fixed inset-0 z-0 animate-pulse-glow"
         style={{
           backgroundImage: `
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23dc2626' stroke-width='0.5'%3E%3Cpath d='M10 10h80v80H10z'/%3E%3Cpath d='M30 10v20h40V10'/%3E%3Cpath d='M10 50h20v-20'/%3E%3Cpath d='M70 50h20'/%3E%3Cpath d='M50 50v40'/%3E%3Cpath d='M30 70h40'/%3E%3Ccircle cx='30' cy='30' r='3'/%3E%3Ccircle cx='70' cy='30' r='3'/%3E%3Ccircle cx='30' cy='70' r='3'/%3E%3Ccircle cx='70' cy='70' r='3'/%3E%3Ccircle cx='50' cy='50' r='4'/%3E%3C/g%3E%3C/svg%3E")
+            radial-gradient(ellipse 800px 600px at 10% 0%, rgba(220,38,38,0.25), transparent 70%),
+            radial-gradient(ellipse 600px 400px at 95% 100%, rgba(185,28,28,0.2), transparent 70%),
+            radial-gradient(ellipse 400px 300px at 50% 50%, rgba(239,68,68,0.1), transparent 70%)
+          `
+        }}
+      />
+      
+      {/* Secondary pulsing orbs with offset timing */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0"
+        style={{
+          animation: 'pulse-glow 4s ease-in-out infinite 2s',
+          backgroundImage: `
+            radial-gradient(ellipse 500px 400px at 80% 20%, rgba(220,38,38,0.15), transparent 70%),
+            radial-gradient(ellipse 400px 300px at 20% 80%, rgba(239,68,68,0.12), transparent 70%)
+          `
+        }}
+      />
+
+      {/* Animated hexagonal tech mesh - the signature tech pattern */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 animate-hex-rotate opacity-[0.07]"
+        style={{
+          backgroundImage: `
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='97' viewBox='0 0 56 100'%3E%3Cpath d='M28 66L0 50L0 16L28 0L56 16L56 50L28 66' fill='none' stroke='%23dc2626' stroke-width='0.5'/%3E%3Cpath d='M28 100L0 84L0 50L28 34L56 50L56 84L28 100' fill='none' stroke='%23dc2626' stroke-width='0.5'/%3E%3Ccircle cx='28' cy='50' r='2' fill='%23ef4444' fill-opacity='0.5'/%3E%3Ccircle cx='0' cy='50' r='1.5' fill='%23ef4444' fill-opacity='0.3'/%3E%3Ccircle cx='56' cy='50' r='1.5' fill='%23ef4444' fill-opacity='0.3'/%3E%3C/svg%3E")
+          `,
+          backgroundSize: "56px 97px"
+        }}
+      />
+      
+      {/* Animated circuit board with glowing nodes */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 animate-circuit-pulse"
+        style={{
+          backgroundImage: `
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cg fill='none' stroke='%23dc2626' stroke-width='0.6'%3E%3Cpath d='M20 20h80M20 20v80M100 20v80M20 100h80'/%3E%3Cpath d='M20 60h25M75 60h25M60 20v25M60 75v25'/%3E%3Cpath d='M45 45h30v30H45z'/%3E%3Cpath d='M35 35L45 45M85 35L75 45M35 85L45 75M85 85L75 75'/%3E%3C/g%3E%3Cg fill='%23ef4444'%3E%3Ccircle cx='20' cy='20' r='3' opacity='0.8'/%3E%3Ccircle cx='100' cy='20' r='3' opacity='0.8'/%3E%3Ccircle cx='20' cy='100' r='3' opacity='0.8'/%3E%3Ccircle cx='100' cy='100' r='3' opacity='0.8'/%3E%3Ccircle cx='60' cy='60' r='4' opacity='1'/%3E%3Ccircle cx='45' cy='60' r='2' opacity='0.6'/%3E%3Ccircle cx='75' cy='60' r='2' opacity='0.6'/%3E%3Ccircle cx='60' cy='45' r='2' opacity='0.6'/%3E%3Ccircle cx='60' cy='75' r='2' opacity='0.6'/%3E%3C/g%3E%3C/svg%3E")
+          `,
+          backgroundSize: "120px 120px"
+        }}
+      />
+      
+      {/* Flowing data grid lines */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 animate-grid-pulse"
+        style={{
+          backgroundImage: `
+            linear-gradient(90deg, transparent 0%, transparent 49%, rgba(220,38,38,0.4) 49%, rgba(220,38,38,0.4) 51%, transparent 51%, transparent 100%),
+            linear-gradient(0deg, transparent 0%, transparent 49%, rgba(220,38,38,0.25) 49%, rgba(220,38,38,0.25) 51%, transparent 51%, transparent 100%)
+          `,
+          backgroundSize: "80px 80px"
+        }}
+      />
+      
+      {/* Animated binary/data stream - Matrix-style */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 animate-data-flow opacity-[0.04]"
+        style={{
+          backgroundImage: `
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ctext x='10' y='20' fill='%23ef4444' font-family='monospace' font-size='10' opacity='0.8'%3E01%3C/text%3E%3Ctext x='50' y='20' fill='%23ef4444' font-family='monospace' font-size='10' opacity='0.6'%3E10%3C/text%3E%3Ctext x='80' y='20' fill='%23ef4444' font-family='monospace' font-size='10' opacity='0.4'%3E11%3C/text%3E%3Ctext x='30' y='50' fill='%23ef4444' font-family='monospace' font-size='10' opacity='0.7'%3E00%3C/text%3E%3Ctext x='70' y='50' fill='%23ef4444' font-family='monospace' font-size='10' opacity='0.5'%3E01%3C/text%3E%3Ctext x='10' y='80' fill='%23ef4444' font-family='monospace' font-size='10' opacity='0.5'%3E11%3C/text%3E%3Ctext x='50' y='80' fill='%23ef4444' font-family='monospace' font-size='10' opacity='0.8'%3E10%3C/text%3E%3Ctext x='85' y='80' fill='%23ef4444' font-family='monospace' font-size='10' opacity='0.6'%3E00%3C/text%3E%3C/svg%3E")
           `,
           backgroundSize: "100px 100px"
         }}
       />
       
-      {/* Binary data stream overlay */}
+      {/* Network topology nodes with connections */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.025]"
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.05]"
         style={{
           backgroundImage: `
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Ctext x='5' y='15' fill='%23ef4444' font-family='monospace' font-size='8'%3E101%3C/text%3E%3Ctext x='35' y='35' fill='%23ef4444' font-family='monospace' font-size='8'%3E010%3C/text%3E%3Ctext x='15' y='55' fill='%23ef4444' font-family='monospace' font-size='8'%3E110%3C/text%3E%3C/svg%3E")
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cg stroke='%23dc2626' stroke-width='0.5' fill='none'%3E%3Cpath d='M100 20L180 60L180 140L100 180L20 140L20 60Z'/%3E%3Cpath d='M100 20L100 180M20 60L180 140M180 60L20 140'/%3E%3C/g%3E%3Cg fill='%23ef4444'%3E%3Ccircle cx='100' cy='20' r='4'/%3E%3Ccircle cx='180' cy='60' r='4'/%3E%3Ccircle cx='180' cy='140' r='4'/%3E%3Ccircle cx='100' cy='180' r='4'/%3E%3Ccircle cx='20' cy='140' r='4'/%3E%3Ccircle cx='20' cy='60' r='4'/%3E%3Ccircle cx='100' cy='100' r='6'/%3E%3C/g%3E%3C/svg%3E")
           `,
-          backgroundSize: "60px 60px"
+          backgroundSize: "200px 200px"
         }}
       />
-      
-      {/* Grid lines - network topology */}
+
+      {/* Microchip/processor pattern */}
       <div
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.04]"
         style={{
           backgroundImage: `
-            linear-gradient(90deg, transparent 0%, transparent calc(50% - 0.5px), rgba(220,38,38,0.5) 50%, transparent calc(50% + 0.5px), transparent 100%),
-            linear-gradient(0deg, transparent 0%, transparent calc(50% - 0.5px), rgba(220,38,38,0.3) 50%, transparent calc(50% + 0.5px), transparent 100%)
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Crect x='40' y='40' width='80' height='80' fill='none' stroke='%23dc2626' stroke-width='1'/%3E%3Crect x='50' y='50' width='60' height='60' fill='none' stroke='%23dc2626' stroke-width='0.5'/%3E%3Cg stroke='%23dc2626' stroke-width='0.5'%3E%3Cpath d='M55 40V30M70 40V30M90 40V30M105 40V30'/%3E%3Cpath d='M55 120V130M70 120V130M90 120V130M105 120V130'/%3E%3Cpath d='M40 55H30M40 70H30M40 90H30M40 105H30'/%3E%3Cpath d='M120 55H130M120 70H130M120 90H130M120 105H130'/%3E%3C/g%3E%3Ccircle cx='80' cy='80' r='15' fill='none' stroke='%23ef4444' stroke-width='0.8'/%3E%3Ccircle cx='80' cy='80' r='5' fill='%23ef4444' opacity='0.5'/%3E%3C/svg%3E")
           `,
-          backgroundSize: "60px 60px"
+          backgroundSize: "160px 160px"
         }}
       />
       
-      {/* Glowing red accent orbs */}
+      {/* Diagonal energy flow lines */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.025]"
+        style={{
+          backgroundImage: `
+            repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(220,38,38,0.5) 60px, rgba(220,38,38,0.5) 61px, transparent 61px, transparent 120px),
+            repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(185,28,28,0.3) 60px, rgba(185,28,28,0.3) 61px, transparent 61px, transparent 120px)
+          `
+        }}
+      />
+      
+      {/* Glowing edge vignette */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
-          backgroundImage: `
-            radial-gradient(ellipse 900px 700px at 15% 5%, rgba(220,38,38,0.15), transparent),
-            radial-gradient(ellipse 700px 500px at 90% 95%, rgba(239,68,68,0.12), transparent),
-            radial-gradient(ellipse 500px 400px at 60% 40%, rgba(185,28,28,0.08), transparent)
+          background: `
+            radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.4) 100%),
+            linear-gradient(to bottom, rgba(220,38,38,0.03) 0%, transparent 20%, transparent 80%, rgba(220,38,38,0.02) 100%)
           `
         }}
       />
       
-      {/* Tech node dots */}
-      <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.06]"
-        style={{
-          backgroundImage: `radial-gradient(circle, rgba(220,38,38,0.9) 1.5px, transparent 1.5px)`,
-          backgroundSize: "40px 40px"
-        }}
-      />
-      
-      {/* Diagonal data flow lines */}
+      {/* Scanline overlay for depth */}
       <div
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.02]"
         style={{
-          backgroundImage: `
-            repeating-linear-gradient(45deg, transparent, transparent 80px, rgba(220,38,38,0.4) 80px, rgba(220,38,38,0.4) 81px),
-            repeating-linear-gradient(-45deg, transparent, transparent 80px, rgba(220,38,38,0.2) 80px, rgba(220,38,38,0.2) 81px)
-          `
+          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.03) 1px, rgba(255,255,255,0.03) 2px)`
         }}
       />
       
-      {/* Micro circuit connectors */}
-      <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M0 20h15M25 20h15M20 0v15M20 25v15' stroke='%23dc2626' stroke-width='0.5' fill='none'/%3E%3Ccircle cx='20' cy='20' r='2' fill='%23dc2626'/%3E%3C/svg%3E")
-          `,
-          backgroundSize: "40px 40px"
-        }}
-      />
-      
-      {/* Scanline effect for CRT tech feel */}
+      {/* Noise texture for premium feel */}
       <div
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.015]"
         style={{
-          backgroundImage: `repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px)`
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
         }}
       />
     </>
