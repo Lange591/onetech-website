@@ -146,7 +146,7 @@ const teamMembers = [
   {
     name: "Managing Director",
     role: "Managing Director",
-    img: "/images/team/md.jpg",
+    img: "/images/team/md.jpeg",
     description: "Leading the company's strategic vision and overall operations."
   },
   {
@@ -162,6 +162,7 @@ const teamMembers = [
     description: "Specialized in wireless solutions, satellite internet, and client relations."
   }
 ];
+
 const pages = [
   { id: "home", label: "Home", icon: Home },
   { id: "about", label: "About", icon: Info },
