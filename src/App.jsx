@@ -175,15 +175,6 @@ const pages = [
 // @Lange coding
 
 function TechBackground() {
-  const [key, setKey] = React.useState(Date.now());
-  
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setKey(Date.now());
-    }, 30000);
-    return () => clearInterval(interval);
-  }, []);
-  
   const particles = Array.from({ length: 50 }, (_, i) => ({
     id: i,
     left: `${Math.random() * 100}%`,
@@ -192,14 +183,11 @@ function TechBackground() {
     size: Math.random() > 0.7 ? 3 : Math.random() > 0.4 ? 2 : 1,
   }));
 
-  const cacheBuster = `?v=${key}`;
-
   return (
     <>
       <div className="pointer-events-none fixed inset-0 z-0 bg-[#050508]" />
       
       <div
-        key={`glow1-${key}`}
         className="pointer-events-none fixed inset-0 z-0"
         style={{
           animation: 'pulse-glow 3s ease-in-out infinite',
@@ -212,7 +200,6 @@ function TechBackground() {
       />
       
       <div
-        key={`glow2-${key}`}
         className="pointer-events-none fixed inset-0 z-0"
         style={{
           animation: 'pulse-glow 4s ease-in-out infinite 1.5s',
@@ -224,7 +211,6 @@ function TechBackground() {
       />
 
       <div
-        key={`circuit-${key}`}
         className="pointer-events-none fixed inset-0 z-0"
         style={{
           animation: 'circuit-pulse 2.5s ease-in-out infinite',
@@ -236,7 +222,6 @@ function TechBackground() {
       />
       
       <div
-        key={`hex-${key}`}
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.12]"
         style={{
           animation: 'hex-rotate 40s linear infinite',
@@ -248,7 +233,6 @@ function TechBackground() {
       />
       
       <div
-        key={`grid-${key}`}
         className="pointer-events-none fixed inset-0 z-0"
         style={{
           animation: 'grid-pulse 4s ease-in-out infinite',
@@ -261,7 +245,6 @@ function TechBackground() {
       />
       
       <div
-        key={`data-${key}`}
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.08]"
         style={{
           animation: 'data-flow 15s linear infinite',
@@ -273,7 +256,6 @@ function TechBackground() {
       />
 
       <div
-        key={`network-${key}`}
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.1]"
         style={{
           backgroundImage: `
@@ -283,7 +265,7 @@ function TechBackground() {
         }}
       />
 
-      <div key={`particles-${key}`} className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         {particles.map((p) => (
           <div
             key={p.id}
@@ -303,7 +285,6 @@ function TechBackground() {
       </div>
 
       <div 
-        key={`scan-${key}`}
         className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-[0.03]"
       >
         <div
@@ -316,7 +297,6 @@ function TechBackground() {
       </div>
 
       <div
-        key={`diagonal-${key}`}
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.04]"
         style={{
           backgroundImage: `
@@ -327,7 +307,6 @@ function TechBackground() {
       />
       
       <div 
-        key={`corner1-${key}`}
         className="pointer-events-none fixed left-0 top-0 z-0 h-96 w-96 opacity-60"
         style={{
           background: `
@@ -338,7 +317,6 @@ function TechBackground() {
       />
       
       <div 
-        key={`corner2-${key}`}
         className="pointer-events-none fixed bottom-0 right-0 z-0 h-96 w-96 opacity-60"
         style={{
           background: `
@@ -349,7 +327,6 @@ function TechBackground() {
       />
       
       <div
-        key={`vignette-${key}`}
         className="pointer-events-none fixed inset-0 z-0"
         style={{
           background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.5) 100%)'
@@ -357,10 +334,9 @@ function TechBackground() {
       />
       
       <div
-        key={`noise-${key}`}
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.025]"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")${cacheBuster}`
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
         }}
       />
 
