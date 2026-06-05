@@ -1081,7 +1081,8 @@ function TeamGrid() {
               <img
                 src={mdMember.img}
                 alt={mdMember.name}
-                className="h-full w-full object-cover object-center"
+                className="h-full w-full object-cover"
+style={{ objectPosition: "50% 30%" }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             </div>
