@@ -146,7 +146,7 @@ const teamMembers = [
   {
     name: "Managing Director",
     role: "Managing Director",
-    img: "/images/team/md.jpeg",
+    img: "/images/team/MD.jpeg",
     description: "Leading the company's strategic vision and overall operations."
   },
   {
