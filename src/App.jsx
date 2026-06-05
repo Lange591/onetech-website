@@ -175,286 +175,170 @@ const pages = [
 // @Lange coding
 
 function TechBackground() {
+  const particles = Array.from({ length: 50 }, (_, i) => ({
+    id: i,
+    left: `${Math.random() * 100}%`,
+    delay: `${Math.random() * 20}s`,
+    duration: `${15 + Math.random() * 20}s`,
+    size: Math.random() > 0.7 ? 3 : Math.random() > 0.4 ? 2 : 1,
+  }));
+
   return (
     <>
-      {/* Base dark background */}
       <div className="pointer-events-none fixed inset-0 z-0 bg-[#050508]" />
       
-      {/* Main red glow orbs */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
           animation: 'pulse-glow 3s ease-in-out infinite',
           backgroundImage: `
-            radial-gradient(ellipse 1000px 800px at 0% 0%, rgba(220,38,38,0.35), transparent 60%),
-            radial-gradient(ellipse 800px 600px at 100% 100%, rgba(185,28,28,0.3), transparent 60%),
-            radial-gradient(ellipse 600px 500px at 50% 30%, rgba(239,68,68,0.12), transparent 60%)
+            radial-gradient(ellipse 1000px 800px at 0% 0%, rgba(220,38,38,0.4), transparent 60%),
+            radial-gradient(ellipse 800px 600px at 100% 100%, rgba(185,28,28,0.35), transparent 60%),
+            radial-gradient(ellipse 600px 500px at 50% 30%, rgba(239,68,68,0.15), transparent 60%)
           `
         }}
       />
       
-      {/* Secondary glow */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
           animation: 'pulse-glow 4s ease-in-out infinite 1.5s',
           backgroundImage: `
-            radial-gradient(ellipse 700px 500px at 85% 15%, rgba(220,38,38,0.2), transparent 60%),
-            radial-gradient(ellipse 500px 400px at 15% 85%, rgba(239,68,68,0.15), transparent 60%)
+            radial-gradient(ellipse 700px 500px at 85% 15%, rgba(220,38,38,0.25), transparent 60%),
+            radial-gradient(ellipse 500px 400px at 15% 85%, rgba(239,68,68,0.2), transparent 60%)
           `
         }}
       />
 
-      {/* Circuit board pattern */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
+          animation: 'circuit-pulse 2.5s ease-in-out infinite',
           backgroundImage: `
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23dc2626' stroke-width='1'%3E%3Cpath d='M0 50h35M65 50h35' stroke-opacity='0.25'/%3E%3Cpath d='M50 0v35M50 65v35' stroke-opacity='0.25'/%3E%3Crect x='35' y='35' width='30' height='30' stroke-opacity='0.2'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='4' fill='%23ef4444' fill-opacity='0.5'/%3E%3C/svg%3E")
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23dc2626' stroke-width='1'%3E%3Cpath d='M0 50h35M65 50h35' stroke-opacity='0.3'/%3E%3Cpath d='M50 0v35M50 65v35' stroke-opacity='0.3'/%3E%3Crect x='35' y='35' width='30' height='30' stroke-opacity='0.25'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='4' fill='%23ef4444' fill-opacity='0.6'/%3E%3Ccircle cx='35' cy='50' r='2' fill='%23ef4444' fill-opacity='0.4'/%3E%3Ccircle cx='65' cy='50' r='2' fill='%23ef4444' fill-opacity='0.4'/%3E%3Ccircle cx='50' cy='35' r='2' fill='%23ef4444' fill-opacity='0.4'/%3E%3Ccircle cx='50' cy='65' r='2' fill='%23ef4444' fill-opacity='0.4'/%3E%3Ccircle cx='0' cy='50' r='2' fill='%23ef4444' fill-opacity='0.3'/%3E%3Ccircle cx='100' cy='50' r='2' fill='%23ef4444' fill-opacity='0.3'/%3E%3Ccircle cx='50' cy='0' r='2' fill='%23ef4444' fill-opacity='0.3'/%3E%3Ccircle cx='50' cy='100' r='2' fill='%23ef4444' fill-opacity='0.3'/%3E%3C/svg%3E")
           `,
           backgroundSize: "100px 100px"
         }}
       />
       
-      {/* Hexagonal grid */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.08]"
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.12]"
         style={{
+          animation: 'hex-rotate 40s linear infinite',
           backgroundImage: `
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='138' viewBox='0 0 80 138'%3E%3Cg fill='none' stroke='%23dc2626' stroke-width='0.8'%3E%3Cpath d='M40 0L80 23v46L40 92 0 69V23z'/%3E%3Cpath d='M40 46L80 69v46L40 138 0 115V69z'/%3E%3C/g%3E%3C/svg%3E")
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='104' viewBox='0 0 60 104'%3E%3Cg fill='none' stroke='%23dc2626' stroke-width='0.8'%3E%3Cpath d='M30 0L60 17.3v34.6L30 69.2 0 51.9V17.3z'/%3E%3Cpath d='M30 34.6L60 51.9v34.6L30 103.8 0 86.5V51.9z'/%3E%3C/g%3E%3Ccircle cx='30' cy='34.6' r='3' fill='%23ef4444' fill-opacity='0.5'/%3E%3C/svg%3E")
           `,
-          backgroundSize: "80px 138px"
+          backgroundSize: "60px 104px"
         }}
       />
       
-      {/* Grid lines */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
+          animation: 'grid-pulse 4s ease-in-out infinite',
           backgroundImage: `
-            linear-gradient(90deg, transparent 0%, transparent 49.5%, rgba(220,38,38,0.1) 50%, transparent 50.5%, transparent 100%),
-            linear-gradient(0deg, transparent 0%, transparent 49.5%, rgba(220,38,38,0.08) 50%, transparent 50.5%, transparent 100%)
+            linear-gradient(90deg, transparent 0%, transparent 49.5%, rgba(220,38,38,0.15) 50%, transparent 50.5%, transparent 100%),
+            linear-gradient(0deg, transparent 0%, transparent 49.5%, rgba(220,38,38,0.1) 50%, transparent 50.5%, transparent 100%)
           `,
-          backgroundSize: "50px 50px"
+          backgroundSize: "60px 60px"
         }}
       />
       
-      {/* Binary data stream */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.06]"
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.08]"
+        style={{
+          animation: 'data-flow 15s linear infinite',
+          backgroundImage: `
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Ctext x='10' y='25' fill='%23ef4444' font-family='Consolas,monospace' font-size='11' font-weight='bold'%3E0101%3C/text%3E%3Ctext x='70' y='25' fill='%23ef4444' font-family='Consolas,monospace' font-size='11' opacity='0.7'%3E1100%3C/text%3E%3Ctext x='30' y='60' fill='%23ef4444' font-family='Consolas,monospace' font-size='11' opacity='0.8'%3E1010%3C/text%3E%3Ctext x='85' y='60' fill='%23ef4444' font-family='Consolas,monospace' font-size='11' opacity='0.6'%3E0011%3C/text%3E%3Ctext x='10' y='95' fill='%23ef4444' font-family='Consolas,monospace' font-size='11' opacity='0.6'%3E1111%3C/text%3E%3Ctext x='60' y='95' fill='%23ef4444' font-family='Consolas,monospace' font-size='11'%3E0100%3C/text%3E%3C/svg%3E")
+          `,
+          backgroundSize: "120px 120px"
+        }}
+      />
+
+      <div
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.1]"
         style={{
           backgroundImage: `
-            repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(239,68,68,0.4) 80px, rgba(239,68,68,0.4) 81px)
-          `
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Cg stroke='%23dc2626' stroke-width='0.6' fill='none'%3E%3Cpath d='M75 10L140 45v60L75 140 10 105V45z'/%3E%3Cpath d='M75 10v130M10 45l130 60M140 45L10 105' stroke-dasharray='4,4'/%3E%3C/g%3E%3Cg fill='%23ef4444'%3E%3Ccircle cx='75' cy='10' r='5'/%3E%3Ccircle cx='140' cy='45' r='4'/%3E%3Ccircle cx='140' cy='105' r='4'/%3E%3Ccircle cx='75' cy='140' r='5'/%3E%3Ccircle cx='10' cy='105' r='4'/%3E%3Ccircle cx='10' cy='45' r='4'/%3E%3Ccircle cx='75' cy='75' r='6'/%3E%3C/g%3E%3C/svg%3E")
+          `,
+          backgroundSize: "150px 150px"
         }}
       />
 
-      {/* ========== STARLINK SATELLITE - LARGE VISIBLE ========== */}
-      <div className="pointer-events-none fixed inset-0 z-0">
-        <div
-          className="absolute"
-          style={{
-            top: "8%",
-            right: "5%",
-            animation: "float-slow 8s ease-in-out infinite",
-          }}
-        >
-          <svg width="70" height="70" viewBox="0 0 70 70" fill="none">
-            <circle cx="35" cy="35" r="28" stroke="#ef4444" strokeWidth="1.5" fill="none" opacity="0.5"/>
-            <line x1="35" y1="7" x2="35" y2="63" stroke="#ef4444" strokeWidth="1" opacity="0.4"/>
-            <line x1="7" y1="35" x2="63" y2="35" stroke="#ef4444" strokeWidth="1" opacity="0.4"/>
-            <line x1="15" y1="15" x2="55" y2="55" stroke="#ef4444" strokeWidth="0.8" opacity="0.3"/>
-            <line x1="55" y1="15" x2="15" y2="55" stroke="#ef4444" strokeWidth="0.8" opacity="0.3"/>
-            <circle cx="35" cy="35" r="8" fill="#ef4444" fillOpacity="0.4"/>
-            <circle cx="35" cy="35" r="4" fill="#dc2626" fillOpacity="0.8"/>
-            <text x="35" y="68" textAnchor="middle" fill="#ef4444" fontSize="10" opacity="0.7" fontFamily="monospace">STARLINK</text>
-          </svg>
-        </div>
-      </div>
-
-      {/* ========== CCTV CAMERA - LARGE VISIBLE ========== */}
-      <div className="pointer-events-none fixed inset-0 z-0">
-        <div
-          className="absolute"
-          style={{
-            bottom: "15%",
-            left: "3%",
-            animation: "pulse-camera 3s ease-in-out infinite",
-          }}
-        >
-          <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-            <rect x="20" y="25" width="40" height="30" rx="5" stroke="#ef4444" strokeWidth="1.5" fill="none" opacity="0.7"/>
-            <circle cx="40" cy="40" r="12" stroke="#ef4444" strokeWidth="1.5" fill="none" opacity="0.7"/>
-            <circle cx="40" cy="40" r="5" fill="#ef4444" fillOpacity="0.6"/>
-            <rect x="45" y="20" width="15" height="5" rx="2" stroke="#ef4444" strokeWidth="1" fill="none" opacity="0.5"/>
-            <circle cx="40" cy="55" r="3" fill="#ef4444" fillOpacity="0.4"/>
-            <text x="40" y="72" textAnchor="middle" fill="#ef4444" fontSize="10" opacity="0.7" fontFamily="monospace">CCTV</text>
-          </svg>
-        </div>
-      </div>
-
-      {/* ========== SOLAR PANELS - LARGE VISIBLE ========== */}
-      <div className="pointer-events-none fixed inset-0 z-0">
-        <div
-          className="absolute"
-          style={{
-            bottom: "20%",
-            right: "8%",
-            animation: "float-slow 10s ease-in-out infinite",
-          }}
-        >
-          <svg width="90" height="90" viewBox="0 0 90 90" fill="none">
-            <rect x="15" y="30" width="60" height="35" rx="3" stroke="#f97316" strokeWidth="1.5" fill="none" opacity="0.7"/>
-            <line x1="25" y1="30" x2="25" y2="65" stroke="#f97316" strokeWidth="0.8" opacity="0.5"/>
-            <line x1="45" y1="30" x2="45" y2="65" stroke="#f97316" strokeWidth="0.8" opacity="0.5"/>
-            <line x1="65" y1="30" x2="65" y2="65" stroke="#f97316" strokeWidth="0.8" opacity="0.5"/>
-            <line x1="15" y1="45" x2="75" y2="45" stroke="#f97316" strokeWidth="0.8" opacity="0.5"/>
-            <rect x="35" y="65" width="20" height="8" rx="2" stroke="#f97316" strokeWidth="1" fill="none" opacity="0.5"/>
-            <circle cx="45" cy="73" r="2" fill="#f97316" fillOpacity="0.5"/>
-            <text x="45" y="88" textAnchor="middle" fill="#f97316" fontSize="10" opacity="0.7" fontFamily="monospace">SOLAR</text>
-          </svg>
-        </div>
-      </div>
-
-      {/* ========== WIFI SIGNAL - LARGE VISIBLE ========== */}
-      <div className="pointer-events-none fixed inset-0 z-0">
-        <div
-          className="absolute"
-          style={{
-            top: "20%",
-            left: "8%",
-            animation: "pulse-wifi 2s ease-in-out infinite",
-          }}
-        >
-          <svg width="70" height="70" viewBox="0 0 70 70" fill="none">
-            <path d="M15 25 Q35 10 55 25" stroke="#ef4444" strokeWidth="2" fill="none" opacity="0.6"/>
-            <path d="M22 33 Q35 22 48 33" stroke="#ef4444" strokeWidth="1.8" fill="none" opacity="0.5"/>
-            <path d="M30 41 Q35 34 40 41" stroke="#ef4444" strokeWidth="1.5" fill="none" opacity="0.4"/>
-            <circle cx="35" cy="50" r="4" fill="#ef4444" fillOpacity="0.7"/>
-            <text x="35" y="68" textAnchor="middle" fill="#ef4444" fontSize="10" opacity="0.7" fontFamily="monospace">WiFi</text>
-          </svg>
-        </div>
-      </div>
-
-      {/* ========== SECURITY LOCK - LARGE VISIBLE ========== */}
-      <div className="pointer-events-none fixed inset-0 z-0">
-        <div
-          className="absolute"
-          style={{
-            top: "50%",
-            right: "12%",
-            animation: "pulse-lock 4s ease-in-out infinite",
-          }}
-        >
-          <svg width="65" height="65" viewBox="0 0 65 65" fill="none">
-            <rect x="18" y="30" width="29" height="24" rx="4" stroke="#ef4444" strokeWidth="1.5" fill="none" opacity="0.7"/>
-            <path d="M22 30V23C22 17 26 14 32.5 14C39 14 43 17 43 23V30" stroke="#ef4444" strokeWidth="1.5" fill="none" opacity="0.7"/>
-            <circle cx="32.5" cy="42" r="4" fill="#ef4444" fillOpacity="0.6"/>
-            <rect x="30" y="42" width="5" height="6" rx="1" fill="#ef4444" fillOpacity="0.5"/>
-            <text x="32.5" y="63" textAnchor="middle" fill="#ef4444" fontSize="10" opacity="0.7" fontFamily="monospace">SECURITY</text>
-          </svg>
-        </div>
-      </div>
-
-      {/* ========== ADDITIONAL FLOATING TECH ELEMENTS ========== */}
-      
-      {/* Small circuit nodes */}
-      <div className="pointer-events-none fixed inset-0 z-0">
-        {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        {particles.map((p) => (
           <div
-            key={i}
-            className="absolute h-1 w-1 rounded-full bg-red-500 opacity-40"
+            key={p.id}
+            className="absolute rounded-full bg-red-500"
             style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animation: `pulse-node ${2 + Math.random() * 3}s infinite`,
+              width: `${p.size}px`,
+              height: `${p.size}px`,
+              left: p.left,
+              bottom: '-10px',
+              opacity: p.size === 3 ? 0.8 : p.size === 2 ? 0.5 : 0.3,
+              animation: `float-particle ${p.duration} linear infinite`,
+              animationDelay: p.delay,
+              boxShadow: p.size === 3 ? '0 0 6px 2px rgba(239,68,68,0.6)' : 'none',
             }}
           />
         ))}
       </div>
 
-      {/* Scanning line */}
-      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-[0.04]">
+      <div 
+        className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-[0.03]"
+      >
         <div
           className="absolute left-0 right-0 h-32"
           style={{
-            background: 'linear-gradient(to bottom, transparent, rgba(220,38,38,0.6), transparent)',
-            animation: 'scan-line 6s linear infinite',
+            background: 'linear-gradient(to bottom, transparent, rgba(220,38,38,0.5), transparent)',
+            animation: 'scan-line 8s linear infinite',
           }}
         />
       </div>
 
-      {/* Diagonal lines */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.03]"
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.04]"
         style={{
           backgroundImage: `
-            repeating-linear-gradient(45deg, transparent, transparent 50px, rgba(220,38,38,0.5) 50px, rgba(220,38,38,0.5) 51px)
+            repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(220,38,38,0.6) 40px, rgba(220,38,38,0.6) 41px),
+            repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(185,28,28,0.4) 40px, rgba(185,28,28,0.4) 41px)
           `
         }}
       />
       
-      {/* Corner gradients */}
       <div 
-        className="pointer-events-none fixed left-0 top-0 z-0 h-96 w-96 opacity-50"
+        className="pointer-events-none fixed left-0 top-0 z-0 h-96 w-96 opacity-60"
         style={{
-          background: 'radial-gradient(ellipse at 0% 0%, rgba(239,68,68,0.15), transparent 70%)'
+          background: `
+            linear-gradient(135deg, rgba(220,38,38,0.15) 0%, transparent 50%),
+            radial-gradient(ellipse at 0% 0%, rgba(239,68,68,0.2), transparent 70%)
+          `
         }}
       />
       
       <div 
-        className="pointer-events-none fixed bottom-0 right-0 z-0 h-96 w-96 opacity-50"
+        className="pointer-events-none fixed bottom-0 right-0 z-0 h-96 w-96 opacity-60"
         style={{
-          background: 'radial-gradient(ellipse at 100% 100%, rgba(239,68,68,0.15), transparent 70%)'
+          background: `
+            linear-gradient(315deg, rgba(220,38,38,0.15) 0%, transparent 50%),
+            radial-gradient(ellipse at 100% 100%, rgba(239,68,68,0.2), transparent 70%)
+          `
         }}
       />
       
-      {/* Vignette */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
-          background: 'radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.6) 100%)'
+          background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.5) 100%)'
         }}
       />
       
-      {/* Subtle noise */}
       <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.02]"
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.025]"
         style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
         }}
       />
-
-      <style>{`
-        @keyframes pulse-glow {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.6; }
-        }
-        @keyframes float-slow {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-15px) rotate(3deg); }
-        }
-        @keyframes pulse-camera {
-          0%, 100% { opacity: 0.6; transform: scale(1); }
-          50% { opacity: 1; transform: scale(1.05); }
-        }
-        @keyframes pulse-wifi {
-          0%, 100% { opacity: 0.4; transform: scale(1); }
-          50% { opacity: 1; transform: scale(1.1); }
-        }
-        @keyframes pulse-lock {
-          0%, 100% { opacity: 0.5; transform: scale(1); }
-          50% { opacity: 0.9; transform: scale(1.08); }
-        }
-        @keyframes pulse-node {
-          0%, 100% { opacity: 0.2; }
-          50% { opacity: 0.6; }
-        }
-        @keyframes scan-line {
-          0% { top: -10%; }
-          100% { top: 110%; }
-        }
-      `}</style>
     </>
   );
 }
