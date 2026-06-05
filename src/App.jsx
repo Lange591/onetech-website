@@ -1069,24 +1069,56 @@ function TeamPreview({ setPage }) {
 // @Lange coding
 
 function TeamGrid() {
+  const mdMember = teamMembers.find(m => m.name === "Managing Director");
+  const otherMembers = teamMembers.filter(m => m.name !== "Managing Director");
+
   return (
-    <div className="grid gap-5 md:grid-cols-2">
-      {teamMembers.map((t) => (
-        <div key={t.name} className="overflow-hidden rounded-[2.2rem] border border-white/10 bg-black/25">
-          <div className="relative aspect-[4/5] overflow-hidden">
-            <img
-              src={t.img}
-              alt={t.name}
-              className="h-full w-full object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-          </div>
-          <div className="p-6">
-            <h3 className="text-2xl font-black">{t.name}</h3>
-            <p className="mt-2 text-red-200">{t.role}</p>
+    <div>
+      {mdMember && (
+        <div className="mb-8 overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-red-950/50 to-black/50">
+          <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-6 p-6">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
+              <img
+                src={mdMember.img}
+                alt={mdMember.name}
+                className="h-full w-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            </div>
+            <div className="flex flex-col justify-center p-4">
+              <div className="mb-2 inline-flex w-fit rounded-full bg-red-600/20 px-3 py-1 text-xs font-bold text-red-400">
+                LEADERSHIP
+              </div>
+              <h3 className="text-3xl font-black tracking-tight md:text-4xl">{mdMember.name}</h3>
+              <p className="mt-1 text-lg font-bold text-red-400">{mdMember.role}</p>
+              <div className="mt-4 h-1 w-12 rounded-full bg-red-500"></div>
+              <p className="mt-5 text-base leading-relaxed text-white/70">{mdMember.description}</p>
+              <div className="mt-6 flex items-center gap-2 text-sm text-white/50">
+                <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                <span>Available for consultation</span>
+              </div>
+            </div>
           </div>
         </div>
-      ))}
+      )}
+      <div className="grid gap-5 md:grid-cols-2">
+        {otherMembers.map((t) => (
+          <div key={t.name} className="overflow-hidden rounded-[2.2rem] border border-white/10 bg-black/25 transition duration-300 hover:scale-[1.02] hover:border-red-500/30">
+            <div className="relative aspect-[4/5] overflow-hidden">
+              <img
+                src={t.img}
+                alt={t.name}
+                className="h-full w-full object-cover object-center transition duration-500 hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            </div>
+            <div className="p-6">
+              <h3 className="text-2xl font-black">{t.name}</h3>
+              <p className="mt-2 text-red-200">{t.role}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
