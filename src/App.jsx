@@ -1082,7 +1082,7 @@ function TeamGrid() {
                 src={mdMember.img}
                 alt={mdMember.name}
                 className="h-full w-full object-cover"
-style={{ objectPosition: "50% 60%" }}
+style={{ objectPosition: "50% 70%" }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
             </div>
@@ -1094,10 +1094,7 @@ style={{ objectPosition: "50% 60%" }}
               <p className="mt-1 text-lg font-bold text-red-400">{mdMember.role}</p>
               <div className="mt-4 h-1 w-12 rounded-full bg-red-500"></div>
               <p className="mt-5 text-base leading-relaxed text-white/70">{mdMember.description}</p>
-              <div className="mt-6 flex items-center gap-2 text-sm text-white/50">
-                <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                <span>Available for consultation</span>
-              </div>
+            
             </div>
           </div>
         </div>
