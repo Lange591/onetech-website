@@ -1320,13 +1320,16 @@ function QuotePage({ selectedService = "" }) {
   const selected = services.find((s) => s.slug === form.service) || services[0];
   const updateField = (field, value) => setForm((prev) => ({ ...prev, [field]: value }));
 
-  const submitQuote = (event) => {
-    event.preventDefault();
-    const subject = `Quotation Request - ${selected.title}`;
-    const body = `Hello OneTech IT Services,%0D%0A%0D%0AI would like to request a quotation.%0D%0A%0D%0AService Required: ${selected.title}%0D%0AName: ${form.name}%0D%0AEmail: ${form.email}%0D%0APhone: ${form.phone}%0D%0ALocation: ${form.location}%0D%0ABudget Range: ${form.budget || "Not specified"}%0D%0ATimeline: ${form.timeline || "Not specified"}%0D%0A%0D%0ASpecifications:%0D%0A${encodeURIComponent(form.specifications)}%0D%0A%0D%0APlease send the quotation to my email address above.`;
-    window.location.href = `mailto:${COMPANY_EMAIL}?cc=${encodeURIComponent(form.email)}&subject=${encodeURIComponent(subject)}&body=${body}`;
-    setSubmitted(true);
-  };
+ const submitQuote = (event) => {
+  event.preventDefault();
+  
+  const message = `*NEW QUOTATION REQUEST*%0A%0A*Service:* ${selected.title}%0A*Name:* ${form.name}%0A*Email:* ${form.email}%0A*Phone:* ${form.phone}%0A*Location:* ${form.location}%0A*Budget:* ${form.budget || "Not specified"}%0A*Timeline:* ${form.timeline || "Not specified"}%0A%0A*Specifications:*%0A${encodeURIComponent(form.specifications) || "None provided"}%0A%0A*Customer Email:* ${form.email}`;
+  
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+  
+  window.open(whatsappUrl, '_blank');
+  setSubmitted(true);
+};
 
   if (submitted) {
     return (
