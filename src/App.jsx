@@ -144,6 +144,12 @@ const services = [
 
 const teamMembers = [
   {
+    name: "Managing Director",
+    role: "Managing Director",
+    img: "/images/team/md.jpg",
+    description: "Leading the company's strategic vision and overall operations."
+  },
+  {
     name: "Nixon Kunze",
     role: "Technical Director",
     img: "/images/team/nixon-kunze.jpg",
@@ -156,7 +162,6 @@ const teamMembers = [
     description: "Specialized in wireless solutions, satellite internet, and client relations."
   }
 ];
-
 const pages = [
   { id: "home", label: "Home", icon: Home },
   { id: "about", label: "About", icon: Info },
