@@ -172,8 +172,6 @@ const pages = [
   { id: "quote", label: "Quote", icon: FileText },
 ];
 
-// @Lange coding
-
 function TechBackground() {
   const particles = Array.from({ length: 50 }, (_, i) => ({
     id: i,
@@ -186,72 +184,72 @@ function TechBackground() {
   return (
     <>
       <div className="pointer-events-none fixed inset-0 z-0 bg-[#050508]" />
-      
+
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
-          animation: 'pulse-glow 3s ease-in-out infinite',
+          animation: "pulse-glow 3s ease-in-out infinite",
           backgroundImage: `
             radial-gradient(ellipse 1000px 800px at 0% 0%, rgba(220,38,38,0.4), transparent 60%),
             radial-gradient(ellipse 800px 600px at 100% 100%, rgba(185,28,28,0.35), transparent 60%),
             radial-gradient(ellipse 600px 500px at 50% 30%, rgba(239,68,68,0.15), transparent 60%)
-          `
-        }}
-      />
-      
-      <div
-        className="pointer-events-none fixed inset-0 z-0"
-        style={{
-          animation: 'pulse-glow 4s ease-in-out infinite 1.5s',
-          backgroundImage: `
-            radial-gradient(ellipse 700px 500px at 85% 15%, rgba(220,38,38,0.25), transparent 60%),
-            radial-gradient(ellipse 500px 400px at 15% 85%, rgba(239,68,68,0.2), transparent 60%)
-          `
+          `,
         }}
       />
 
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
-          animation: 'circuit-pulse 2.5s ease-in-out infinite',
+          animation: "pulse-glow 4s ease-in-out infinite 1.5s",
           backgroundImage: `
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23dc2626' stroke-width='1'%3E%3Cpath d='M0 50h35M65 50h35' stroke-opacity='0.3'/%3E%3Cpath d='M50 0v35M50 65v35' stroke-opacity='0.3'/%3E%3Crect x='35' y='35' width='30' height='30' stroke-opacity='0.25'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='4' fill='%23ef4444' fill-opacity='0.6'/%3E%3Ccircle cx='35' cy='50' r='2' fill='%23ef4444' fill-opacity='0.4'/%3E%3Ccircle cx='65' cy='50' r='2' fill='%23ef4444' fill-opacity='0.4'/%3E%3Ccircle cx='50' cy='35' r='2' fill='%23ef4444' fill-opacity='0.4'/%3E%3Ccircle cx='50' cy='65' r='2' fill='%23ef4444' fill-opacity='0.4'/%3E%3Ccircle cx='0' cy='50' r='2' fill='%23ef4444' fill-opacity='0.3'/%3E%3Ccircle cx='100' cy='50' r='2' fill='%23ef4444' fill-opacity='0.3'/%3E%3Ccircle cx='50' cy='0' r='2' fill='%23ef4444' fill-opacity='0.3'/%3E%3Ccircle cx='50' cy='100' r='2' fill='%23ef4444' fill-opacity='0.3'/%3E%3C/svg%3E")
+            radial-gradient(ellipse 700px 500px at 85% 15%, rgba(220,38,38,0.25), transparent 60%),
+            radial-gradient(ellipse 500px 400px at 15% 85%, rgba(239,68,68,0.2), transparent 60%)
           `,
-          backgroundSize: "100px 100px"
         }}
       />
-      
-      <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.12]"
-        style={{
-          animation: 'hex-rotate 40s linear infinite',
-          backgroundImage: `
-            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='104' viewBox='0 0 60 104'%3E%3Cg fill='none' stroke='%23dc2626' stroke-width='0.8'%3E%3Cpath d='M30 0L60 17.3v34.6L30 69.2 0 51.9V17.3z'/%3E%3Cpath d='M30 34.6L60 51.9v34.6L30 103.8 0 86.5V51.9z'/%3E%3C/g%3E%3Ccircle cx='30' cy='34.6' r='3' fill='%23ef4444' fill-opacity='0.5'/%3E%3C/svg%3E")
-          `,
-          backgroundSize: "60px 104px"
-        }}
-      />
-      
+
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
-          animation: 'grid-pulse 4s ease-in-out infinite',
+          animation: "circuit-pulse 2.5s ease-in-out infinite",
+          backgroundImage: `
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23dc2626' stroke-width='1'%3E%3Cpath d='M0 50h35M65 50h35' stroke-opacity='0.3'/%3E%3Cpath d='M50 0v35M50 65v35' stroke-opacity='0.3'/%3E%3Crect x='35' y='35' width='30' height='30' stroke-opacity='0.25'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='4' fill='%23ef4444' fill-opacity='0.6'/%3E%3Ccircle cx='35' cy='50' r='2' fill='%23ef4444' fill-opacity='0.4'/%3E%3Ccircle cx='65' cy='50' r='2' fill='%23ef4444' fill-opacity='0.4'/%3E%3Ccircle cx='50' cy='35' r='2' fill='%23ef4444' fill-opacity='0.4'/%3E%3Ccircle cx='50' cy='65' r='2' fill='%23ef4444' fill-opacity='0.4'/%3E%3Ccircle cx='0' cy='50' r='2' fill='%23ef4444' fill-opacity='0.3'/%3E%3Ccircle cx='100' cy='50' r='2' fill='%23ef4444' fill-opacity='0.3'/%3E%3Ccircle cx='50' cy='0' r='2' fill='%23ef4444' fill-opacity='0.3'/%3E%3Ccircle cx='50' cy='100' r='2' fill='%23ef4444' fill-opacity='0.3'/%3E%3C/svg%3E")
+          `,
+          backgroundSize: "100px 100px",
+        }}
+      />
+
+      <div
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.12]"
+        style={{
+          animation: "hex-rotate 40s linear infinite",
+          backgroundImage: `
+            url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='104' viewBox='0 0 60 104'%3E%3Cg fill='none' stroke='%23dc2626' stroke-width='0.8'%3E%3Cpath d='M30 0L60 17.3v34.6L30 69.2 0 51.9V17.3z'/%3E%3Cpath d='M30 34.6L60 51.9v34.6L30 103.8 0 86.5V51.9z'/%3E%3C/g%3E%3Ccircle cx='30' cy='34.6' r='3' fill='%23ef4444' fill-opacity='0.5'/%3E%3C/svg%3E")
+          `,
+          backgroundSize: "60px 104px",
+        }}
+      />
+
+      <div
+        className="pointer-events-none fixed inset-0 z-0"
+        style={{
+          animation: "grid-pulse 4s ease-in-out infinite",
           backgroundImage: `
             linear-gradient(90deg, transparent 0%, transparent 49.5%, rgba(220,38,38,0.15) 50%, transparent 50.5%, transparent 100%),
             linear-gradient(0deg, transparent 0%, transparent 49.5%, rgba(220,38,38,0.1) 50%, transparent 50.5%, transparent 100%)
           `,
-          backgroundSize: "60px 60px"
+          backgroundSize: "60px 60px",
         }}
       />
-      
+
       <div
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.08]"
         style={{
-          animation: 'data-flow 15s linear infinite',
+          animation: "data-flow 15s linear infinite",
           backgroundImage: `
             url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Ctext x='10' y='25' fill='%23ef4444' font-family='Consolas,monospace' font-size='11' font-weight='bold'%3E0101%3C/text%3E%3Ctext x='70' y='25' fill='%23ef4444' font-family='Consolas,monospace' font-size='11' opacity='0.7'%3E1100%3C/text%3E%3Ctext x='30' y='60' fill='%23ef4444' font-family='Consolas,monospace' font-size='11' opacity='0.8'%3E1010%3C/text%3E%3Ctext x='85' y='60' fill='%23ef4444' font-family='Consolas,monospace' font-size='11' opacity='0.6'%3E0011%3C/text%3E%3Ctext x='10' y='95' fill='%23ef4444' font-family='Consolas,monospace' font-size='11' opacity='0.6'%3E1111%3C/text%3E%3Ctext x='60' y='95' fill='%23ef4444' font-family='Consolas,monospace' font-size='11'%3E0100%3C/text%3E%3C/svg%3E")
           `,
-          backgroundSize: "120px 120px"
+          backgroundSize: "120px 120px",
         }}
       />
 
@@ -261,7 +259,7 @@ function TechBackground() {
           backgroundImage: `
             url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Cg stroke='%23dc2626' stroke-width='0.6' fill='none'%3E%3Cpath d='M75 10L140 45v60L75 140 10 105V45z'/%3E%3Cpath d='M75 10v130M10 45l130 60M140 45L10 105' stroke-dasharray='4,4'/%3E%3C/g%3E%3Cg fill='%23ef4444'%3E%3Ccircle cx='75' cy='10' r='5'/%3E%3Ccircle cx='140' cy='45' r='4'/%3E%3Ccircle cx='140' cy='105' r='4'/%3E%3Ccircle cx='75' cy='140' r='5'/%3E%3Ccircle cx='10' cy='105' r='4'/%3E%3Ccircle cx='10' cy='45' r='4'/%3E%3Ccircle cx='75' cy='75' r='6'/%3E%3C/g%3E%3C/svg%3E")
           `,
-          backgroundSize: "150px 150px"
+          backgroundSize: "150px 150px",
         }}
       />
 
@@ -274,24 +272,26 @@ function TechBackground() {
               width: `${p.size}px`,
               height: `${p.size}px`,
               left: p.left,
-              bottom: '-10px',
+              bottom: "-10px",
               opacity: p.size === 3 ? 0.8 : p.size === 2 ? 0.5 : 0.3,
               animation: `float-particle ${p.duration} linear infinite`,
               animationDelay: p.delay,
-              boxShadow: p.size === 3 ? '0 0 6px 2px rgba(239,68,68,0.6)' : 'none',
+              boxShadow:
+                p.size === 3
+                  ? "0 0 6px 2px rgba(239,68,68,0.6)"
+                  : "none",
             }}
           />
         ))}
       </div>
 
-      <div 
-        className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-[0.03]"
-      >
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-[0.03]">
         <div
           className="absolute left-0 right-0 h-32"
           style={{
-            background: 'linear-gradient(to bottom, transparent, rgba(220,38,38,0.5), transparent)',
-            animation: 'scan-line 8s linear infinite',
+            background:
+              "linear-gradient(to bottom, transparent, rgba(220,38,38,0.5), transparent)",
+            animation: "scan-line 8s linear infinite",
           }}
         />
       </div>
@@ -302,80 +302,49 @@ function TechBackground() {
           backgroundImage: `
             repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(220,38,38,0.6) 40px, rgba(220,38,38,0.6) 41px),
             repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(185,28,28,0.4) 40px, rgba(185,28,28,0.4) 41px)
-          `
+          `,
         }}
       />
-      
-      <div 
+
+      <div
         className="pointer-events-none fixed left-0 top-0 z-0 h-96 w-96 opacity-60"
         style={{
           background: `
             linear-gradient(135deg, rgba(220,38,38,0.15) 0%, transparent 50%),
             radial-gradient(ellipse at 0% 0%, rgba(239,68,68,0.2), transparent 70%)
-          `
+          `,
         }}
       />
-      
-      <div 
+
+      <div
         className="pointer-events-none fixed bottom-0 right-0 z-0 h-96 w-96 opacity-60"
         style={{
           background: `
             linear-gradient(315deg, rgba(220,38,38,0.15) 0%, transparent 50%),
             radial-gradient(ellipse at 100% 100%, rgba(239,68,68,0.2), transparent 70%)
-          `
-        }}
-      />
-      
-      <div
-        className="pointer-events-none fixed inset-0 z-0"
-        style={{
-          background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.5) 100%)'
-        }}
-      />
-      
-      <div
-        className="pointer-events-none fixed inset-0 z-0 opacity-[0.025]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
+          `,
         }}
       />
 
-      <style>{`
-        @keyframes pulse-glow {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.7; }
-        }
-        @keyframes circuit-pulse {
-          0%, 100% { opacity: 0.6; }
-          50% { opacity: 1; }
-        }
-        @keyframes hex-rotate {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-        @keyframes grid-pulse {
-          0%, 100% { opacity: 0.3; }
-          50% { opacity: 0.6; }
-        }
-        @keyframes data-flow {
-          0% { transform: translateY(0); }
-          100% { transform: translateY(-120px); }
-        }
-        @keyframes float-particle {
-          0% { transform: translateY(0) translateX(0); opacity: 0; }
-          20% { opacity: 1; }
-          80% { opacity: 1; }
-          100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
-        }
-        @keyframes scan-line {
-          0% { top: -10%; }
-          100% { top: 110%; }
-        }
-      `}</style>
+      <div
+        className="pointer-events-none fixed inset-0 z-0"
+        style={{
+          background:
+            "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.5) 100%)",
+        }}
+      />
+
+      <div
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.025]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`,
+        }}
+      />
     </>
   );
 }
-// @Lange coding
+
+
 
 function Logo({ small = false }) {
   return (
@@ -387,7 +356,7 @@ function Logo({ small = false }) {
   );
 }
 
-// @Lange coding
+
 
 function AppShell({ page, setPage, children }) {
   const [open, setOpen] = useState(false);
