@@ -175,12 +175,26 @@ const pages = [
 // @Lange coding
 
 function TechBackground() {
-  const particles = Array.from({ length: 50 }, (_, i) => ({
+  const particles = Array.from({ length: 60 }, (_, i) => ({
     id: i,
     left: `${Math.random() * 100}%`,
     delay: `${Math.random() * 20}s`,
     duration: `${15 + Math.random() * 20}s`,
     size: Math.random() > 0.7 ? 3 : Math.random() > 0.4 ? 2 : 1,
+  }));
+
+  const satellites = Array.from({ length: 8 }, (_, i) => ({
+    id: i,
+    top: `${Math.random() * 80 + 10}%`,
+    left: `${Math.random() * 90}%`,
+    delay: `${Math.random() * 15}s`,
+    duration: `${20 + Math.random() * 25}s`,
+  }));
+
+  const cctvNodes = Array.from({ length: 12 }, (_, i) => ({
+    id: i,
+    top: `${Math.random() * 100}%`,
+    left: `${Math.random() * 100}%`,
   }));
 
   return (
@@ -284,6 +298,129 @@ function TechBackground() {
         ))}
       </div>
 
+      {/* STARLINK SATELLITE DISHES - Animated */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        {satellites.map((s) => (
+          <div
+            key={s.id}
+            className="absolute"
+            style={{
+              top: s.top,
+              left: s.left,
+              animation: `float-satellite ${s.duration} ease-in-out infinite`,
+              animationDelay: s.delay,
+            }}
+          >
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="15" cy="15" r="12" stroke="#ef4444" strokeWidth="1" fill="none" opacity="0.4"/>
+              <line x1="15" y1="3" x2="15" y2="27" stroke="#ef4444" strokeWidth="0.8" opacity="0.3"/>
+              <line x1="3" y1="15" x2="27" y2="15" stroke="#ef4444" strokeWidth="0.8" opacity="0.3"/>
+              <circle cx="15" cy="15" r="3" fill="#ef4444" fillOpacity="0.6"/>
+              <circle cx="15" cy="15" r="1.5" fill="#dc2626" fillOpacity="0.9"/>
+            </svg>
+          </div>
+        ))}
+      </div>
+
+      {/* CCTV CAMERA ICONS - Static nodes */}
+      <div className="pointer-events-none fixed inset-0 z-0 opacity-40">
+        {cctvNodes.map((node) => (
+          <div
+            key={node.id}
+            className="absolute"
+            style={{ top: node.top, left: node.left }}
+          >
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="6" stroke="#ef4444" strokeWidth="0.8" fill="none" opacity="0.5"/>
+              <circle cx="8" cy="8" r="2" fill="#ef4444" fillOpacity="0.7"/>
+            </svg>
+          </div>
+        ))}
+      </div>
+
+      {/* CCTV CONNECTION LINES */}
+      <svg className="pointer-events-none fixed inset-0 z-0 h-full w-full opacity-20">
+        <defs>
+          <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stopColor="#ef4444" stopOpacity="0"/>
+            <stop offset="50%" stopColor="#ef4444" stopOpacity="0.8"/>
+            <stop offset="100%" stopColor="#ef4444" stopOpacity="0"/>
+          </linearGradient>
+        </defs>
+        {cctvNodes.slice(0, 6).map((node, idx) => (
+          <line
+            key={`line-${idx}`}
+            x1={node.left}
+            y1={node.top}
+            x2={cctvNodes[idx + 6]?.left || "20%"}
+            y2={cctvNodes[idx + 6]?.top || "80%"}
+            stroke="#ef4444"
+            strokeWidth="0.5"
+            strokeDasharray="3,3"
+            opacity="0.3"
+          />
+        ))}
+      </svg>
+
+      {/* SOLAR PANEL GRID PATTERN */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0 opacity-[0.06]"
+        style={{
+          backgroundImage: `
+            repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(239,68,68,0.5) 40px, rgba(239,68,68,0.5) 41px),
+            repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(239,68,68,0.5) 40px, rgba(239,68,68,0.5) 41px)
+          `,
+          backgroundSize: "80px 80px",
+        }}
+      />
+
+      {/* WIFI SIGNAL WAVES - Animated */}
+      <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        {[1, 2, 3].map((i) => (
+          <div
+            key={`wifi-${i}`}
+            className="absolute"
+            style={{
+              bottom: `${15 + i * 8}%`,
+              right: `${5 + i * 3}%`,
+              animation: `pulse-wifi ${2 + i * 0.5}s ease-in-out infinite`,
+              animationDelay: `${i * 0.3}s`,
+            }}
+          >
+            <svg width="40" height="40" viewBox="0 0 40 40">
+              <path d="M5 15 Q20 5 35 15" stroke="#ef4444" strokeWidth="1.5" fill="none" opacity={0.6 - i * 0.15}/>
+              <path d="M10 22 Q20 14 30 22" stroke="#ef4444" strokeWidth="1.2" fill="none" opacity={0.5 - i * 0.12}/>
+              <path d="M15 29 Q20 23 25 29" stroke="#ef4444" strokeWidth="0.9" fill="none" opacity={0.4 - i * 0.1}/>
+              <circle cx="20" cy="35" r="2" fill="#ef4444" fillOpacity={0.7 - i * 0.2}/>
+            </svg>
+          </div>
+        ))}
+      </div>
+
+      {/* LOCK/SECURITY ICONS */}
+      <div className="pointer-events-none fixed inset-0 z-0 opacity-30">
+        <div className="absolute bottom-[20%] left-[5%]">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <rect x="6" y="9" width="8" height="8" rx="1" stroke="#ef4444" strokeWidth="1" fill="none"/>
+            <path d="M7 9V6C7 4.5 8 3 10 3C12 3 13 4.5 13 6V9" stroke="#ef4444" strokeWidth="1" fill="none"/>
+            <circle cx="10" cy="13" r="1.5" fill="#ef4444" fillOpacity="0.7"/>
+          </svg>
+        </div>
+        <div className="absolute top-[25%] right-[8%]">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <rect x="4" y="7" width="8" height="7" rx="1" stroke="#ef4444" strokeWidth="0.8" fill="none"/>
+            <path d="M5 7V5C5 3.5 6 2.5 8 2.5C10 2.5 11 3.5 11 5V7" stroke="#ef4444" strokeWidth="0.8" fill="none"/>
+          </svg>
+        </div>
+        <div className="absolute top-[60%] right-[15%]">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <rect x="3" y="5" width="6" height="5" rx="0.5" stroke="#ef4444" strokeWidth="0.6" fill="none"/>
+            <path d="M4 5V3.5C4 2.5 4.5 2 6 2C7.5 2 8 2.5 8 3.5V5" stroke="#ef4444" strokeWidth="0.6" fill="none"/>
+          </svg>
+        </div>
+      </div>
+
+      {/* SCANNING LINE EFFECT */}
       <div 
         className="pointer-events-none fixed inset-0 z-0 overflow-hidden opacity-[0.03]"
       >
@@ -296,6 +433,7 @@ function TechBackground() {
         />
       </div>
 
+      {/* DIAGONAL TECH LINES */}
       <div
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.04]"
         style={{
@@ -306,6 +444,7 @@ function TechBackground() {
         }}
       />
       
+      {/* CORNER TECH ACCENTS */}
       <div 
         className="pointer-events-none fixed left-0 top-0 z-0 h-96 w-96 opacity-60"
         style={{
@@ -326,6 +465,7 @@ function TechBackground() {
         }}
       />
       
+      {/* VIGNETTE */}
       <div
         className="pointer-events-none fixed inset-0 z-0"
         style={{
@@ -333,12 +473,56 @@ function TechBackground() {
         }}
       />
       
+      {/* NOISE TEXTURE */}
       <div
         className="pointer-events-none fixed inset-0 z-0 opacity-[0.025]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E")`
         }}
       />
+
+      <style>{`
+        @keyframes float-satellite {
+          0%, 100% { transform: translate(0, 0) rotate(0deg); }
+          25% { transform: translate(10px, -10px) rotate(5deg); }
+          50% { transform: translate(0, -20px) rotate(0deg); }
+          75% { transform: translate(-10px, -10px) rotate(-5deg); }
+        }
+        @keyframes pulse-wifi {
+          0%, 100% { opacity: 0.3; transform: scale(1); }
+          50% { opacity: 0.8; transform: scale(1.1); }
+        }
+        @keyframes pulse-glow {
+          0%, 100% { opacity: 1; }
+          50% { opacity: 0.7; }
+        }
+        @keyframes circuit-pulse {
+          0%, 100% { opacity: 0.6; }
+          50% { opacity: 1; }
+        }
+        @keyframes hex-rotate {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        @keyframes grid-pulse {
+          0%, 100% { opacity: 0.3; }
+          50% { opacity: 0.6; }
+        }
+        @keyframes data-flow {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(-120px); }
+        }
+        @keyframes float-particle {
+          0% { transform: translateY(0) translateX(0); opacity: 0; }
+          20% { opacity: 1; }
+          80% { opacity: 1; }
+          100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
+        }
+        @keyframes scan-line {
+          0% { top: -10%; }
+          100% { top: 110%; }
+        }
+      `}</style>
     </>
   );
 }
