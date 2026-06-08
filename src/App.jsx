@@ -364,30 +364,31 @@ function AppShell({ page, setPage, children }) {
     <div className="min-h-screen overflow-hidden bg-[#050505] text-white">
       <TechBackground />
       <header className="sticky top-0 z-50 border-b border-white/10 bg-black/50 backdrop-blur-2xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <button onClick={() => setPage("home")} className="flex items-center gap-3 text-left">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
+          <button onClick={() => setPage("home")} className="flex items-center gap-2 sm:gap-3 text-left">
             <Logo small />
             <div>
-              <p className="text-xl font-black">
+              <p className="text-base sm:text-xl font-black">
                 <span className="text-red-500">One</span>Tech
               </p>
-              <p className="-mt-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/55">
+              <p className="hidden sm:block -mt-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/55">
                 IT Services
               </p>
             </div>
           </button>
-          <nav className="hidden items-center gap-2 rounded-full border border-white/10 bg-white/5 p-1 text-sm font-semibold text-white/70 backdrop-blur-xl lg:flex">
+          <nav className="hidden items-center gap-1 lg:gap-2 rounded-full border border-white/10 bg-white/5 p-1 text-sm font-semibold text-white/70 backdrop-blur-xl lg:flex">
             {pages.map((p) => {
               const Icon = p.icon;
               return (
                 <button
                   key={p.id}
                   onClick={() => setPage(p.id)}
-                  className={`flex items-center gap-2 rounded-full px-4 py-2.5 transition ${
+                  className={`flex items-center gap-1 lg:gap-2 rounded-full px-3 lg:px-4 py-2 lg:py-2.5 transition ${
                     page === p.id ? "bg-white text-red-800" : "hover:bg-white/10 hover:text-white"
                   }`}
                 >
-                  <Icon size={16} /> {p.label}
+                  <Icon size={14} className="lg:w-4 lg:h-4" /> 
+                  <span className="text-xs lg:text-sm">{p.label}</span>
                 </button>
               );
             })}
@@ -396,12 +397,12 @@ function AppShell({ page, setPage, children }) {
             href={`https://wa.me/${WHATSAPP_NUMBER}`}
             target="_blank"
             rel="noreferrer"
-            className="hidden rounded-full bg-green-500 px-5 py-2.5 text-sm font-black text-white shadow-xl transition hover:bg-green-600 lg:inline-flex"
+            className="hidden rounded-full bg-green-500 px-4 lg:px-5 py-2 lg:py-2.5 text-xs lg:text-sm font-black text-white shadow-xl transition hover:bg-green-600 lg:inline-flex"
           >
             WhatsApp
           </a>
-          <button onClick={() => setOpen(true)} className="rounded-full border border-white/10 bg-white/5 p-3 lg:hidden">
-            <Menu />
+          <button onClick={() => setOpen(true)} className="rounded-full border border-white/10 bg-white/5 p-2 lg:hidden">
+            <Menu size={20} />
           </button>
         </div>
       </header>
@@ -411,7 +412,7 @@ function AppShell({ page, setPage, children }) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[80] bg-black/85 p-6 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-[80] bg-black/95 p-6 backdrop-blur-xl lg:hidden"
           >
             <div className="flex justify-end">
               <button onClick={() => setOpen(false)} className="rounded-full bg-white p-3 text-red-800">
@@ -426,22 +427,30 @@ function AppShell({ page, setPage, children }) {
                     setPage(p.id);
                     setOpen(false);
                   }}
-                  className="rounded-3xl border border-white/10 bg-white/10 px-6 py-5 text-left text-xl font-black"
+                  className="rounded-2xl border border-white/10 bg-white/10 px-6 py-4 text-left text-lg font-black"
                 >
                   {p.label}
                 </button>
               ))}
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}`}
+                target="_blank"
+                rel="noreferrer"
+                className="rounded-2xl bg-green-600 px-6 py-4 text-center text-lg font-black text-white"
+              >
+                WhatsApp
+              </a>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
       <main className="relative z-10">{children}</main>
       <WhatsAppFloat />
-      <footer className="relative z-10 border-t border-white/10 bg-black/60 px-6 py-10">
+      <footer className="relative z-10 border-t border-white/10 bg-black/60 px-4 sm:px-6 py-8 sm:py-10">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 md:grid-cols-3">
-            <div>
-              <div className="flex items-center gap-3">
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-3">
+            <div className="text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start gap-3">
                 <Logo small />
                 <div>
                   <p className="text-xl font-black">
@@ -452,20 +461,20 @@ function AppShell({ page, setPage, children }) {
                   </p>
                 </div>
               </div>
-              <p className="mt-4 text-sm text-white/60">
+              <p className="mt-4 text-sm text-white/60 text-center md:text-left">
                 Experts in Technology Solutions. Serving Zimbabwe with professional ICT services.
               </p>
             </div>
-            <div>
+            <div className="text-center md:text-left">
               <h4 className="font-black text-red-400">Contact</h4>
               <div className="mt-4 space-y-2 text-sm text-white/60">
-                <p>Email: {COMPANY_EMAIL}</p>
+                <p className="break-words">Email: {COMPANY_EMAIL}</p>
                 <p>Location: {COMPANY_LOCATION}</p>
               </div>
             </div>
-            <div>
+            <div className="text-center md:text-left">
               <h4 className="font-black text-red-400">Follow Us</h4>
-              <div className="mt-4 flex gap-3">
+              <div className="mt-4 flex justify-center md:justify-start gap-3">
                 <a href={socialLinks.facebook} target="_blank" rel="noreferrer" className="rounded-full bg-white/10 p-3 hover:bg-red-600">
                   <span className="sr-only">Facebook</span>
                   <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
@@ -481,7 +490,7 @@ function AppShell({ page, setPage, children }) {
               </div>
             </div>
           </div>
-          <div className="mt-8 border-t border-white/10 pt-8 text-center text-sm text-white/50">
+          <div className="mt-6 sm:mt-8 border-t border-white/10 pt-6 sm:pt-8 text-center text-xs sm:text-sm text-white/50">
             OneTech IT Services. Experts in Technology Solutions.
           </div>
         </div>
@@ -490,12 +499,7 @@ function AppShell({ page, setPage, children }) {
   );
 }
 
-//APPSHELL
-
-
-
-
-
+// APPSHELL
 
 
 // @Lange coding
@@ -506,9 +510,10 @@ function WhatsAppFloat() {
       href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi OneTech, I would like to request a quotation.")}`}
       target="_blank"
       rel="noreferrer"
-      className="fixed bottom-6 right-6 z-[90] flex items-center gap-3 rounded-full bg-green-500 px-5 py-4 font-black text-white shadow-2xl shadow-green-900/40 transition hover:scale-105"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-[90] flex items-center gap-2 sm:gap-3 rounded-full bg-green-500 px-3 py-3 sm:px-5 sm:py-4 font-black text-white shadow-2xl shadow-green-900/40 transition hover:scale-105"
     >
-      <MessageCircle /> Chat on WhatsApp
+      <MessageCircle size={18} className="sm:h-5 sm:w-5" /> 
+      <span className="text-xs sm:text-base">Chat on WhatsApp</span>
     </a>
   );
 }
