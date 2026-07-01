@@ -37,10 +37,13 @@ const services = [
       "/images/cctv/real-cctv-indoor.jpg",
       "/images/cctv/real-cctv-pole-1.jpg",
       "/images/cctv/real-cctv-pole-2.jpg",
-      "/images/cctv/real-cctv-pole-3.jpg",
       "/images/cctv/cctv-install.jpg",
       "/images/cctv/cctv-1.jpg",
-      "/images/cctv/cctv-2.jpg"
+      "/images/cctv/cctv-2.jpg",
+      "/images/cctv/cctv-3.jpg",
+      "/images/cctv/cctv-4.jpg",
+      "/images/cctv/cctv-5.jpg",
+      "/images/cctv/cctv-6.jpg"
     ],
     gradient: "from-red-500 to-red-950",
   },
@@ -55,7 +58,10 @@ const services = [
       "/images/starlink/real-dish-wall.jpg",
       "/images/starlink/real-dish-roof.jpg",
       "/images/starlink/real-antenna-roof.jpg",
-      "/images/network/starlink-install.jpg"
+      "/images/network/starlink-install.jpg",
+      "/images/network/wifi-install.jpg",
+      "/images/network/network-4.jpg",
+      "/images/network/network-5.jpg"
     ],
     gradient: "from-red-400 to-zinc-950",
   },
@@ -112,14 +118,14 @@ const services = [
     text: "We install solar panels, inverters and batteries to keep critical systems running even during power cuts. Our solutions provide reliable, sustainable energy independence.",
     points: ["Solar panels", "Inverters", "Battery backup", "Maintenance support"],
     images: [
-      "/images/solar/real-solar-light.jpg",
-      "/images/solar/real-solar-shack.jpg",
       "/images/solar/inverter-install-2.jpg",
       "/images/solar/solar-panel-install.jpg",
       "/images/solar/inverter-install-1.jpg",
       "/images/solar/solar-1.jpg",
       "/images/solar/solar-2.jpg",
-      "/images/solar/solar-3.jpg"
+      "/images/solar/solar-3.jpg",
+      "/images/solar/solar-4.jpg",
+      "/images/solar/solar-5.jpg"
     ],
     gradient: "from-orange-500 to-red-950",
   },
@@ -342,11 +348,17 @@ function TechBackground() {
 
 function Logo({ small = false }) {
   return (
-    <img
-      src="/images/brand/logo.png"
-      alt="OneTech IT Services"
-      className={`${small ? "h-10 sm:h-12" : "h-20"} w-auto object-contain`}
-    />
+    <span
+      className={`inline-flex items-center justify-center rounded-xl bg-white shadow-md ${
+        small ? "h-11 px-2 sm:px-3" : "h-20 px-4"
+      }`}
+    >
+      <img
+        src="/images/brand/logo.png"
+        alt="OneTech IT Services"
+        className={`${small ? "h-7 sm:h-8" : "h-14"} w-auto object-contain`}
+      />
+    </span>
   );
 }
 
@@ -632,8 +644,8 @@ function WorkShowcase() {
     { src: "/images/cctv/real-cctv-indoor.jpg", alt: "Technician installing a CCTV camera", label: "CCTV Setup" },
     { src: "/images/cctv/real-cctv-pole-1.jpg", alt: "Outdoor CCTV camera installation on a pole", label: "Outdoor CCTV" },
     { src: "/images/starlink/real-dish-roof.jpg", alt: "Technician aligning a satellite dish on a rooftop", label: "Dish Alignment" },
-    { src: "/images/solar/real-solar-light.jpg", alt: "Solar-powered lighting installation", label: "Solar Power" },
-    { src: "/images/solar/real-solar-shack.jpg", alt: "Off-grid solar installation", label: "Off-Grid Solar" },
+    { src: "/images/solar/inverter-install-2.jpg", alt: "Solar inverter installation", label: "Solar Power" },
+    { src: "/images/events/team-booth.jpg", alt: "Team at community event", label: "Community Events" },
   ];
 
   return (
