@@ -9,10 +9,10 @@ import {
 
 // @Lange coding
 
-const WHATSAPP_NUMBER = "263786025853";
+const WHATSAPP_NUMBER = "263775131446";
 const COMPANY_EMAIL = "info@onetechitservices.co.zw";
-const COMPANY_PHONE = "+263 786 025 853";
-const COMPANY_PHONE_ALT1 = "+263 775 131 446";
+const COMPANY_PHONE = "+263 775 131 446";
+const COMPANY_PHONE_ALT1 = "+263 786 025 853";
 const COMPANY_PHONE_ALT2 = "+263 773 566 596";
 const COMPANY_LOCATION = "Mutare Trade Centre, Shop 69-70";
 
@@ -34,13 +34,13 @@ const services = [
     text: "We install HD cameras, DVR/NVR systems, remote viewing, clean cabling and secure camera positioning. Our professional team ensures optimal camera placement for maximum coverage and security.",
     points: ["Indoor & outdoor cameras", "Remote phone viewing", "DVR/NVR setup", "Solar-powered options"],
     images: [
+      "/images/cctv/real-cctv-indoor.jpg",
+      "/images/cctv/real-cctv-pole-1.jpg",
+      "/images/cctv/real-cctv-pole-2.jpg",
+      "/images/cctv/real-cctv-pole-3.jpg",
       "/images/cctv/cctv-install.jpg",
       "/images/cctv/cctv-1.jpg",
-      "/images/cctv/cctv-2.jpg",
-      "/images/cctv/cctv-3.jpg",
-      "/images/cctv/cctv-4.jpg",
-      "/images/cctv/cctv-5.jpg",
-      "/images/cctv/cctv-6.jpg"
+      "/images/cctv/cctv-2.jpg"
     ],
     gradient: "from-red-500 to-red-950",
   },
@@ -52,10 +52,10 @@ const services = [
     text: "We install and configure Starlink for homes, businesses, farms and remote sites that need fast internet. Our team handles dish mounting, cable routing, and network optimization.",
     points: ["Dish mounting", "Cable routing", "Router setup", "Speed testing"],
     images: [
-      "/images/network/starlink-install.jpg",
-      "/images/network/wifi-install.jpg",
-      "/images/network/network-4.jpg",
-      "/images/network/network-5.jpg"
+      "/images/starlink/real-dish-wall.jpg",
+      "/images/starlink/real-dish-roof.jpg",
+      "/images/starlink/real-antenna-roof.jpg",
+      "/images/network/starlink-install.jpg"
     ],
     gradient: "from-red-400 to-zinc-950",
   },
@@ -112,14 +112,14 @@ const services = [
     text: "We install solar panels, inverters and batteries to keep critical systems running even during power cuts. Our solutions provide reliable, sustainable energy independence.",
     points: ["Solar panels", "Inverters", "Battery backup", "Maintenance support"],
     images: [
+      "/images/solar/real-solar-light.jpg",
+      "/images/solar/real-solar-shack.jpg",
       "/images/solar/inverter-install-2.jpg",
       "/images/solar/solar-panel-install.jpg",
       "/images/solar/inverter-install-1.jpg",
       "/images/solar/solar-1.jpg",
       "/images/solar/solar-2.jpg",
-      "/images/solar/solar-3.jpg",
-      "/images/solar/solar-4.jpg",
-      "/images/solar/solar-5.jpg"
+      "/images/solar/solar-3.jpg"
     ],
     gradient: "from-orange-500 to-red-950",
   },
@@ -144,22 +144,16 @@ const services = [
 
 const teamMembers = [
   {
-    name: "Managing Director",
-    role: "Managing Director",
+    name: "Hilary Mudadi",
+    role: "Founder & Managing Director",
     img: "/images/team/MD.jpg",
-    description: "Leading the company's strategic vision and overall operations."
+    description: "Hilary Mudadi is an experienced Telecommunications and Network Engineer with over 15 years of expertise in ICT infrastructure, telecommunications, and project delivery. He specializes in fibre optic networks, wireless networking, VoIP and IP PBX systems, structured cabling, broadband solutions, and ICT project management. Before founding OneTech IT Services, Hilary worked with leading telecommunications organizations in Zimbabwe and the United Kingdom, where he gained extensive experience in designing, deploying, and maintaining enterprise and carrier-grade networks. He holds an MSc in Project Management from Birmingham City University, a BSc Honours Degree in Network Computing, a Full Technological Diploma in Telecommunication Engineering and several industry certifications in telecommunications, networking, and project management. Hilary is passionate about delivering innovative, reliable, and cost-effective technology solutions that help organizations improve connectivity, productivity, and business performance."
   },
   {
     name: "Nixon Kunze",
-    role: "Technical Director",
+    role: "Technical Director & Co-Founder",
     img: "/images/team/nixon-kunze.jpg",
-    description: "Leading the technical vision and overseeing all installations and projects."
-  },
-  {
-    name: "Field Specialist",
-    role: "WiFi, Starlink & Customer Support",
-    img: "/images/solar/inverter-thumbsup.jpg",
-    description: "Specialized in wireless solutions, satellite internet, and client relations."
+    description: "Nixon Kunze is the Technical Director and Co-Founder of OneTech IT Services, bringing extensive hands-on experience in security, connectivity, and renewable energy solutions. He has worked in South Africa as a MultiChoice satellite systems technician and has successfully delivered numerous CCTV surveillance, solar power, and wireless networking projects for residential, commercial, and institutional clients. With a strong technical background in satellite installations, CCTV systems, Wi-Fi networks, solar energy solutions, and Starlink deployments, Nixon oversees the implementation and quality assurance of OneTech's technical projects. His practical expertise, attention to detail, and commitment to customer satisfaction ensure that every installation is delivered to the highest standards. Nixon is passionate about helping clients leverage technology to improve security, connectivity, and energy efficiency through reliable and cost-effective solutions."
   }
 ];
 
@@ -349,9 +343,9 @@ function TechBackground() {
 function Logo({ small = false }) {
   return (
     <img
-      src="/images/brand/logo.jpg"
+      src="/images/brand/logo.png"
       alt="OneTech IT Services"
-      className={`${small ? "h-12 w-12" : "h-24 w-24"} rounded-full object-cover bg-white shadow-xl`}
+      className={`${small ? "h-10 sm:h-12" : "h-20"} w-auto object-contain`}
     />
   );
 }
@@ -365,16 +359,9 @@ function AppShell({ page, setPage, children }) {
       <TechBackground />
       <header className="sticky top-0 z-50 border-b border-white/10 bg-black/50 backdrop-blur-2xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
-          <button onClick={() => setPage("home")} className="flex items-center gap-2 sm:gap-3 text-left">
+          <button onClick={() => setPage("home")} className="flex items-center text-left">
             <Logo small />
-            <div>
-              <p className="text-base sm:text-xl font-black">
-                <span className="text-red-500">One</span>Tech
-              </p>
-              <p className="hidden sm:block -mt-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/55">
-                IT Services
-              </p>
-            </div>
+            <span className="sr-only">OneTech IT Services</span>
           </button>
           <nav className="hidden items-center gap-1 lg:gap-2 rounded-full border border-white/10 bg-white/5 p-1 text-sm font-semibold text-white/70 backdrop-blur-xl lg:flex">
             {pages.map((p) => {
@@ -450,16 +437,9 @@ function AppShell({ page, setPage, children }) {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 sm:gap-8 md:grid-cols-3">
             <div className="text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start gap-3">
-                <Logo small />
-                <div>
-                  <p className="text-xl font-black">
-                    <span className="text-red-500">One</span>Tech
-                  </p>
-                  <p className="-mt-1 text-xs font-semibold uppercase tracking-[0.28em] text-white/55">
-                    IT Services
-                  </p>
-                </div>
+              <div className="flex items-center justify-center md:justify-start">
+                <Logo />
+                <span className="sr-only">OneTech IT Services</span>
               </div>
               <p className="mt-4 text-sm text-white/60 text-center md:text-left">
                 Experts in Technology Solutions. Serving Zimbabwe with professional ICT services.
@@ -535,13 +515,13 @@ function HeroGraphic() {
       />
       <div className="absolute left-1/2 top-1/2 h-[330px] w-[330px] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-[3.5rem] border border-white/15 bg-white/10 p-5 shadow-2xl backdrop-blur-2xl">
         <img
-          src="/images/solar/inverter-install-2.jpg"
+          src="/images/cctv/real-cctv-indoor.jpg"
           alt="OneTech installation work"
           className="h-full w-full rounded-[2.7rem] object-cover object-top opacity-80"
         />
         <div className="absolute inset-0 rounded-[3.5rem] bg-gradient-to-t from-black via-black/20 to-transparent" />
-        <div className="absolute bottom-8 left-8">
-          <Logo />
+        <div className="absolute bottom-8 left-8 right-8">
+          <Logo small />
           <h3 className="mt-4 text-3xl font-black">Real projects. Real results.</h3>
         </div>
       </div>
@@ -648,12 +628,12 @@ function HomePage({ setPage, openService }) {
 
 function WorkShowcase() {
   const workImages = [
-    { src: "/images/solar/inverter-install-2.jpg", alt: "Solar inverter installation", label: "Solar Installation" },
-    { src: "/images/cctv/cctv-install.jpg", alt: "CCTV camera installation", label: "CCTV Setup" },
-    { src: "/images/network/wifi-install.jpg", alt: "WiFi equipment installation", label: "Network Setup" },
-    { src: "/images/network/starlink-install.jpg", alt: "Starlink dish installation", label: "Starlink Install" },
-    { src: "/images/solar/solar-panel-install.jpg", alt: "Solar panel installation", label: "Solar Panels" },
-    { src: "/images/events/team-booth.jpg", alt: "Team at event", label: "Community Events" },
+    { src: "/images/starlink/real-dish-wall.jpg", alt: "Starlink satellite dish mounted on a home", label: "Starlink Install" },
+    { src: "/images/cctv/real-cctv-indoor.jpg", alt: "Technician installing a CCTV camera", label: "CCTV Setup" },
+    { src: "/images/cctv/real-cctv-pole-1.jpg", alt: "Outdoor CCTV camera installation on a pole", label: "Outdoor CCTV" },
+    { src: "/images/starlink/real-dish-roof.jpg", alt: "Technician aligning a satellite dish on a rooftop", label: "Dish Alignment" },
+    { src: "/images/solar/real-solar-light.jpg", alt: "Solar-powered lighting installation", label: "Solar Power" },
+    { src: "/images/solar/real-solar-shack.jpg", alt: "Off-grid solar installation", label: "Off-Grid Solar" },
   ];
 
   return (
@@ -1083,53 +1063,33 @@ function TeamPreview({ setPage }) {
 // @Lange coding
 
 function TeamGrid() {
-  const mdMember = teamMembers.find(m => m.name === "Managing Director");
-  const otherMembers = teamMembers.filter(m => m.name !== "Managing Director");
-
   return (
-    <div>
-      {mdMember && (
-        <div className="mb-8 overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-red-950/50 to-black/50">
-          <div className="grid md:grid-cols-[0.8fr_1.2fr] gap-6 p-6">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
-              <img
-                src={mdMember.img}
-                alt={mdMember.name}
-                className="h-full w-full object-cover"
-style={{ objectPosition: "50% 10%" }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+    <div className="grid gap-6 lg:grid-cols-2">
+      {teamMembers.map((t) => (
+        <div
+          key={t.name}
+          className="overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-red-950/40 to-black/40 transition duration-300 hover:border-red-500/30"
+        >
+          <div className="relative aspect-[4/5] overflow-hidden sm:aspect-[16/10]">
+            <img
+              src={t.img}
+              alt={t.name}
+              className="h-full w-full object-cover"
+              style={{ objectPosition: "50% 15%" }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+          </div>
+          <div className="p-6 md:p-8">
+            <div className="mb-3 inline-flex w-fit rounded-full bg-red-600/20 px-3 py-1 text-xs font-bold text-red-400">
+              LEADERSHIP
             </div>
-            <div className="flex flex-col justify-center p-4">
-              <div className="mb-2 inline-flex w-fit rounded-full bg-red-600/20 px-3 py-1 text-xs font-bold text-red-400">
-                LEADERSHIP
-              </div>
-              <h3 className="text-3xl font-black tracking-tight md:text-4xl">{mdMember.name}</h3>
-              <p className="mt-1 text-lg font-bold text-red-400">{mdMember.role}</p>
-              <div className="mt-4 h-1 w-12 rounded-full bg-red-500"></div>
-              <p className="mt-5 text-base leading-relaxed text-white/70">{mdMember.description}</p>
-            </div>
+            <h3 className="text-2xl font-black tracking-tight md:text-3xl">{t.name}</h3>
+            <p className="mt-1 text-base font-bold text-red-400">{t.role}</p>
+            <div className="mt-4 h-1 w-12 rounded-full bg-red-500" />
+            <p className="mt-5 text-sm leading-relaxed text-white/70 md:text-base">{t.description}</p>
           </div>
         </div>
-      )}
-      <div className="grid gap-5 md:grid-cols-2">
-        {otherMembers.map((t) => (
-          <div key={t.name} className="overflow-hidden rounded-[2.2rem] border border-white/10 bg-black/25 transition duration-300 hover:scale-[1.02] hover:border-red-500/30">
-            <div className="relative aspect-[4/5] overflow-hidden">
-              <img
-                src={t.img}
-                alt={t.name}
-                className="h-full w-full object-cover object-center transition duration-500 hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-            </div>
-            <div className="p-6">
-              <h3 className="text-2xl font-black">{t.name}</h3>
-              <p className="mt-2 text-red-200">{t.role}</p>
-            </div>
-          </div>
-        ))}
-      </div>
+      ))}
     </div>
   );
 }
@@ -1336,12 +1296,26 @@ function QuotePage({ selectedService = "" }) {
 
  const submitQuote = (event) => {
   event.preventDefault();
-  
-  const message = `*NEW QUOTATION REQUEST*%0A%0A*Service:* ${selected.title}%0A*Name:* ${form.name}%0A*Email:* ${form.email}%0A*Phone:* ${form.phone}%0A*Location:* ${form.location}%0A*Budget:* ${form.budget || "Not specified"}%0A*Timeline:* ${form.timeline || "Not specified"}%0A%0A*Specifications:*%0A${encodeURIComponent(form.specifications) || "None provided"}%0A%0A*Customer Email:* ${form.email}`;
-  
-  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
-  
-  window.open(whatsappUrl, '_blank');
+
+  const subject = `New Quotation Request - ${selected.title}`;
+  const body = [
+    "NEW QUOTATION REQUEST",
+    "",
+    `Service: ${selected.title}`,
+    `Name: ${form.name}`,
+    `Email: ${form.email}`,
+    `Phone: ${form.phone}`,
+    `Location: ${form.location}`,
+    `Budget: ${form.budget || "Not specified"}`,
+    `Timeline: ${form.timeline || "Not specified"}`,
+    "",
+    "Specifications:",
+    form.specifications || "None provided",
+  ].join("\n");
+
+  const mailtoUrl = `mailto:${COMPANY_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+  window.location.href = mailtoUrl;
   setSubmitted(true);
 };
 
