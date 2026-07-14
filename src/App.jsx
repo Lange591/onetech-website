@@ -73,10 +73,10 @@ const services = [
     text: "We help you choose the right devices, networks, security systems and support approach for your environment. Get expert guidance tailored to your specific needs.",
     points: ["IT planning", "Device recommendations", "Business support", "Digital upgrades"],
     images: [
-      "/images/network/network-1.jpg",
       "/images/events/radio-interview.jpg",
-      "/images/events/exhibition.jpg",
-      "/images/events/tent-booth.jpg"
+      "/images/events/team-event.jpg",
+      "/images/events/outdoor-event.jpg",
+      "/images/events/team-booth.jpg"
     ],
     gradient: "from-zinc-700 to-red-950",
   },
@@ -140,7 +140,7 @@ const services = [
     images: [
       "/images/events/tent-booth.jpg",
       "/images/network/network-1.jpg",
-      "/images/events/team-booth.jpg",
+      "/images/events/exhibition.jpg",
       "/images/network/network-2.jpg"
     ],
     gradient: "from-zinc-800 to-red-700",
