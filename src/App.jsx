@@ -74,9 +74,7 @@ const services = [
     points: ["IT planning", "Device recommendations", "Business support", "Digital upgrades"],
     images: [
       "/images/events/radio-interview.jpg",
-      "/images/events/team-event.jpg",
-      "/images/events/outdoor-event.jpg",
-      "/images/events/team-booth.jpg"
+      "/images/events/outdoor-event.jpg"
     ],
     gradient: "from-zinc-700 to-red-950",
   },
@@ -90,8 +88,7 @@ const services = [
     images: [
       "/images/network/wifi-install.jpg",
       "/images/network/nf-infra-1.jpg",
-      "/images/network/starlink-install.jpg",
-      "/images/network/network-5.jpg"
+      "/images/network/network-3.jpg"
     ],
     gradient: "from-red-600 to-black",
   },
@@ -104,9 +101,7 @@ const services = [
     points: ["Structured cabling", "Switches & routers", "Cabinet setup", "LAN upgrades"],
     images: [
       "/images/network/nf-infra-2.jpg",
-      "/images/network/nf-infra-1.jpg",
       "/images/network/network-5.jpg",
-      "/images/network/network-3.jpg",
       "/images/network/network-2.jpg"
     ],
     gradient: "from-red-500 to-zinc-900",
@@ -140,8 +135,7 @@ const services = [
     images: [
       "/images/events/tent-booth.jpg",
       "/images/network/network-1.jpg",
-      "/images/events/exhibition.jpg",
-      "/images/network/network-2.jpg"
+      "/images/events/team-event.jpg"
     ],
     gradient: "from-zinc-800 to-red-700",
   },
