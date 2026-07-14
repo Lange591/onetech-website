@@ -73,10 +73,10 @@ const services = [
     text: "We help you choose the right devices, networks, security systems and support approach for your environment. Get expert guidance tailored to your specific needs.",
     points: ["IT planning", "Device recommendations", "Business support", "Digital upgrades"],
     images: [
-      "/images/network/network-2.jpg",
-      "/images/network/network-3.jpg",
+      "/images/network/network-1.jpg",
+      "/images/events/radio-interview.jpg",
       "/images/events/exhibition.jpg",
-      "/images/events/team-event.jpg"
+      "/images/events/tent-booth.jpg"
     ],
     gradient: "from-zinc-700 to-red-950",
   },
@@ -89,9 +89,9 @@ const services = [
     points: ["Access points", "Guest hotspots", "Coverage extension", "Router optimisation"],
     images: [
       "/images/network/wifi-install.jpg",
-      "/images/network/network-4.jpg",
-      "/images/network/network-5.jpg",
-      "/images/network/network-1.jpg"
+      "/images/network/nf-infra-1.jpg",
+      "/images/network/starlink-install.jpg",
+      "/images/network/network-5.jpg"
     ],
     gradient: "from-red-600 to-black",
   },
@@ -103,11 +103,10 @@ const services = [
     text: "We design and install clean, scalable network infrastructure that supports daily business operations. From small offices to large enterprises, we deliver reliable solutions.",
     points: ["Structured cabling", "Switches & routers", "Cabinet setup", "LAN upgrades"],
     images: [
-      "/images/network/nf-infra-1.jpg",
       "/images/network/nf-infra-2.jpg",
-      "/images/network/network-4.jpg",
+      "/images/network/nf-infra-1.jpg",
       "/images/network/network-5.jpg",
-      "/images/network/network-1.jpg",
+      "/images/network/network-3.jpg",
       "/images/network/network-2.jpg"
     ],
     gradient: "from-red-500 to-zinc-900",
@@ -140,9 +139,9 @@ const services = [
     points: ["Routers", "Cameras", "Smart accessories", "Tech recommendations"],
     images: [
       "/images/events/tent-booth.jpg",
-      "/images/network/network-2.jpg",
-      "/images/network/network-3.jpg",
-      "/images/events/team-booth.jpg"
+      "/images/network/network-1.jpg",
+      "/images/events/team-booth.jpg",
+      "/images/network/network-2.jpg"
     ],
     gradient: "from-zinc-800 to-red-700",
   },
