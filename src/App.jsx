@@ -103,6 +103,8 @@ const services = [
     text: "We design and install clean, scalable network infrastructure that supports daily business operations. From small offices to large enterprises, we deliver reliable solutions.",
     points: ["Structured cabling", "Switches & routers", "Cabinet setup", "LAN upgrades"],
     images: [
+      "/images/network/nf-infra-1.jpg",
+      "/images/network/nf-infra-2.jpg",
       "/images/network/network-4.jpg",
       "/images/network/network-5.jpg",
       "/images/network/network-1.jpg",
@@ -154,6 +156,7 @@ const teamMembers = [
     role: "Founder & Managing Director",
     img: "/images/team/MD.jpg",
     objPos: "50% 8%",
+    linkedin: "https://www.linkedin.com/in/hilarymudadi",
     description: "Hilary Mudadi is an experienced Telecommunications and Network Engineer with over 15 years of expertise in ICT infrastructure, telecommunications, and project delivery. He specializes in fibre optic networks, wireless networking, VoIP and IP PBX systems, structured cabling, broadband solutions, and ICT project management. Before founding OneTech IT Services, Hilary worked with leading telecommunications organizations in Zimbabwe and the United Kingdom, where he gained extensive experience in designing, deploying, and maintaining enterprise and carrier-grade networks. He holds an MSc in Project Management from Birmingham City University, a BSc Honours Degree in Network Computing, a Full Technological Diploma in Telecommunication Engineering and several industry certifications in telecommunications, networking, and project management. Hilary is passionate about delivering innovative, reliable, and cost-effective technology solutions that help organizations improve connectivity, productivity, and business performance."
   },
   {
@@ -514,6 +517,85 @@ function WhatsAppFloat() {
 
 // @Lange coding
 
+function CivilServantsPopup({ setPage }) {
+  const [show, setShow] = useState(true);
+
+  const goToServices = () => {
+    setShow(false);
+    setPage("services");
+  };
+
+  return (
+    <AnimatePresence>
+      {show && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="civil-servants-title"
+          onClick={() => setShow(false)}
+        >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: 10 }}
+            transition={{ type: "spring", stiffness: 220, damping: 22 }}
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-full max-w-lg overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-b from-zinc-900 to-black shadow-2xl"
+          >
+            <button
+              onClick={() => setShow(false)}
+              className="absolute right-4 top-4 z-10 rounded-full border border-white/15 bg-white/10 p-2 text-white transition hover:bg-white/20"
+              aria-label="Close"
+            >
+              <X size={18} />
+            </button>
+
+            <div className="bg-gradient-to-r from-red-700 to-red-600 px-8 py-6">
+              <div className="inline-flex items-center gap-2 rounded-full bg-black/20 px-3 py-1 text-xs font-black uppercase tracking-widest text-white">
+                <Sparkles size={14} /> Special Offer
+              </div>
+              <h2 id="civil-servants-title" className="mt-3 text-3xl font-black leading-tight tracking-tight text-white md:text-4xl">
+                Attention Civil Servants!
+              </h2>
+            </div>
+
+            <div className="px-8 py-7">
+              <p className="text-lg font-bold text-white">
+                Get your <span className="text-red-400">CCTV</span> and <span className="text-red-400">Solar installations</span> on easy monthly installments.
+              </p>
+              <p className="mt-3 leading-relaxed text-white/70">
+                Secure your home, office or business and power your life today, pay later in affordable monthly payments. Easy approval, no hidden charges.
+              </p>
+
+              <div className="mt-5 grid grid-cols-2 gap-3">
+                {["Easy Approval", "No Hidden Charges", "Flexible Payment Plans", "Affordable Monthly Payments"].map((f) => (
+                  <div key={f} className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-2.5">
+                    <CheckCircle2 size={16} className="shrink-0 text-red-400" />
+                    <span className="text-sm font-semibold text-white/80">{f}</span>
+                  </div>
+                ))}
+              </div>
+
+              <button
+                onClick={goToServices}
+                className="group mt-6 inline-flex w-full items-center justify-center rounded-full bg-red-600 px-8 py-4 font-black text-white shadow-2xl shadow-red-700/30 transition hover:bg-red-500"
+              >
+                View Services <ArrowRight className="ml-2 transition group-hover:translate-x-1" size={19} />
+              </button>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
+  );
+}
+
+// @Lange coding
+
 function HeroGraphic() {
   return (
     <div className="relative mx-auto h-[650px] w-full max-w-[650px]">
@@ -577,6 +659,7 @@ function HeroGraphic() {
 function HomePage({ setPage, openService }) {
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+      <CivilServantsPopup setPage={setPage} />
       <section className="px-6 py-16 md:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-[1fr_1.05fr]">
           <div>
@@ -606,6 +689,12 @@ function HomePage({ setPage, openService }) {
                 className="rounded-full border border-white/15 bg-white/5 px-8 py-4 font-black text-white backdrop-blur-xl hover:bg-white/10"
               >
                 Explore Services
+              </button>
+              <button
+                onClick={() => setPage("services")}
+                className="group inline-flex items-center justify-center rounded-full border border-red-400/40 bg-red-500/10 px-8 py-4 font-black text-red-100 backdrop-blur-xl transition hover:bg-red-500/20"
+              >
+                <Users className="mr-2" size={18} /> Civil Servants
               </button>
             </div>
           </div>
@@ -1103,6 +1192,16 @@ function TeamGrid() {
             </div>
             <h3 className="text-2xl font-black tracking-tight md:text-3xl">{t.name}</h3>
             <p className="mt-1 text-base font-bold text-red-400">{t.role}</p>
+            {t.linkedin && (
+              <a
+                href={t.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-3 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-bold text-white transition hover:border-red-500/40 hover:bg-red-600/20"
+              >
+                <svg className="h-4 w-4 text-red-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg> Connect on LinkedIn
+              </a>
+            )}
             <div className="mt-4 h-1 w-12 rounded-full bg-red-500" />
             <p className="mt-5 text-sm leading-relaxed text-white/70 md:text-base">{t.description}</p>
           </div>
