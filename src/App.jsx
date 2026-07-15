@@ -74,8 +74,7 @@ const services = [
     points: ["IT planning", "Device recommendations", "Business support", "Digital upgrades"],
     images: [
       "/images/events/radio-interview.jpg",
-      "/images/events/exhibition.jpg",
-      "/images/events/team-event.jpg"
+      "/images/events/exhibition.jpg"
     ],
     gradient: "from-zinc-700 to-red-950",
   },
@@ -88,7 +87,7 @@ const services = [
     points: ["Access points", "Guest hotspots", "Coverage extension", "Router optimisation"],
     images: [
       "/images/network/nf-infra-1.jpg",
-      "/images/network/network-2.jpg"
+      "/images/network/wifi-install.jpg"
     ],
     gradient: "from-red-600 to-black",
   },
@@ -101,7 +100,7 @@ const services = [
     points: ["Structured cabling", "Switches & routers", "Cabinet setup", "LAN upgrades"],
     images: [
       "/images/network/nf-infra-2.jpg",
-      "/images/network/network-5.jpg"
+      "/images/network/network-2.jpg"
     ],
     gradient: "from-red-500 to-zinc-900",
   },
@@ -132,9 +131,8 @@ const services = [
     text: "We supply and advise on tech gadgets that improve productivity, internet access, safety and convenience. Quality equipment from trusted brands at competitive prices.",
     points: ["Routers", "Cameras", "Smart accessories", "Tech recommendations"],
     images: [
-      "/images/events/tent-booth.jpg",
       "/images/network/network-1.jpg",
-      "/images/events/team-booth.jpg"
+      "/images/events/tent-booth.jpg"
     ],
     gradient: "from-zinc-800 to-red-700",
   },
