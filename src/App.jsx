@@ -86,8 +86,8 @@ const services = [
     text: "We extend coverage, reduce dead zones, configure access points and set up guest hotspot access. Our solutions ensure seamless connectivity throughout your premises.",
     points: ["Access points", "Guest hotspots", "Coverage extension", "Router optimisation"],
     images: [
-      "/images/network/nf-infra-1.jpg",
-      "/images/network/wifi-install.jpg"
+      "/images/network/wifi-install.jpg",
+      "/images/starlink/real-antenna-roof.jpg"
     ],
     gradient: "from-red-600 to-black",
   },
@@ -99,8 +99,8 @@ const services = [
     text: "We design and install clean, scalable network infrastructure that supports daily business operations. From small offices to large enterprises, we deliver reliable solutions.",
     points: ["Structured cabling", "Switches & routers", "Cabinet setup", "LAN upgrades"],
     images: [
-      "/images/network/nf-infra-2.jpg",
-      "/images/network/network-2.jpg"
+      "/images/network/nf-infra-1.jpg",
+      "/images/network/nf-infra-2.jpg"
     ],
     gradient: "from-red-500 to-zinc-900",
   },
