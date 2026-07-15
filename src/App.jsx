@@ -99,8 +99,8 @@ const services = [
     text: "We design and install clean, scalable network infrastructure that supports daily business operations. From small offices to large enterprises, we deliver reliable solutions.",
     points: ["Structured cabling", "Switches & routers", "Cabinet setup", "LAN upgrades"],
     images: [
-      "/images/network/nf-infra-1.jpg",
-      "/images/network/nf-infra-2.jpg"
+      "/images/network/nf-infra-2.jpg",
+      "/images/network/network-5.jpg"
     ],
     gradient: "from-red-500 to-zinc-900",
   },
