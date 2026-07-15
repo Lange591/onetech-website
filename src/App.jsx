@@ -99,8 +99,8 @@ const services = [
     text: "We design and install clean, scalable network infrastructure that supports daily business operations. From small offices to large enterprises, we deliver reliable solutions.",
     points: ["Structured cabling", "Switches & routers", "Cabinet setup", "LAN upgrades"],
     images: [
-      "/images/network/nf-infra-2.jpg",
-      "/images/network/network-5.jpg"
+      "/images/network/real-network-infra.jpg",
+      "/images/network/nf-infra-2.jpg"
     ],
     gradient: "from-red-500 to-zinc-900",
   },
@@ -162,6 +162,7 @@ const pages = [
   { id: "home", label: "Home", icon: Home },
   { id: "about", label: "About", icon: Info },
   { id: "services", label: "Services", icon: BriefcaseBusiness },
+  { id: "civil-servants", label: "Civil Loans", icon: Building2 },
   { id: "team", label: "Team", icon: Users },
   { id: "contact", label: "Contact", icon: MessageCircle },
   { id: "quote", label: "Quote", icon: FileText },
@@ -512,7 +513,7 @@ function CivilServantsPopup({ setPage }) {
 
   const goToServices = () => {
     setShow(false);
-    setPage("services");
+    setPage("civil-servants");
   };
 
   return (
