@@ -73,10 +73,8 @@ const services = [
     text: "We help you choose the right devices, networks, security systems and support approach for your environment. Get expert guidance tailored to your specific needs.",
     points: ["IT planning", "Device recommendations", "Business support", "Digital upgrades"],
     images: [
-      "/images/network/network-2.jpg",
-      "/images/network/network-3.jpg",
-      "/images/events/exhibition.jpg",
-      "/images/events/team-event.jpg"
+      "/images/events/radio-interview.jpg",
+      "/images/events/exhibition.jpg"
     ],
     gradient: "from-zinc-700 to-red-950",
   },
@@ -89,9 +87,7 @@ const services = [
     points: ["Access points", "Guest hotspots", "Coverage extension", "Router optimisation"],
     images: [
       "/images/network/wifi-install.jpg",
-      "/images/network/network-4.jpg",
-      "/images/network/network-5.jpg",
-      "/images/network/network-1.jpg"
+      "/images/starlink/real-antenna-roof.jpg"
     ],
     gradient: "from-red-600 to-black",
   },
@@ -103,12 +99,8 @@ const services = [
     text: "We design and install clean, scalable network infrastructure that supports daily business operations. From small offices to large enterprises, we deliver reliable solutions.",
     points: ["Structured cabling", "Switches & routers", "Cabinet setup", "LAN upgrades"],
     images: [
-      "/images/network/nf-infra-1.jpg",
       "/images/network/nf-infra-2.jpg",
-      "/images/network/network-4.jpg",
-      "/images/network/network-5.jpg",
-      "/images/network/network-1.jpg",
-      "/images/network/network-2.jpg"
+      "/images/network/network-5.jpg"
     ],
     gradient: "from-red-500 to-zinc-900",
   },
@@ -139,10 +131,8 @@ const services = [
     text: "We supply and advise on tech gadgets that improve productivity, internet access, safety and convenience. Quality equipment from trusted brands at competitive prices.",
     points: ["Routers", "Cameras", "Smart accessories", "Tech recommendations"],
     images: [
-      "/images/events/tent-booth.jpg",
-      "/images/network/network-2.jpg",
-      "/images/network/network-3.jpg",
-      "/images/events/team-booth.jpg"
+      "/images/network/network-1.jpg",
+      "/images/events/tent-booth.jpg"
     ],
     gradient: "from-zinc-800 to-red-700",
   },
@@ -565,7 +555,7 @@ function CivilServantsPopup({ setPage }) {
 
             <div className="px-8 py-7">
               <p className="text-lg font-bold text-white">
-                Get your <span className="text-red-400">CCTV</span> and <span className="text-red-400">Solar installations</span> on easy monthly installments.
+                Get your <span className="text-red-400">Starlink</span>, <span className="text-red-400">CCTV</span> and <span className="text-red-400">Solar installations</span> on easy monthly instalments.
               </p>
               <p className="mt-3 leading-relaxed text-white/70">
                 Secure your home, office or business and power your life today, pay later in affordable monthly payments. Easy approval, no hidden charges.
