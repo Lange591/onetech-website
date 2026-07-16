@@ -4,7 +4,8 @@ import {
   Camera, Satellite, Wifi, Network, Sun, Laptop, Phone, Mail, MapPin,
   ArrowRight, CheckCircle2, Lock, Sparkles, Menu, X, Home,
   BriefcaseBusiness, MessageCircle, Building2, Router, Zap, ShoppingBag,
-  ChevronRight, FileText, Users, ExternalLink, Info
+  ChevronRight, FileText, Users, ExternalLink, Info,
+  HandCoins, Wallet, CreditCard, CalendarClock, ShieldCheck, BadgeCheck
 } from "lucide-react";
 
 // @Lange coding
@@ -96,11 +97,13 @@ const services = [
     icon: Network,
     title: "Network Infrastructure",
     intro: "Structured cabling, switching, routing and business network upgrades.",
-    text: "We design and install clean, scalable network infrastructure that supports daily business operations. From small offices to large enterprises, we deliver reliable solutions.",
-    points: ["Structured cabling", "Switches & routers", "Cabinet setup", "LAN upgrades"],
+    text: "We design and install clean, scalable network infrastructure that supports daily business operations. From small offices to large enterprises, we deliver reliable solutions including wireless point-to-point links and rooftop CPE installations.",
+    points: ["Structured cabling", "Switches & routers", "Wireless CPE links", "LAN upgrades"],
     images: [
+      "/images/network/real-network-install.jpg",
       "/images/network/nf-infra-2.jpg",
-      "/images/network/network-5.jpg"
+      "/images/network/network-5.jpg",
+      "/images/network/nf-infra-1.jpg"
     ],
     gradient: "from-red-500 to-zinc-900",
   },
@@ -162,6 +165,7 @@ const pages = [
   { id: "home", label: "Home", icon: Home },
   { id: "about", label: "About", icon: Info },
   { id: "services", label: "Services", icon: BriefcaseBusiness },
+  { id: "loans", label: "Loans", icon: HandCoins },
   { id: "team", label: "Team", icon: Users },
   { id: "contact", label: "Contact", icon: MessageCircle },
   { id: "quote", label: "Quote", icon: FileText },
@@ -512,7 +516,7 @@ function CivilServantsPopup({ setPage }) {
 
   const goToServices = () => {
     setShow(false);
-    setPage("services");
+    setPage("loans");
   };
 
   return (
@@ -574,7 +578,7 @@ function CivilServantsPopup({ setPage }) {
                 onClick={goToServices}
                 className="group mt-6 inline-flex w-full items-center justify-center rounded-full bg-red-600 px-8 py-4 font-black text-white shadow-2xl shadow-red-700/30 transition hover:bg-red-500"
               >
-                View Services <ArrowRight className="ml-2 transition group-hover:translate-x-1" size={19} />
+                View Loan Options <ArrowRight className="ml-2 transition group-hover:translate-x-1" size={19} />
               </button>
             </div>
           </motion.div>
@@ -681,10 +685,10 @@ function HomePage({ setPage, openService }) {
                 Explore Services
               </button>
               <button
-                onClick={() => setPage("services")}
+                onClick={() => setPage("loans")}
                 className="group inline-flex items-center justify-center rounded-full border border-red-400/40 bg-red-500/10 px-8 py-4 font-black text-red-100 backdrop-blur-xl transition hover:bg-red-500/20"
               >
-                <Users className="mr-2" size={18} /> Civil Servants
+                <HandCoins className="mr-2" size={18} /> Civil Servant Loans
               </button>
             </div>
           </div>
@@ -727,7 +731,7 @@ function WorkShowcase() {
     { src: "/images/cctv/real-cctv-pole-1.jpg", alt: "Outdoor CCTV camera installation on a pole", label: "Outdoor CCTV" },
     { src: "/images/starlink/real-dish-roof.jpg", alt: "Technician aligning a satellite dish on a rooftop", label: "Dish Alignment" },
     { src: "/images/solar/inverter-install-2.jpg", alt: "Solar inverter installation", label: "Solar Power" },
-    { src: "/images/events/team-booth.jpg", alt: "Team at community event", label: "Community Events" },
+    { src: "/images/network/real-network-install.jpg", alt: "Technician installing a wireless network CPE antenna on a pole", label: "Network Infrastructure" },
   ];
 
   return (
@@ -1030,6 +1034,208 @@ function ServiceDetailPage({ serviceSlug, setPage }) {
             ))}
           </div>
         )}
+      </div>
+    </motion.div>
+  );
+}
+
+// @Lange coding
+
+function LoansPage({ setPage }) {
+  const loanOptions = [
+    {
+      icon: Wallet,
+      title: "Cash Loans",
+      intro: "Quick, affordable cash loans for civil servants.",
+      text: "Access instant cash to cover school fees, emergencies, home improvements or personal needs, with easy repayments deducted in convenient monthly instalments.",
+      points: ["Fast approval", "Affordable interest", "Flexible repayment", "Direct deductions"],
+      gradient: "from-red-600 to-red-900",
+    },
+    {
+      icon: ShoppingBag,
+      title: "IT Gadgets on Instalments",
+      intro: "Own the tech you need today, pay over time.",
+      text: "Get laptops, phones, routers, cameras, Starlink kits and other IT gadgets on easy monthly instalments, no need to pay the full amount upfront.",
+      points: ["Laptops & phones", "Routers & networking", "CCTV & cameras", "Starlink kits"],
+      gradient: "from-zinc-800 to-red-800",
+    },
+    {
+      icon: Satellite,
+      title: "Installations on Instalments",
+      intro: "Starlink, CCTV & Solar, installed now, paid monthly.",
+      text: "Secure and power your home or business with our full installation services spread across affordable monthly payments, professionally installed by our expert team.",
+      points: ["Starlink internet", "CCTV security", "Solar systems", "Professional install"],
+      gradient: "from-red-500 to-zinc-900",
+    },
+  ];
+
+  const steps = [
+    { icon: FileText, title: "Apply", text: "Send us your details and choose what you need, cash, a gadget or an installation." },
+    { icon: BadgeCheck, title: "Get Approved", text: "Quick and easy approval for civil servants with minimal paperwork." },
+    { icon: CreditCard, title: "Receive & Enjoy", text: "Get your cash, gadget or installation and start using it right away." },
+    { icon: CalendarClock, title: "Pay Monthly", text: "Repay in comfortable, predictable monthly instalments that suit your budget." },
+  ];
+
+  const benefits = [
+    "Exclusive rates for civil servants",
+    "Easy approval process",
+    "No hidden charges",
+    "Flexible payment plans",
+    "Affordable monthly payments",
+    "Trusted, professional service",
+  ];
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0 }}
+      className="px-6 py-20"
+    >
+      <div className="mx-auto max-w-7xl">
+        {/* Hero */}
+        <div className="relative overflow-hidden rounded-[3.5rem] border border-white/10 bg-gradient-to-br from-red-600 via-red-800 to-black p-8 shadow-2xl md:p-12">
+          <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-white/15 blur-3xl" />
+          <div className="relative">
+            <div className="inline-flex items-center gap-2 rounded-full bg-black/20 px-4 py-2 text-xs font-black uppercase tracking-widest text-white">
+              <Sparkles size={14} /> For Civil Servants
+            </div>
+            <h1 className="mt-5 max-w-4xl text-5xl font-black leading-[0.95] tracking-[-0.05em] md:text-8xl">
+              Civil Servant Loans.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/80 md:text-xl">
+              At OneTech IT Services we make technology and cash accessible to civil servants. Get cash loans, or take any of our IT gadgets and installations on easy monthly instalments, buy now and pay later, stress free.
+            </p>
+            <div className="mt-8 flex flex-col gap-4 sm:flex-row">
+              <a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello OneTech IT Services, I am a civil servant and I would like to apply for a loan / instalment plan.")}`}
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center justify-center rounded-full bg-white px-8 py-4 font-black text-red-800 shadow-xl transition hover:bg-white/90"
+              >
+                Apply on WhatsApp <ArrowRight className="ml-2 transition group-hover:translate-x-1" size={19} />
+              </a>
+              <button
+                onClick={() => setPage("contact")}
+                className="rounded-full border border-white/25 bg-white/10 px-8 py-4 font-black text-white backdrop-blur-xl transition hover:bg-white/20"
+              >
+                Contact Us
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Loan options */}
+        <div className="mt-14 text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2">
+            <HandCoins className="h-4 w-4 text-red-400" />
+            <span className="text-sm font-bold uppercase tracking-widest text-red-400">What We Offer</span>
+          </div>
+          <h2 className="mt-6 text-4xl font-black tracking-[-0.03em] md:text-6xl">
+            Choose what <span className="text-red-500">works</span> for you.
+          </h2>
+        </div>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+          {loanOptions.map((opt, i) => {
+            const Icon = opt.icon;
+            return (
+              <motion.div
+                key={opt.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.12, duration: 0.5 }}
+                whileHover={{ y: -8, transition: { duration: 0.3 } }}
+                className="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-gradient-to-b from-white/[0.08] to-white/[0.02] p-7 shadow-2xl backdrop-blur-xl"
+              >
+                <div className={`inline-flex rounded-2xl bg-gradient-to-br ${opt.gradient} p-4 shadow-lg ring-1 ring-white/15`}>
+                  <Icon className="h-7 w-7 text-white" />
+                </div>
+                <h3 className="mt-5 text-2xl font-black tracking-tight">{opt.title}</h3>
+                <p className="mt-2 text-sm font-bold text-red-300">{opt.intro}</p>
+                <p className="mt-3 text-sm leading-relaxed text-white/60">{opt.text}</p>
+                <div className="mt-5 grid grid-cols-2 gap-2.5">
+                  {opt.points.map((p) => (
+                    <div key={p} className="flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2">
+                      <CheckCircle2 size={15} className="shrink-0 text-red-400" />
+                      <span className="text-xs font-semibold text-white/80">{p}</span>
+                    </div>
+                  ))}
+                </div>
+                <a
+                  href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hello OneTech IT Services, I am a civil servant interested in: ${opt.title}.`)}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-6 inline-flex items-center gap-2 text-sm font-black text-red-400 transition-colors group-hover:text-red-300"
+                >
+                  Enquire now <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
+                <div className="pointer-events-none absolute inset-0 rounded-[2rem] opacity-0 ring-2 ring-inset ring-red-500/40 transition-opacity duration-300 group-hover:opacity-100" />
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* How it works */}
+        <div className="mt-16 rounded-[2.5rem] border border-white/10 bg-white/[0.055] p-8 backdrop-blur-xl md:p-10">
+          <h2 className="text-3xl font-black tracking-tight md:text-4xl">How it works</h2>
+          <p className="mt-3 max-w-2xl leading-relaxed text-white/60">
+            Getting started is simple. Follow these four easy steps and enjoy your technology today.
+          </p>
+          <div className="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+            {steps.map((step, i) => {
+              const Icon = step.icon;
+              return (
+                <div key={step.title} className="relative rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-transparent p-6">
+                  <div className="flex items-center justify-between">
+                    <div className="rounded-2xl bg-red-600 p-3 shadow-lg">
+                      <Icon className="h-5 w-5 text-white" />
+                    </div>
+                    <span className="text-4xl font-black text-white/10">{i + 1}</span>
+                  </div>
+                  <h3 className="mt-4 text-lg font-black">{step.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-white/60">{step.text}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Benefits */}
+        <div className="mt-8 grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+          <div className="rounded-[2.5rem] border border-white/10 bg-white/[0.055] p-8 backdrop-blur-xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-red-500/30 bg-red-500/10 px-4 py-2">
+              <ShieldCheck className="h-4 w-4 text-red-400" />
+              <span className="text-sm font-bold uppercase tracking-widest text-red-400">Why Choose Us</span>
+            </div>
+            <h2 className="mt-5 text-3xl font-black">Built for civil servants.</h2>
+            <div className="mt-7 grid gap-4 sm:grid-cols-2">
+              {benefits.map((item) => (
+                <div key={item} className="flex items-center gap-3 rounded-2xl bg-white/10 p-4">
+                  <CheckCircle2 className="shrink-0 text-red-400" />
+                  <span className="text-sm font-bold">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="flex flex-col justify-center rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-red-600 via-red-800 to-black p-8 text-center shadow-2xl">
+            <h2 className="text-3xl font-black leading-tight md:text-4xl">Ready to get started?</h2>
+            <p className="mt-4 leading-relaxed text-white/80">
+              Chat with our team today to check your eligibility and pick a plan that fits your budget.
+            </p>
+            <a
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hello OneTech IT Services, I am a civil servant and I would like to apply for a loan / instalment plan.")}`}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-white px-8 py-4 font-black text-red-800 shadow-xl transition hover:bg-white/90"
+            >
+              <MessageCircle size={19} /> Apply Now
+            </a>
+            <p className="mt-4 text-sm text-white/70">or call {COMPANY_PHONE}</p>
+          </div>
+        </div>
       </div>
     </motion.div>
   );
@@ -1624,6 +1830,7 @@ export default function OneTechWebsite() {
     if (page === "about") return <AboutPage />;
     if (page === "services") return <ServicesPage openService={openService} />;
     if (page === "service-detail") return <ServiceDetailPage serviceSlug={serviceSlug} setPage={setPage} />;
+    if (page === "loans") return <LoansPage setPage={setPage} />;
     if (page === "team") return <TeamPage />;
     if (page === "contact") return <ContactPage />;
     if (page === "quote") return <QuotePage selectedService={quoteService} />;
